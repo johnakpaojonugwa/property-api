@@ -1,0 +1,17 @@
+node_modules
+# Environment files
+.env.local
+.env.*
+
+# Secrets and keys
+*.pem
+*.key
+*.crt
+secrets.json
+.aws/credentials
+.aws/config
+
+# Editor and OS files
+.vscode/
+.DS_Store
+thumbs.db
