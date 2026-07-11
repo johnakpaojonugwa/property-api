@@ -15,3 +15,6 @@ secrets.json
 .vscode/
 .DS_Store
 thumbs.db
+
+.qodo
+.__tests__
