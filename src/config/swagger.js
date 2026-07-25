@@ -1,42 +1,28 @@
-import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-const options = {
-  definition: {
-    openapi: '3.0.0',
-    info: {
-      title: 'Property API',
-      version: '1.0.0',
-      description: 'Production-ready RESTful Real Estate API with Enterprise Security Best Practices',
-    },
-    servers: [
-      {
-        url: 'http://localhost:5000/v1',
-        description: 'Local Development Server',
-      },
-    ],
-    components: {
-      securitySchemes: {
-        bearerAuth: {
-          type: 'http',
-          scheme: 'bearer',
-          bearerFormat: 'JWT',
-        },
-      },
-    },
-    security: [
-      {
-        bearerAuth: [],
-      },
-    ],
-  },
-  apis: ['./src/routes/*.js'],
-};
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const swaggerPath = path.resolve(__dirname, '../../swagger.json');
 
-const swaggerSpec = swaggerJsdoc(options);
+let swaggerSpec = {};
+try {
+  const fileData = fs.readFileSync(swaggerPath, 'utf8');
+  swaggerSpec = JSON.parse(fileData);
+} catch (err) {
+  console.error('Failed to load swagger.json:', err.message);
+}
 
 export const setupSwagger = (app) => {
+  app.get('/swagger.json', (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(swaggerSpec);
+  });
+
   app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 };
 
 export default setupSwagger;

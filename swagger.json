@@ -1,0 +1,528 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Property API",
+    "version": "1.0.0",
+    "description": "Production-ready RESTful Real Estate API with Enterprise Security Best Practices"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5000/v1",
+      "description": "Local Development Server (Port 5000)"
+    },
+    {
+      "url": "http://localhost:6000/v1",
+      "description": "Local Development Server (Port 6000)"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    },
+    "schemas": {
+      "ApiResponse": {
+        "type": "object",
+        "properties": {
+          "success": { "type": "boolean" },
+          "message": { "type": "string" },
+          "data": { "type": "object" }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "success": { "type": "boolean", "example": false },
+          "message": { "type": "string" },
+          "errors": { "type": "array", "items": { "type": "object" } }
+        }
+      },
+      "LoginRequest": {
+        "type": "object",
+        "required": ["email", "password"],
+        "properties": {
+          "email": { "type": "string", "format": "email", "example": "user@example.com" },
+          "password": { "type": "string", "example": "Password123!" }
+        }
+      },
+      "CreateUserRequest": {
+        "type": "object",
+        "required": ["email", "password", "name"],
+        "properties": {
+          "name": { "type": "string", "example": "John Doe" },
+          "email": { "type": "string", "format": "email", "example": "johndoe@example.com" },
+          "password": { "type": "string", "example": "SecurePass123!" },
+          "role": { "type": "string", "enum": ["user", "agent", "merchant", "admin"], "default": "user" },
+          "phone": { "type": "string", "example": "+1234567890" }
+        }
+      },
+      "CreatePropertyRequest": {
+        "type": "object",
+        "required": ["title", "description", "price", "location", "propertyType"],
+        "properties": {
+          "title": { "type": "string", "example": "Modern 3 Bedroom Apartment" },
+          "description": { "type": "string", "example": "Spacious apartment located in downtown." },
+          "price": { "type": "number", "example": 250000 },
+          "propertyType": { "type": "string", "example": "apartment" },
+          "location": {
+            "type": "object",
+            "properties": {
+              "address": { "type": "string", "example": "123 Main Street" },
+              "city": { "type": "string", "example": "Metropolis" },
+              "state": { "type": "string", "example": "NY" }
+            }
+          },
+          "bedrooms": { "type": "integer", "example": 3 },
+          "bathrooms": { "type": "integer", "example": 2 },
+          "images": { "type": "array", "items": { "type": "string" } }
+        }
+      },
+      "CreateAppointmentRequest": {
+        "type": "object",
+        "required": ["property_id", "appointment_date"],
+        "properties": {
+          "property_id": { "type": "string", "example": "60d5ec49f1b2c811845e2111" },
+          "appointment_date": { "type": "string", "format": "date-time", "example": "2026-08-01T10:00:00.000Z" },
+          "notes": { "type": "string", "example": "Interested in morning viewing" }
+        }
+      },
+      "CreateReviewRequest": {
+        "type": "object",
+        "required": ["property_id", "rating", "comment"],
+        "properties": {
+          "property_id": { "type": "string", "example": "60d5ec49f1b2c811845e2111" },
+          "rating": { "type": "integer", "minimum": 1, "maximum": 5, "example": 5 },
+          "comment": { "type": "string", "example": "Great location and wonderful neighborhood!" }
+        }
+      },
+      "CreateWishlistRequest": {
+        "type": "object",
+        "required": ["property_id"],
+        "properties": {
+          "property_id": { "type": "string", "example": "60d5ec49f1b2c811845e2111" }
+        }
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/auth/login": {
+      "post": {
+        "tags": ["Authentication"],
+        "summary": "User Login",
+        "description": "Authenticate user credentials and receive JWT access token",
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/LoginRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Login successful" },
+          "401": { "description": "Invalid credentials" }
+        }
+      }
+    },
+    "/token": {
+      "post": {
+        "tags": ["Authentication"],
+        "summary": "Create Token",
+        "security": [],
+        "responses": {
+          "200": { "description": "Token generated successfully" }
+        }
+      }
+    },
+    "/properties": {
+      "get": {
+        "tags": ["Properties"],
+        "summary": "Get All Properties",
+        "description": "Retrieve property listings with optional search, sorting, and pagination filters",
+        "parameters": [
+          { "name": "page", "in": "query", "schema": { "type": "integer", "default": 1 } },
+          { "name": "limit", "in": "query", "schema": { "type": "integer", "default": 10 } },
+          { "name": "city", "in": "query", "schema": { "type": "string" } },
+          { "name": "minPrice", "in": "query", "schema": { "type": "number" } },
+          { "name": "maxPrice", "in": "query", "schema": { "type": "number" } }
+        ],
+        "responses": {
+          "200": { "description": "Properties retrieved successfully" }
+        }
+      },
+      "post": {
+        "tags": ["Properties"],
+        "summary": "Create Property Listing",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreatePropertyRequest" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Property created successfully" }
+        }
+      }
+    },
+    "/properties/buy": {
+      "post": {
+        "tags": ["Properties"],
+        "summary": "Purchase Property",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "property_id": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Purchase transaction initiated" }
+        }
+      }
+    },
+    "/properties/{property_id}": {
+      "get": {
+        "tags": ["Properties"],
+        "summary": "Get Property Details",
+        "parameters": [
+          { "name": "property_id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Property details retrieved" },
+          "404": { "description": "Property not found" }
+        }
+      },
+      "put": {
+        "tags": ["Properties"],
+        "summary": "Update Property Listing",
+        "parameters": [
+          { "name": "property_id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreatePropertyRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Property updated successfully" }
+        }
+      },
+      "delete": {
+        "tags": ["Properties"],
+        "summary": "Delete Property Listing",
+        "parameters": [
+          { "name": "property_id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Property deleted successfully" }
+        }
+      }
+    },
+    "/properties/{property_id}/resource": {
+      "put": {
+        "tags": ["Properties"],
+        "summary": "Update Property Resource / Upload Media",
+        "parameters": [
+          { "name": "property_id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Property resource updated" }
+        }
+      }
+    },
+    "/properties/{property_id}/set-verified": {
+      "put": {
+        "tags": ["Properties"],
+        "summary": "Verify Property Listing",
+        "parameters": [
+          { "name": "property_id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Property verification status updated" }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "tags": ["Users"],
+        "summary": "Get All Users",
+        "responses": {
+          "200": { "description": "Users retrieved successfully" }
+        }
+      },
+      "post": {
+        "tags": ["Users"],
+        "summary": "Register New User",
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateUserRequest" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "User created successfully" }
+        }
+      }
+    },
+    "/users/{user_id}": {
+      "put": {
+        "tags": ["Users"],
+        "summary": "Update User",
+        "parameters": [
+          { "name": "user_id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "User updated successfully" }
+        }
+      },
+      "delete": {
+        "tags": ["Users"],
+        "summary": "Delete User",
+        "parameters": [
+          { "name": "user_id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "User deleted successfully" }
+        }
+      }
+    },
+    "/users/{user_id}/wishlist": {
+      "get": {
+        "tags": ["Users"],
+        "summary": "Get User Wishlist",
+        "parameters": [
+          { "name": "user_id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "User wishlist retrieved" }
+        }
+      }
+    },
+    "/users/{user_id}/properties": {
+      "get": {
+        "tags": ["Users"],
+        "summary": "Get User Listed Properties",
+        "parameters": [
+          { "name": "user_id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "User properties retrieved" }
+        }
+      }
+    },
+    "/users/wishlist": {
+      "post": {
+        "tags": ["Wishlist"],
+        "summary": "Add Property to Wishlist",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateWishlistRequest" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Property added to wishlist" }
+        }
+      }
+    },
+    "/agents": {
+      "get": {
+        "tags": ["Agents"],
+        "summary": "Get All Agents",
+        "responses": {
+          "200": { "description": "Agents retrieved successfully" }
+        }
+      },
+      "post": {
+        "tags": ["Agents"],
+        "summary": "Register Agent",
+        "responses": {
+          "201": { "description": "Agent created successfully" }
+        }
+      }
+    },
+    "/agents/{agent_id}/wishlist": {
+      "get": {
+        "tags": ["Agents"],
+        "summary": "Get Agent Wishlist",
+        "parameters": [
+          { "name": "agent_id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Wishlist retrieved" }
+        }
+      }
+    },
+    "/merchants": {
+      "get": {
+        "tags": ["Merchants"],
+        "summary": "Get All Merchants",
+        "responses": {
+          "200": { "description": "Merchants retrieved successfully" }
+        }
+      },
+      "post": {
+        "tags": ["Merchants"],
+        "summary": "Register Merchant",
+        "security": [],
+        "responses": {
+          "201": { "description": "Merchant registered successfully" }
+        }
+      }
+    },
+    "/merchants/agents": {
+      "get": {
+        "tags": ["Merchants"],
+        "summary": "Get Merchant Agents",
+        "responses": {
+          "200": { "description": "Merchant agents retrieved" }
+        }
+      },
+      "post": {
+        "tags": ["Merchants"],
+        "summary": "Create Agent under Merchant",
+        "responses": {
+          "201": { "description": "Agent created" }
+        }
+      }
+    },
+    "/merchants/verify-agent": {
+      "post": {
+        "tags": ["Merchants"],
+        "summary": "Verify Agent status",
+        "responses": {
+          "200": { "description": "Agent verified" }
+        }
+      }
+    },
+    "/appointments": {
+      "get": {
+        "tags": ["Appointments"],
+        "summary": "Get Appointments",
+        "responses": {
+          "200": { "description": "Appointments retrieved successfully" }
+        }
+      },
+      "post": {
+        "tags": ["Appointments"],
+        "summary": "Create Viewing Appointment",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateAppointmentRequest" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Appointment scheduled successfully" }
+        }
+      }
+    },
+    "/appointments/{appointment_id}": {
+      "put": {
+        "tags": ["Appointments"],
+        "summary": "Update Appointment Details",
+        "parameters": [
+          { "name": "appointment_id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Appointment updated" }
+        }
+      },
+      "delete": {
+        "tags": ["Appointments"],
+        "summary": "Delete Appointment",
+        "parameters": [
+          { "name": "appointment_id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Appointment deleted" }
+        }
+      }
+    },
+    "/appointments/{appointment_id}/confirm-meeting": {
+      "put": {
+        "tags": ["Appointments"],
+        "summary": "Confirm Appointment Meeting",
+        "parameters": [
+          { "name": "appointment_id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Meeting confirmed" }
+        }
+      }
+    },
+    "/reviews": {
+      "get": {
+        "tags": ["Reviews"],
+        "summary": "Get Property Reviews",
+        "responses": {
+          "200": { "description": "Reviews retrieved successfully" }
+        }
+      },
+      "post": {
+        "tags": ["Reviews"],
+        "summary": "Submit Property Review",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateReviewRequest" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Review created successfully" }
+        }
+      }
+    },
+    "/reviews/{review_id}": {
+      "put": {
+        "tags": ["Reviews"],
+        "summary": "Update Property Review",
+        "parameters": [
+          { "name": "review_id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Review updated" }
+        }
+      },
+      "delete": {
+        "tags": ["Reviews"],
+        "summary": "Delete Review",
+        "parameters": [
+          { "name": "review_id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Review deleted" }
+        }
+      }
+    }
+  }
+}

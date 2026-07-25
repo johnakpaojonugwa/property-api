@@ -1,0 +1,5 @@
+{
+  "exec": "node src/server.js",
+  "watch": ["src"],
+  "ext": "js,mjs,cjs,json"
+}
