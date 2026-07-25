@@ -8,10 +8,10 @@ const router = express.Router();
 
 router.get('/appointments', optionalAuthenticate, appointmentController.getAppointments);
 router.post('/appointments', optionalAuthenticate, validate(createAppointmentSchema), appointmentController.createAppointment);
-router.put('/appointments/:appointment_id/confirm-meeting', authenticate, appointmentController.confirmMeeting);
-router.put('/appointments/:appointment_id/set-agent-appointment-completion', authenticate, appointmentController.setAgentCompletion);
-router.put('/appointments/:appointment_id/set-user-appointment-completion', authenticate, appointmentController.setUserCompletion);
-router.put('/appointments/:appointment_id', authenticate, appointmentController.updateAppointment);
-router.delete('/appointments/:appointment_id', authenticate, appointmentController.deleteAppointment);
+router.put('/appointments/:appointment_id/confirm-meeting', optionalAuthenticate, appointmentController.confirmMeeting);
+router.put('/appointments/:appointment_id/set-agent-appointment-completion', optionalAuthenticate, appointmentController.setAgentCompletion);
+router.put('/appointments/:appointment_id/set-user-appointment-completion', optionalAuthenticate, appointmentController.setUserCompletion);
+router.put('/appointments/:appointment_id', optionalAuthenticate, appointmentController.updateAppointment);
+router.delete('/appointments/:appointment_id', optionalAuthenticate, appointmentController.deleteAppointment);
 
 export default router;

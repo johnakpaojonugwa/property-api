@@ -7,6 +7,7 @@ import userController from '../controllers/user.controller.js';
 const router = express.Router();
 
 router.get('/users', optionalAuthenticate, userController.getUsers);
+router.get('/users/:user_id', optionalAuthenticate, userController.getUserById);
 router.get('/users/:user_id/wishlist', optionalAuthenticate, userController.getUserWishlist);
 router.get('/users/:user_id/properties', optionalAuthenticate, userController.getUserProperties);
 router.post('/users', validate(createUserSchema), userController.createUser);

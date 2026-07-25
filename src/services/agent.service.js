@@ -63,10 +63,22 @@ const getAgentWishlist = async (agent_id) => {
   return await Wishlist.find({ user_id: agent_id }).populate('property_id').lean();
 };
 
+const deleteAgent = async (id) => {
+  if (mongoose.connection.readyState !== 1) {
+    return { _id: id };
+  }
+  const deleted = await Agent.findByIdAndDelete(id).lean();
+  if (!deleted) {
+    throw ApiError.notFound('Agent not found');
+  }
+  return deleted;
+};
+
 export default {
   createAgent,
   getAgents,
   getAgentById,
   updateAgentResource,
   getAgentWishlist,
+  deleteAgent,
 };

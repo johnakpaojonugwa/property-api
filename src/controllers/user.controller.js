@@ -12,6 +12,11 @@ const getUsers = asyncHandler(async (req, res) => {
   return res.status(200).json(ApiResponse.success(users, 'Users retrieved'));
 });
 
+const getUserById = asyncHandler(async (req, res) => {
+  const user = await userService.getUserById(req.params.user_id);
+  return res.status(200).json(ApiResponse.success(user, 'User retrieved'));
+});
+
 const getUserWishlist = asyncHandler(async (req, res) => {
   const wishlist = await userService.getUserWishlist(req.params.user_id);
   return res.status(200).json(ApiResponse.success(wishlist, 'User wishlist retrieved'));
@@ -40,6 +45,7 @@ const deleteUser = asyncHandler(async (req, res) => {
 export default {
   createUser,
   getUsers,
+  getUserById,
   getUserWishlist,
   getUserProperties,
   updateUser,

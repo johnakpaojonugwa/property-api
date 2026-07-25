@@ -22,9 +22,15 @@ const updateAgentResource = asyncHandler(async (req, res) => {
   return res.status(200).json(ApiResponse.success(updatedAgent, 'Agent resource updated'));
 });
 
+const deleteAgent = asyncHandler(async (req, res) => {
+  const deleted = await agentService.deleteAgent(req.params.agent_id);
+  return res.status(200).json(ApiResponse.success(deleted, 'Agent deleted'));
+});
+
 export default {
   createAgent,
   getAgents,
   getAgentWishlist,
   updateAgentResource,
+  deleteAgent,
 };

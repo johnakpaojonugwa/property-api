@@ -288,6 +288,17 @@
       }
     },
     "/users/{user_id}": {
+      "get": {
+        "tags": ["Users"],
+        "summary": "Get User Details",
+        "parameters": [
+          { "name": "user_id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "User details retrieved" },
+          "404": { "description": "User not found" }
+        }
+      },
       "put": {
         "tags": ["Users"],
         "summary": "Update User",
@@ -306,6 +317,19 @@
         ],
         "responses": {
           "200": { "description": "User deleted successfully" }
+        }
+      }
+    },
+    "/users/{user_id}/resource": {
+      "put": {
+        "tags": ["Users"],
+        "summary": "Update User Resource / Upload Media",
+        "parameters": [
+          { "name": "user_id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "User resource updated" },
+          "404": { "description": "User not found" }
         }
       }
     },
@@ -366,6 +390,32 @@
         }
       }
     },
+    "/agents/{agent_id}": {
+      "delete": {
+        "tags": ["Agents"],
+        "summary": "Delete Agent",
+        "parameters": [
+          { "name": "agent_id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Agent deleted successfully" },
+          "404": { "description": "Agent not found" }
+        }
+      }
+    },
+    "/agents/{agent_id}/resource": {
+      "put": {
+        "tags": ["Agents"],
+        "summary": "Update Agent Resource / Upload Media",
+        "parameters": [
+          { "name": "agent_id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Agent resource updated" },
+          "404": { "description": "Agent not found" }
+        }
+      }
+    },
     "/agents/{agent_id}/wishlist": {
       "get": {
         "tags": ["Agents"],
@@ -417,6 +467,18 @@
         "summary": "Verify Agent status",
         "responses": {
           "200": { "description": "Agent verified" }
+        }
+      }
+    },
+    "/merchants/{merchant_id}/wishlist": {
+      "get": {
+        "tags": ["Merchants"],
+        "summary": "Get Merchant Wishlist",
+        "parameters": [
+          { "name": "merchant_id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Merchant wishlist retrieved" }
         }
       }
     },
@@ -475,6 +537,30 @@
         ],
         "responses": {
           "200": { "description": "Meeting confirmed" }
+        }
+      }
+    },
+    "/appointments/{appointment_id}/set-agent-appointment-completion": {
+      "put": {
+        "tags": ["Appointments"],
+        "summary": "Set Agent Appointment Completion",
+        "parameters": [
+          { "name": "appointment_id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Agent appointment completion updated" }
+        }
+      }
+    },
+    "/appointments/{appointment_id}/set-user-appointment-completion": {
+      "put": {
+        "tags": ["Appointments"],
+        "summary": "Set User Appointment Completion",
+        "parameters": [
+          { "name": "appointment_id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "User appointment completion updated" }
         }
       }
     },
