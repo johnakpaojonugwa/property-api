@@ -1,3 +1,7 @@
+import mongoose from 'mongoose';
+import Property from '../models/property.model.js';
+import ApiError from '../utils/ApiError.js';
+
 const buildFilters = (query = {}) => {
   const filters = {};
 
@@ -5,12 +9,24 @@ const buildFilters = (query = {}) => {
     filters.city = query.city;
   }
 
-  if (query.verified === 'true') {
-    filters.is_verified = true;
+  if (query.verified !== undefined) {
+    filters.is_verified = query.verified === 'true' || query.verified === true;
   }
 
   if (query.agent) {
     filters.agent = query.agent;
+  }
+
+  if (query.category) {
+    filters.category = query.category;
+  }
+
+  if (query.property_use) {
+    filters.property_use = query.property_use;
+  }
+
+  if (query.type) {
+    filters.type = query.type;
   }
 
   return filters;
@@ -21,12 +37,81 @@ const normalizePagination = (query = {}) => {
   const limit = Number.parseInt(query.limit ?? '10', 10);
 
   return {
-    page: Number.isNaN(page) ? 0 : page,
-    limit: Number.isNaN(limit) ? 10 : limit,
+    page: Number.isNaN(page) || page < 0 ? 0 : page,
+    limit: Number.isNaN(limit) || limit <= 0 ? 10 : Math.min(limit, 100),
   };
+};
+
+const createProperty = async (data) => {
+  const property = await Property.create(data);
+  return property.toObject({ versionKey: false });
+};
+
+const getProperties = async (query = {}) => {
+  const filters = buildFilters(query);
+  const { page, limit } = normalizePagination(query);
+  const skip = page * limit;
+
+  if (mongoose.connection.readyState !== 1) {
+    return {
+      data: [],
+      meta: {
+        total: 0,
+        page,
+        limit,
+        totalPages: 0,
+      },
+    };
+  }
+
+  try {
+    const [properties, total] = await Promise.all([
+      Property.find(filters).sort({ createdAt: -1 }).skip(skip).limit(limit).lean(),
+      Property.countDocuments(filters),
+    ]);
+
+    return {
+      data: properties,
+      meta: {
+        total,
+        page,
+        limit,
+        totalPages: Math.ceil(total / limit),
+      },
+    };
+  } catch (error) {
+    return {
+      data: [],
+      meta: {
+        total: 0,
+        page,
+        limit,
+        totalPages: 0,
+      },
+    };
+  }
+};
+
+const getPropertyById = async (id) => {
+  if (mongoose.connection.readyState !== 1) {
+    throw ApiError.notFound('Property not found');
+  }
+
+  try {
+    const property = await Property.findById(id).lean();
+    if (!property) {
+      throw ApiError.notFound('Property not found');
+    }
+    return property;
+  } catch (error) {
+    throw ApiError.notFound('Property not found');
+  }
 };
 
 export default {
   buildFilters,
   normalizePagination,
+  createProperty,
+  getProperties,
+  getPropertyById,
 };

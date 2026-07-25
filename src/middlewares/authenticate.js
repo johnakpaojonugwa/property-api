@@ -15,7 +15,7 @@ const authenticate = (req, res, next) => {
     const decoded = jwt.verify(token, env.JWT_SECRET);
     req.actor = {
       id: decoded.id,
-      type: decoded.actor_type,
+      type: decoded.actor_type || decoded.role || 'USER',
     };
     return next();
   } catch (error) {

@@ -11,10 +11,12 @@ import rejectDuplicateQueryParams from './middlewares/rejectDuplicateQueryParams
 import cookieSecurity from './middlewares/cookieSecurity.js';
 import requestTimeout from './middlewares/requestTimeout.js';
 import ApiResponse from './utils/ApiResponse.js';
+import { setupSwagger } from './config/swagger.js';
 
 const app = express();
 
 app.set('trust proxy', 1);
+app.set('etag', 'strong');
 app.disable('x-powered-by');
 
 const limiter = rateLimit({
@@ -25,15 +27,22 @@ const limiter = rateLimit({
   message: 'Too many requests, please try again later.',
 });
 
+const corsOptions = {
+  origin: process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',') : '*',
+  credentials: true,
+};
+
 app.use(compression());
 app.use(helmet());
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json({ limit: '1mb' }));
 app.use(rejectDuplicateQueryParams);
 app.use(cookieSecurity);
 app.use(requestTimeout(5000));
 app.use(requestLogger);
 app.use(limiter);
+
+setupSwagger(app);
 
 app.get('/health', (req, res) => {
   res.status(200).json(ApiResponse.success({ status: 'ok' }, 'Service healthy'));
