@@ -7,4 +7,9 @@ const login = asyncHandler(async (req, res) => {
   return res.status(200).json(ApiResponse.success(authResult, 'Login successful'));
 });
 
-export default { login };
+const createToken = asyncHandler(async (req, res) => {
+  const result = await authService.createGuestToken();
+  return res.status(200).json(ApiResponse.success(result, 'Token created'));
+});
+
+export default { login, createToken };

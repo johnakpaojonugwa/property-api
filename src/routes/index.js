@@ -8,7 +8,10 @@ import appointmentRoutes from './appointment.routes.js';
 import reviewRoutes from './review.routes.js';
 import wishlistRoutes from './wishlist.routes.js';
 
+import tokenRoutes from './token.routes.js';
+
 const router = express.Router();
+router.use('/v1', tokenRoutes);
 router.use('/v1', authRoutes);
 router.use('/v1', propertyRoutes);
 router.use('/v1', userRoutes);

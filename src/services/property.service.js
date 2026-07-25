@@ -17,6 +17,10 @@ const buildFilters = (query = {}) => {
     filters.agent = query.agent;
   }
 
+  if (query.merchant) {
+    filters.merchant = query.merchant;
+  }
+
   if (query.category) {
     filters.category = query.category;
   }
@@ -108,10 +112,57 @@ const getPropertyById = async (id) => {
   }
 };
 
+const updateProperty = async (id, data) => {
+  const updated = await Property.findByIdAndUpdate(id, data, { new: true }).lean();
+  if (!updated) {
+    throw ApiError.notFound('Property not found');
+  }
+  return updated;
+};
+
+const updatePropertyResources = async (id, imagesData) => {
+  const images = Array.isArray(imagesData) ? imagesData : [imagesData.images || imagesData].flat();
+  const maxImages = images.slice(0, 5);
+  const updated = await Property.findByIdAndUpdate(id, { images: maxImages }, { new: true }).lean();
+  if (!updated) {
+    throw ApiError.notFound('Property not found');
+  }
+  return updated;
+};
+
+const setVerified = async (id, is_verified) => {
+  const updated = await Property.findByIdAndUpdate(id, { is_verified }, { new: true }).lean();
+  if (!updated) {
+    throw ApiError.notFound('Property not found');
+  }
+  return updated;
+};
+
+const buyProperty = async (property_id, user_id) => {
+  const property = await Property.findByIdAndUpdate(property_id, { is_sold: true }, { new: true }).lean();
+  if (!property) {
+    throw ApiError.notFound('Property not found');
+  }
+  return { property_id, user_id, status: 'BOUGHT', property };
+};
+
+const deleteProperty = async (id) => {
+  const deleted = await Property.findByIdAndDelete(id).lean();
+  if (!deleted) {
+    throw ApiError.notFound('Property not found');
+  }
+  return deleted;
+};
+
 export default {
   buildFilters,
   normalizePagination,
   createProperty,
   getProperties,
   getPropertyById,
+  updateProperty,
+  updatePropertyResources,
+  setVerified,
+  buyProperty,
+  deleteProperty,
 };

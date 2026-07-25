@@ -61,8 +61,14 @@ const storeToken = async (email, token) => {
   return saved.toObject({ versionKey: false });
 };
 
+const createGuestToken = async () => {
+  const token = createJwt({ role: 'GUEST', is_public: true });
+  return { token };
+};
+
 export default {
   login,
   verifyToken,
   storeToken,
+  createGuestToken,
 };
