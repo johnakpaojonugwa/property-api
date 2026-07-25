@@ -23,7 +23,11 @@ const createMerchant = async (data) => {
   }
 
   const merchant = await Merchant.create(payload);
-  return merchant.toObject({ versionKey: false });
+
+  const merchantData = merchant.toObject({ versionKey: false });
+  delete merchantData.password_hash;
+  
+  return merchantData;
 };
 
 const getMerchants = async () => {
