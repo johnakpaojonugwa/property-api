@@ -17,16 +17,32 @@ const login = async ({ email, password, actor_type }) => {
 
   const normalizedEmail = email.toLowerCase().trim();
   let principal = null;
+  let resolvedActorType = actor_type;
 
   if (!actor_type || actor_type === 'USER') {
     principal = await User.findOne({ email: normalizedEmail }).select('+password_hash');
+    if (principal && !actor_type) {
+      resolvedActorType = 'USER';
+    }
   }
 
   if (!principal && actor_type !== 'USER') {
     if (actor_type === 'AGENT') {
       principal = await Agent.findOne({ email: normalizedEmail }).select('+password_hash');
+      resolvedActorType = 'AGENT';
     } else if (actor_type === 'MERCHANT') {
       principal = await Merchant.findOne({ email: normalizedEmail }).select('+password_hash');
+      resolvedActorType = 'MERCHANT';
+    } else if (!actor_type) {
+      principal = await Agent.findOne({ email: normalizedEmail }).select('+password_hash');
+      if (principal) {
+        resolvedActorType = 'AGENT';
+      } else {
+        principal = await Merchant.findOne({ email: normalizedEmail }).select('+password_hash');
+        if (principal) {
+          resolvedActorType = 'MERCHANT';
+        }
+      }
     }
   }
 
@@ -41,10 +57,18 @@ const login = async ({ email, password, actor_type }) => {
 
   const token = createJwt({
     id: principal._id.toString(),
-    actor_type: actor_type || principal.role || 'USER',
-    role: actor_type || principal.role || 'USER',
+    actor_type: resolvedActorType || principal.role || 'USER',
+    role: resolvedActorType || principal.role || 'USER',
   });
-  return { token };
+
+  const userObj = principal.toObject();
+  delete userObj.password_hash;
+
+  return {
+    token,
+    role: resolvedActorType || 'USER',
+    user: userObj,
+  };
 };
 
 const verifyToken = async (token) => {
