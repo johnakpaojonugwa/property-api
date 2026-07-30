@@ -20,6 +20,7 @@ An enterprise-grade RESTful API for real estate property management platforms. B
 - **📜 API Documentation**: Interactive OpenAPI / Swagger UI documentation served directly at `/api-docs`.
 - **🐳 Containerization**: Fully containerized using Docker and `docker-compose` with MongoDB health checks.
 - **🧪 Automated Testing**: Unit and integration test suite powered by `vitest` and `supertest`.
+- **🔔 Notification System**: Role-based notification engine supporting guest sessions, real-time WebSocket events, in-app alerts, email notifications (via Resend), quiet-hours schedules, custom channels/category preferences, and admin broadcasts.
 
 ---
 
@@ -183,6 +184,10 @@ to access the interactive **Swagger UI** API documentation.
 | `POST` | `/v1/appointments` | Schedule a viewing appointment | Yes |
 | `POST` | `/v1/reviews` | Submit a property review | Yes |
 | `GET` | `/v1/wishlist` | View user saved properties | Yes |
+| `GET` | `/v1/notifications` | List notifications (guest/JWT) | Yes (Guest/User) |
+| `PATCH`| `/v1/notifications/:id/read` | Mark notification as read | Yes (Owner) |
+| `POST` | `/v1/admin/notifications/broadcast` | System-wide broadcast | Yes (Admin) |
+| `PUT` | `/v1/notifications/preferences` | Update channels/types settings | Yes |
 
 ---
 

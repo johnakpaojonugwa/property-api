@@ -8,6 +8,7 @@ import appointmentRoutes from './appointment.routes.js';
 import reviewRoutes from './review.routes.js';
 import wishlistRoutes from './wishlist.routes.js';
 import notificationRoutes from './notification.routes.js';
+import adminRoutes from './admin.routes.js';
 
 import tokenRoutes from './token.routes.js';
 
@@ -22,5 +23,6 @@ router.use('/v1', appointmentRoutes);
 router.use('/v1', reviewRoutes);
 router.use('/v1', wishlistRoutes);
 router.use('/v1', notificationRoutes);
+router.use('/v1', adminRoutes);
 
 export default router;

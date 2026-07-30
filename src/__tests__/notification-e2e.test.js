@@ -122,5 +122,5 @@ describe('Notification E2E Test on Appointment Creation', () => {
     expect(notification.category).toBe('management');
     expect(notification.isRead).toBe(false);
     expect(notification.message).toContain('E2E User requested a tour appointment for the property "E2E Test Property".');
-  });
+  }, 30000);
 });

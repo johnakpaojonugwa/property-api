@@ -104,6 +104,136 @@
         "properties": {
           "property_id": { "type": "string", "example": "60d5ec49f1b2c811845e2111" }
         }
+      },
+      "Notification": {
+        "type": "object",
+        "properties": {
+          "_id": { "type": "string", "example": "60d5ec49f1b2c811845e9999" },
+          "recipientId": { "type": "string", "example": "60d5ec49f1b2c811845e2111" },
+          "guestSessionId": { "type": "string", "example": "guest-session-456" },
+          "recipientRole": { "type": "string", "enum": ["guest", "user", "agent", "merchant", "admin"], "example": "user" },
+          "actorRole": { "type": "string", "enum": ["guest", "user", "agent", "merchant", "admin", "system"], "example": "system" },
+          "triggeredByUserId": { "type": "string", "example": "60d5ec49f1b2c811845e2111" },
+          "sourceType": { "type": "string", "enum": ["property", "inquiry", "offer", "showing", "lease", "system"], "example": "showing" },
+          "sourceId": { "type": "string", "example": "60d5ec49f1b2c811845e3333" },
+          "type": { "type": "string", "example": "showing_request" },
+          "category": { "type": "string", "enum": ["engagement", "management", "sales", "system", "compliance"], "example": "management" },
+          "priority": { "type": "string", "enum": ["low", "medium", "high", "critical"], "example": "medium" },
+          "title": { "type": "string", "example": "New Showing Request" },
+          "message": { "type": "string", "example": "A tour request has been made." },
+          "isRead": { "type": "boolean", "example": false },
+          "readAt": { "type": "string", "format": "date-time" },
+          "isArchived": { "type": "boolean", "example": false },
+          "channels": {
+            "type": "object",
+            "properties": {
+              "inApp": { "type": "boolean", "example": true },
+              "email": { "type": "boolean", "example": false },
+              "push": { "type": "boolean", "example": false },
+              "sms": { "type": "boolean", "example": false }
+            }
+          },
+          "createdAt": { "type": "string", "format": "date-time" },
+          "updatedAt": { "type": "string", "format": "date-time" }
+        }
+      },
+      "NotificationPreference": {
+        "type": "object",
+        "properties": {
+          "_id": { "type": "string", "example": "60d5ec49f1b2c811845e8888" },
+          "userId": { "type": "string", "example": "60d5ec49f1b2c811845e2111" },
+          "guestSessionId": { "type": "string", "example": "guest-session-456" },
+          "channels": {
+            "type": "object",
+            "properties": {
+              "inApp": { "type": "boolean", "default": true },
+              "email": { "type": "boolean", "default": true },
+              "push": { "type": "boolean", "default": true },
+              "sms": { "type": "boolean", "default": false }
+            }
+          },
+          "categories": {
+            "type": "object",
+            "properties": {
+              "engagement": { "type": "boolean", "default": true },
+              "management": { "type": "boolean", "default": true },
+              "sales": { "type": "boolean", "default": true },
+              "system": { "type": "boolean", "default": true },
+              "compliance": { "type": "boolean", "default": true }
+            }
+          },
+          "quietHours": {
+            "type": "object",
+            "properties": {
+              "enabled": { "type": "boolean", "default": false },
+              "start": { "type": "string", "default": "22:00" },
+              "end": { "type": "string", "default": "07:00" },
+              "timezone": { "type": "string", "default": "UTC" }
+            }
+          },
+          "digestFrequency": { "type": "string", "enum": ["instant", "daily", "weekly"], "default": "instant" }
+        }
+      },
+      "UpdatePreferencesRequest": {
+        "type": "object",
+        "properties": {
+          "channels": {
+            "type": "object",
+            "properties": {
+              "inApp": { "type": "boolean" },
+              "email": { "type": "boolean" },
+              "push": { "type": "boolean" },
+              "sms": { "type": "boolean" }
+            }
+          },
+          "categories": {
+            "type": "object",
+            "properties": {
+              "engagement": { "type": "boolean" },
+              "management": { "type": "boolean" },
+              "sales": { "type": "boolean" },
+              "system": { "type": "boolean" },
+              "compliance": { "type": "boolean" }
+            }
+          },
+          "quietHours": {
+            "type": "object",
+            "properties": {
+              "enabled": { "type": "boolean" },
+              "start": { "type": "string", "example": "22:00" },
+              "end": { "type": "string", "example": "07:00" },
+              "timezone": { "type": "string", "example": "UTC" }
+            }
+          },
+          "digestFrequency": { "type": "string", "enum": ["instant", "daily", "weekly"] }
+        }
+      },
+      "BroadcastNotificationRequest": {
+        "type": "object",
+        "required": ["recipientRoles", "title", "message"],
+        "properties": {
+          "recipientRoles": {
+            "type": "array",
+            "items": { "type": "string" },
+            "example": ["user", "agent"]
+          },
+          "title": { "type": "string", "example": "System Maintenance Notice" },
+          "message": { "type": "string", "example": "The platform will undergo scheduled maintenance." },
+          "priority": { "type": "string", "enum": ["low", "medium", "high", "critical"], "default": "medium" },
+          "data": { "type": "object" },
+          "actions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["label", "url"],
+              "properties": {
+                "label": { "type": "string" },
+                "url": { "type": "string" },
+                "method": { "type": "string", "enum": ["GET", "POST", "PUT", "PATCH", "DELETE"], "default": "GET" }
+              }
+            }
+          }
+        }
       }
     }
   },
@@ -607,6 +737,80 @@
         ],
         "responses": {
           "200": { "description": "Review deleted" }
+        }
+      }
+    },
+    "/notifications": {
+      "get": {
+        "tags": ["Notifications"],
+        "summary": "Get Notifications",
+        "description": "Retrieve notifications for the authenticated user, guest, or scoped recipient.",
+        "parameters": [
+          { "name": "page", "in": "query", "schema": { "type": "integer", "default": 1 } },
+          { "name": "limit", "in": "query", "schema": { "type": "integer", "default": 10 } },
+          { "name": "isRead", "in": "query", "schema": { "type": "string", "enum": ["true", "false"] } },
+          { "name": "category", "in": "query", "schema": { "type": "string", "enum": ["engagement", "management", "sales", "system", "compliance"] } },
+          { "name": "priority", "in": "query", "schema": { "type": "string", "enum": ["low", "medium", "high", "critical"] } },
+          { "name": "sourceType", "in": "query", "schema": { "type": "string", "enum": ["property", "inquiry", "offer", "showing", "lease", "system"] } },
+          { "name": "recipientId", "in": "query", "schema": { "type": "string" }, "description": "Admin or privileged scopes can filter by specific recipient." }
+        ],
+        "responses": {
+          "200": {
+            "description": "Notifications retrieved successfully"
+          },
+          "401": { "description": "Unauthorized" },
+          "403": { "description": "Forbidden" }
+        }
+      }
+    },
+    "/notifications/{id}/read": {
+      "patch": {
+        "tags": ["Notifications"],
+        "summary": "Mark Notification as Read",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Notification marked as read successfully" },
+          "401": { "description": "Unauthorized" },
+          "404": { "description": "Notification not found" }
+        }
+      }
+    },
+    "/admin/notifications/broadcast": {
+      "post": {
+        "tags": ["Notifications"],
+        "summary": "Broadcast Notification (Admin Only)",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/BroadcastNotificationRequest" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Broadcast succeeded" },
+          "401": { "description": "Unauthorized" },
+          "403": { "description": "Forbidden" }
+        }
+      }
+    },
+    "/notifications/preferences": {
+      "put": {
+        "tags": ["Notifications"],
+        "summary": "Update Notification Preferences",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/UpdatePreferencesRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Preferences updated successfully" },
+          "401": { "description": "Unauthorized" }
         }
       }
     }
