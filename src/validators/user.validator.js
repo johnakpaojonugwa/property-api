@@ -9,3 +9,14 @@ export const createUserSchema = Joi.object({
   password_hash: Joi.string().min(8).optional(),
   role: Joi.string().valid('USER').optional(),
 }).or('password', 'password_hash').unknown(false);
+
+export const updateUserSchema = Joi.object({
+  first_name: Joi.string().trim().min(2).max(50).optional(),
+  last_name: Joi.string().trim().min(2).max(50).optional(),
+  email: Joi.string().email().optional(),
+  phone: Joi.string().trim().pattern(/^[0-9+()\-\s]{7,15}$/).optional(),
+  password: Joi.string().min(8).optional(),
+  password_hash: Joi.string().min(8).optional(),
+  avatar: Joi.string().optional(),
+}).unknown(false);
+

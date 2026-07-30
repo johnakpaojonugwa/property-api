@@ -13,17 +13,17 @@ const getUsers = asyncHandler(async (req, res) => {
 });
 
 const getUserById = asyncHandler(async (req, res) => {
-  const user = await userService.getUserById(req.params.user_id);
+  const user = await userService.getUserById(req.params.user_id, req.actor);
   return res.status(200).json(ApiResponse.success(user, 'User retrieved'));
 });
 
 const getUserWishlist = asyncHandler(async (req, res) => {
-  const wishlist = await userService.getUserWishlist(req.params.user_id);
+  const wishlist = await userService.getUserWishlist(req.params.user_id, req.actor);
   return res.status(200).json(ApiResponse.success(wishlist, 'User wishlist retrieved'));
 });
 
 const getUserProperties = asyncHandler(async (req, res) => {
-  const properties = await userService.getUserProperties(req.params.user_id);
+  const properties = await userService.getUserProperties(req.params.user_id, req.actor);
   return res.status(200).json(ApiResponse.success(properties, 'User properties retrieved'));
 });
 

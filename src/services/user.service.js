@@ -37,7 +37,10 @@ const getUsers = async (query = {}) => {
   return await User.find().skip(skip).limit(limit).lean();
 };
 
-const getUserById = async (id) => {
+const getUserById = async (id, actor) => {
+  if (actor && actor.role !== 'ADMIN' && id !== actor.id) {
+    throw ApiError.forbidden('You do not have permission to view this user information');
+  }
   if (mongoose.connection.readyState !== 1) {
     throw ApiError.notFound('User not found');
   }
@@ -48,14 +51,20 @@ const getUserById = async (id) => {
   return user;
 };
 
-const getUserWishlist = async (user_id) => {
+const getUserWishlist = async (user_id, actor) => {
+  if (actor && actor.role !== 'ADMIN' && user_id !== actor.id) {
+    throw ApiError.forbidden('You do not have permission to view this wishlist');
+  }
   if (mongoose.connection.readyState !== 1) {
     return [];
   }
   return await Wishlist.find({ user_id }).populate('property_id').lean();
 };
 
-const getUserProperties = async (user_id) => {
+const getUserProperties = async (user_id, actor) => {
+  if (actor && actor.role !== 'ADMIN' && user_id !== actor.id) {
+    throw ApiError.forbidden('You do not have permission to view these properties');
+  }
   if (mongoose.connection.readyState !== 1) {
     return [];
   }
@@ -68,6 +77,10 @@ const updateUser = async (id, data, actor) => {
   }
   if (id !== actor.id && actor.role !== 'ADMIN') {
     throw ApiError.forbidden('You do not have permission to update this user');
+  }
+  if (actor.role !== 'ADMIN') {
+    delete data.role;
+    delete data.type;
   }
   if (mongoose.connection.readyState !== 1) {
     return { _id: id, ...data };
