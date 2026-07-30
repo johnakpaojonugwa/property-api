@@ -14,8 +14,23 @@ if (process.env.REDIS_URL || process.env.REDIS_HOST) {
     host: process.env.REDIS_HOST || '127.0.0.1',
     port: process.env.REDIS_PORT || 6379,
   };
-  redisPub = new Redis(redisConfig);
-  redisSub = new Redis(redisConfig);
+  const redisOptions = {
+    enableOfflineQueue: false,
+    maxRetriesPerRequest: 1,
+    connectTimeout: 1000,
+  };
+
+  if (typeof redisConfig === 'string') {
+    redisPub = new Redis(redisConfig, redisOptions);
+    redisSub = new Redis(redisConfig, redisOptions);
+  } else {
+    redisPub = new Redis({ ...redisConfig, ...redisOptions });
+    redisSub = new Redis({ ...redisConfig, ...redisOptions });
+  }
+
+  // Attach error listeners to prevent unhandled rejection/crash in environments where Redis is not running
+  redisPub.on('error', (err) => console.error('Notification Service Redis Pub error:', err.message));
+  redisSub.on('error', (err) => console.error('Notification Service Redis Sub error:', err.message));
   
   // Subscribe to notification channel
   redisSub.subscribe('notifications:pubsub', (err) => {
