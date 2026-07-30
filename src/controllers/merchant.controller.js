@@ -27,13 +27,13 @@ const getMerchantWishlist = asyncHandler(async (req, res) => {
 
 const createAgentByMerchant = asyncHandler(async (req, res) => {
   const agentData = { ...req.body, merchant: req.actor?.id };
-  const agent = await agentService.createAgent(agentData);
+  const agent = await agentService.createAgent(agentData, req.actor);
   return res.status(201).json(ApiResponse.success(agent, 'Agent created by merchant'));
 });
 
 const verifyAgent = asyncHandler(async (req, res) => {
   const { agent_id, is_verified } = req.body;
-  const updatedAgent = await merchantService.verifyAgent(agent_id, is_verified);
+  const updatedAgent = await merchantService.verifyAgent(agent_id, is_verified, req.actor);
   return res.status(200).json(ApiResponse.success(updatedAgent, 'Agent verification status updated'));
 });
 

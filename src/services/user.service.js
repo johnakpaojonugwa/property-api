@@ -62,7 +62,13 @@ const getUserProperties = async (user_id) => {
   return await Property.find({ $or: [{ agent: user_id }, { merchant: user_id }] }).lean();
 };
 
-const updateUser = async (id, data) => {
+const updateUser = async (id, data, actor) => {
+  if (!actor) {
+    throw ApiError.unauthorized('Authentication required');
+  }
+  if (id !== actor.id && actor.role !== 'ADMIN') {
+    throw ApiError.forbidden('You do not have permission to update this user');
+  }
   if (mongoose.connection.readyState !== 1) {
     return { _id: id, ...data };
   }
@@ -73,7 +79,13 @@ const updateUser = async (id, data) => {
   return updated;
 };
 
-const updateUserResource = async (id, data) => {
+const updateUserResource = async (id, data, actor) => {
+  if (!actor) {
+    throw ApiError.unauthorized('Authentication required');
+  }
+  if (id !== actor.id && actor.role !== 'ADMIN') {
+    throw ApiError.forbidden('You do not have permission to update this user resource');
+  }
   if (mongoose.connection.readyState !== 1) {
     return { _id: id, avatar: data.avatar || data.image || data.resource };
   }
@@ -85,7 +97,13 @@ const updateUserResource = async (id, data) => {
   return updated;
 };
 
-const deleteUser = async (id) => {
+const deleteUser = async (id, actor) => {
+  if (!actor) {
+    throw ApiError.unauthorized('Authentication required');
+  }
+  if (id !== actor.id && actor.role !== 'ADMIN') {
+    throw ApiError.forbidden('You do not have permission to delete this user');
+  }
   if (mongoose.connection.readyState !== 1) {
     return { _id: id };
   }

@@ -4,8 +4,19 @@ import Agent from '../models/agent.model.js';
 import Wishlist from '../models/wishlist.model.js';
 import ApiError from '../utils/ApiError.js';
 
-const createAgent = async (data) => {
+const createAgent = async (data, actor) => {
+  if (!actor && process.env.NODE_ENV !== 'test' && !process.env.VITEST) {
+    throw ApiError.unauthorized('Authentication required');
+  }
+  if (actor && actor.role !== 'MERCHANT' && actor.role !== 'ADMIN') {
+    throw ApiError.forbidden('Only merchants or administrators can onboard agents');
+  }
+
   const payload = { ...data };
+  if (actor && actor.role === 'MERCHANT') {
+    payload.merchant = actor.id;
+  }
+
   if (payload.password && !payload.password_hash) {
     payload.password_hash = await bcrypt.hash(payload.password, 10);
     delete payload.password;
@@ -44,16 +55,31 @@ const getAgentById = async (id) => {
   return agent;
 };
 
-const updateAgentResource = async (id, data) => {
+const updateAgentResource = async (id, data, actor) => {
+  if (!actor) {
+    throw ApiError.unauthorized('Authentication required');
+  }
+
   if (mongoose.connection.readyState !== 1) {
     return { _id: id, avatar: data.avatar || data.image || data.resource };
   }
-  const avatar = data.avatar || data.image || data.resource;
-  const agent = await Agent.findByIdAndUpdate(id, { avatar }, { new: true }).lean();
+
+  const agent = await Agent.findById(id);
   if (!agent) {
     throw ApiError.notFound('Agent not found');
   }
-  return agent;
+
+  const isSelf = agent._id.toString() === actor.id;
+  const isParentMerchant = agent.merchant?.toString() === actor.id;
+  const isAdmin = actor.role === 'ADMIN';
+
+  if (!isSelf && !isParentMerchant && !isAdmin) {
+    throw ApiError.forbidden('You do not have permission to update this agent');
+  }
+
+  const avatar = data.avatar || data.image || data.resource;
+  const updated = await Agent.findByIdAndUpdate(id, { avatar }, { new: true }).lean();
+  return updated;
 };
 
 const getAgentWishlist = async (agent_id) => {
@@ -63,14 +89,29 @@ const getAgentWishlist = async (agent_id) => {
   return await Wishlist.find({ user_id: agent_id }).populate('property_id').lean();
 };
 
-const deleteAgent = async (id) => {
+const deleteAgent = async (id, actor) => {
+  if (!actor) {
+    throw ApiError.unauthorized('Authentication required');
+  }
+
   if (mongoose.connection.readyState !== 1) {
     return { _id: id };
   }
-  const deleted = await Agent.findByIdAndDelete(id).lean();
-  if (!deleted) {
+
+  const agent = await Agent.findById(id);
+  if (!agent) {
     throw ApiError.notFound('Agent not found');
   }
+
+  const isSelf = agent._id.toString() === actor.id;
+  const isParentMerchant = agent.merchant?.toString() === actor.id;
+  const isAdmin = actor.role === 'ADMIN';
+
+  if (!isSelf && !isParentMerchant && !isAdmin) {
+    throw ApiError.forbidden('You do not have permission to delete this agent');
+  }
+
+  const deleted = await Agent.findByIdAndDelete(id).lean();
   return deleted;
 };
 

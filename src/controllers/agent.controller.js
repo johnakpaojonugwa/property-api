@@ -3,7 +3,7 @@ import asyncHandler from '../utils/asyncHandler.js';
 import agentService from '../services/agent.service.js';
 
 const createAgent = asyncHandler(async (req, res) => {
-  const agent = await agentService.createAgent(req.body);
+  const agent = await agentService.createAgent(req.body, req.actor);
   return res.status(201).json(ApiResponse.success(agent, 'Agent created'));
 });
 
@@ -18,12 +18,12 @@ const getAgentWishlist = asyncHandler(async (req, res) => {
 });
 
 const updateAgentResource = asyncHandler(async (req, res) => {
-  const updatedAgent = await agentService.updateAgentResource(req.params.agent_id, req.body);
+  const updatedAgent = await agentService.updateAgentResource(req.params.agent_id, req.body, req.actor);
   return res.status(200).json(ApiResponse.success(updatedAgent, 'Agent resource updated'));
 });
 
 const deleteAgent = asyncHandler(async (req, res) => {
-  const deleted = await agentService.deleteAgent(req.params.agent_id);
+  const deleted = await agentService.deleteAgent(req.params.agent_id, req.actor);
   return res.status(200).json(ApiResponse.success(deleted, 'Agent deleted'));
 });
 

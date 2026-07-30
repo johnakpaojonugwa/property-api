@@ -58,15 +58,27 @@ const getMerchantAgents = async (merchant_id, options = {}) => {
   return await Agent.find(query).skip(offset).limit(limit).lean();
 };
 
-const verifyAgent = async (agent_id, is_verified) => {
+const verifyAgent = async (agent_id, is_verified, actor) => {
+  if (!actor) {
+    throw ApiError.unauthorized('Authentication required');
+  }
   if (mongoose.connection.readyState !== 1) {
     return { _id: agent_id, is_verified };
   }
-  const agent = await Agent.findByIdAndUpdate(agent_id, { is_verified }, { new: true }).lean();
+  const agent = await Agent.findById(agent_id);
   if (!agent) {
     throw ApiError.notFound('Agent not found');
   }
-  return agent;
+
+  const isParentMerchant = agent.merchant?.toString() === actor.id;
+  const isAdmin = actor.role === 'ADMIN';
+
+  if (!isParentMerchant && !isAdmin) {
+    throw ApiError.forbidden('You do not have permission to verify this agent');
+  }
+
+  const updatedAgent = await Agent.findByIdAndUpdate(agent_id, { is_verified }, { new: true }).lean();
+  return updatedAgent;
 };
 
 const getMerchantWishlist = async (merchant_id) => {

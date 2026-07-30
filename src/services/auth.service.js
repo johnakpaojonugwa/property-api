@@ -55,11 +55,17 @@ const login = async ({ email, password, actor_type }) => {
     throw ApiError.unauthorized('Invalid credentials');
   }
 
-  const token = createJwt({
+  const jwtPayload = {
     id: principal._id.toString(),
     actor_type: resolvedActorType || principal.role || 'USER',
     role: resolvedActorType || principal.role || 'USER',
-  });
+  };
+
+  if (resolvedActorType === 'AGENT' && principal.merchant) {
+    jwtPayload.merchant_id = principal.merchant.toString();
+  }
+
+  const token = createJwt(jwtPayload);
 
   const userObj = principal.toObject();
   delete userObj.password_hash;

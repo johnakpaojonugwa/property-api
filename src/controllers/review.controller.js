@@ -3,7 +3,7 @@ import asyncHandler from '../utils/asyncHandler.js';
 import reviewService from '../services/review.service.js';
 
 const createReview = asyncHandler(async (req, res) => {
-  const review = await reviewService.createReview(req.body);
+  const review = await reviewService.createReview(req.body, req.actor);
   return res.status(201).json(ApiResponse.success(review, 'Review created'));
 });
 
@@ -13,12 +13,12 @@ const getReviews = asyncHandler(async (req, res) => {
 });
 
 const updateReview = asyncHandler(async (req, res) => {
-  const updated = await reviewService.updateReview(req.params.review_id, req.body);
+  const updated = await reviewService.updateReview(req.params.review_id, req.body, req.actor);
   return res.status(200).json(ApiResponse.success(updated, 'Review updated'));
 });
 
 const deleteReview = asyncHandler(async (req, res) => {
-  const deleted = await reviewService.deleteReview(req.params.review_id);
+  const deleted = await reviewService.deleteReview(req.params.review_id, req.actor);
   return res.status(200).json(ApiResponse.success(deleted, 'Review deleted'));
 });
 

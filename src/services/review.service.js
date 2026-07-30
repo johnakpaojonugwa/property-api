@@ -2,7 +2,16 @@ import mongoose from 'mongoose';
 import Review from '../models/review.model.js';
 import ApiError from '../utils/ApiError.js';
 
-const createReview = async (data) => {
+const createReview = async (data, actor) => {
+  if (!actor) {
+    throw ApiError.unauthorized('Authentication required');
+  }
+  if (actor.role !== 'USER' && actor.role !== 'ADMIN') {
+    throw ApiError.forbidden('Only users can post reviews');
+  }
+  if (actor.role === 'USER') {
+    data.user_id = actor.id;
+  }
   if (mongoose.connection.readyState !== 1) {
     return { _id: 'mock-review-id', ...data };
   }
@@ -37,25 +46,47 @@ const getReviewById = async (id) => {
   return review;
 };
 
-const updateReview = async (id, data) => {
+const updateReview = async (id, data, actor) => {
+  if (!actor) {
+    throw ApiError.unauthorized('Authentication required');
+  }
+  if (mongoose.connection.readyState !== 1) {
+    return { _id: id, ...data };
+  }
+  const review = await Review.findById(id);
+  if (!review) {
+    throw ApiError.notFound('Review not found');
+  }
+  if (review.user_id.toString() !== actor.id && actor.role !== 'ADMIN') {
+    throw ApiError.forbidden('You do not have permission to update this review');
+  }
+
   if (mongoose.connection.readyState !== 1) {
     return { _id: id, ...data };
   }
   const updated = await Review.findByIdAndUpdate(id, data, { new: true }).lean();
-  if (!updated) {
-    throw ApiError.notFound('Review not found');
-  }
   return updated;
 };
 
-const deleteReview = async (id) => {
+const deleteReview = async (id, actor) => {
+  if (!actor) {
+    throw ApiError.unauthorized('Authentication required');
+  }
+  if (mongoose.connection.readyState !== 1) {
+    return { _id: id };
+  }
+  const review = await Review.findById(id);
+  if (!review) {
+    throw ApiError.notFound('Review not found');
+  }
+  if (review.user_id.toString() !== actor.id && actor.role !== 'ADMIN') {
+    throw ApiError.forbidden('You do not have permission to delete this review');
+  }
+
   if (mongoose.connection.readyState !== 1) {
     return { _id: id };
   }
   const deleted = await Review.findByIdAndDelete(id).lean();
-  if (!deleted) {
-    throw ApiError.notFound('Review not found');
-  }
   return deleted;
 };
 

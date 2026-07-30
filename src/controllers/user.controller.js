@@ -28,17 +28,17 @@ const getUserProperties = asyncHandler(async (req, res) => {
 });
 
 const updateUser = asyncHandler(async (req, res) => {
-  const updated = await userService.updateUser(req.params.user_id, req.body);
+  const updated = await userService.updateUser(req.params.user_id, req.body, req.actor);
   return res.status(200).json(ApiResponse.success(updated, 'User updated'));
 });
 
 const updateUserResource = asyncHandler(async (req, res) => {
-  const updated = await userService.updateUserResource(req.params.user_id, req.body);
+  const updated = await userService.updateUserResource(req.params.user_id, req.body, req.actor);
   return res.status(200).json(ApiResponse.success(updated, 'User resource updated'));
 });
 
 const deleteUser = asyncHandler(async (req, res) => {
-  const deleted = await userService.deleteUser(req.params.user_id);
+  const deleted = await userService.deleteUser(req.params.user_id, req.actor);
   return res.status(200).json(ApiResponse.success(deleted, 'User deleted'));
 });
 
