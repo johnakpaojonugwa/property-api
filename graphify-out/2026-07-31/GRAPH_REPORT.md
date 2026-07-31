@@ -1,12 +1,12 @@
 # Graph Report - property-api  (2026-07-31)
 
 ## Corpus Check
-- 157 files · ~59,058 words
+- 158 files · ~59,271 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 553 nodes · 1213 edges · 39 communities (12 shown, 27 thin omitted)
-- Extraction: 90% EXTRACTED · 10% INFERRED · 0% AMBIGUOUS · INFERRED: 120 edges (avg confidence: 0.56)
+- 555 nodes · 1223 edges · 39 communities (12 shown, 27 thin omitted)
+- Extraction: 90% EXTRACTED · 10% INFERRED · 0% AMBIGUOUS · INFERRED: 121 edges (avg confidence: 0.57)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
@@ -29,7 +29,7 @@
 - dependencies
 - phase9.test.js
 - notificationInteraction.model.js
-- Review
+- env.js
 - compression
 - cors
 - express
@@ -58,7 +58,7 @@
 ## God Nodes (most connected - your core abstractions)
 1. `app` - 57 edges
 2. `Property` - 31 edges
-3. `User` - 29 edges
+3. `User` - 31 edges
 4. `ApiError` - 29 edges
 5. `Agent` - 21 edges
 6. `Appointment` - 19 edges
@@ -68,16 +68,16 @@
 10. `env` - 12 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `createAdmin()` --references--> `User`  [EXTRACTED]
+  scripts/create-admin.js → src/models/user.model.js
 - `Docker Integration` --conceptually_related_to--> `Multi-container Stack`  [INFERRED]
   README.md → docker-compose.yml
+- `createAdmin()` --calls--> `connectDB()`  [EXTRACTED]
+  scripts/create-admin.js → src/config/db.js
+- `createAdmin()` --calls--> `disconnectDB()`  [EXTRACTED]
+  scripts/create-admin.js → src/config/db.js
 - `getMerchantAgents()` --references--> `Agent`  [EXTRACTED]
   src/services/merchant.service.js → src/models/agent.model.js
-- `getProperties()` --references--> `Property`  [EXTRACTED]
-  src/services/admin.service.js → src/models/property.model.js
-- `listUsers()` --references--> `User`  [EXTRACTED]
-  src/services/admin.service.js → src/models/user.model.js
-- `getNotifications()` --references--> `Appointment`  [EXTRACTED]
-  src/controllers/notification.controller.js → src/models/appointment.model.js
 
 ## Import Cycles
 - None detected.
@@ -85,32 +85,32 @@
 ## Communities (39 total, 27 thin omitted)
 
 ### Community 0 - "app.js"
-Cohesion: 0.05
-Nodes (11): app, corsOptions, limiter, __dirname, __filename, setupSwagger(), swaggerPath, swaggerSpec (+3 more)
+Cohesion: 0.06
+Nodes (12): app, corsOptions, limiter, __dirname, __filename, setupSwagger(), swaggerPath, swaggerSpec (+4 more)
 
 ### Community 1 - "ApiError"
 Cohesion: 0.07
-Nodes (35): authenticate(), optionalAuthenticate(), authorize(), errorHandler(), notFoundHandler(), requestTimeout(), fileFilter(), storage (+27 more)
+Nodes (34): authenticate(), optionalAuthenticate(), authorize(), ensureOwnerOrAdmin(), errorHandler(), requestTimeout(), storage, upload (+26 more)
 
 ### Community 2 - ".notFound"
-Cohesion: 0.09
-Nodes (50): ensureOwnerOrAdmin(), injectGuestActor(), rbacGuard(), verifyRelation(), Agent, agentSchema, Appointment, appointmentSchema (+42 more)
+Cohesion: 0.10
+Nodes (48): rbacGuard(), verifyRelation(), Agent, Appointment, Property, propertySchema, Review, reviewSchema (+40 more)
 
 ### Community 3 - "notification.controller.js"
-Cohesion: 0.09
-Nodes (26): connectDB(), disconnectDB(), env, requiredEnv, validNodeEnvs, broadcastNotification(), getNotifications(), markAsRead() (+18 more)
+Cohesion: 0.11
+Nodes (19): broadcastNotification(), getNotifications(), markAsRead(), updatePreferences(), injectGuestActor(), actionSchema, deliveryStatusSchema, Notification (+11 more)
 
 ### Community 4 - "ApiResponse"
 Cohesion: 0.05
 Nodes (43): createAgent, deleteAgent, getAgents, getAgentWishlist, updateAgentResource, confirmMeeting, createAppointment, deleteAppointment (+35 more)
 
 ### Community 5 - "auth.service.js"
-Cohesion: 0.11
-Nodes (22): Merchant, merchantSchema, Token, tokenSchema, Wishlist, wishlistSchema, verifyMerchant(), getAgentWishlist() (+14 more)
+Cohesion: 0.10
+Nodes (22): agentSchema, Merchant, merchantSchema, Token, tokenSchema, Wishlist, wishlistSchema, verifyMerchant() (+14 more)
 
 ### Community 6 - "admin.service.js"
-Cohesion: 0.06
-Nodes (10): rejectDuplicateQueryParams(), banIp(), flagProperty(), getDashboard(), getProperties(), listUsers(), rejectProperty(), restoreBackup() (+2 more)
+Cohesion: 0.05
+Nodes (18): rejectDuplicateQueryParams(), fileFilter(), User, userSchema, banIp(), banUser(), deleteUser(), getDashboard() (+10 more)
 
 ### Community 7 - "admin.controller.js"
 Cohesion: 0.05
@@ -128,9 +128,9 @@ Nodes (12): API Service Container, MongoDB Service Container, Multi-container St
 Cohesion: 0.29
 Nodes (7): bcryptjs, dotenv, mongoose, dependencies, bcryptjs, dotenv, mongoose
 
-### Community 14 - "Review"
-Cohesion: 0.36
-Nodes (7): Review, reviewSchema, createReview(), deleteReview(), getReviewById(), getReviews(), updateReview()
+### Community 14 - "env.js"
+Cohesion: 0.15
+Nodes (9): createAdmin(), connectDB(), disconnectDB(), env, requiredEnv, validNodeEnvs, appointmentSchema, startServer() (+1 more)
 
 ## Knowledge Gaps
 - **155 isolated node(s):** `name`, `version`, `description`, `main`, `start` (+150 more)
@@ -142,15 +142,15 @@ _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `ApiResponse` connect `ApiResponse` to `app.js`, `notification.controller.js`, `admin.controller.js`?**
   _High betweenness centrality (0.057) - this node is a cross-community bridge._
-- **Why does `ApiError` connect `ApiError` to `.notFound`, `notification.controller.js`, `ApiResponse`, `auth.service.js`, `admin.service.js`, `Review`?**
+- **Why does `ApiError` connect `ApiError` to `app.js`, `.notFound`, `notification.controller.js`, `ApiResponse`, `auth.service.js`, `admin.service.js`?**
   _High betweenness centrality (0.056) - this node is a cross-community bridge._
-- **Why does `Property` connect `.notFound` to `ApiError`, `notification.controller.js`, `admin.service.js`?**
+- **Why does `Property` connect `.notFound` to `ApiError`, `notification.controller.js`, `admin.service.js`, `env.js`?**
   _High betweenness centrality (0.041) - this node is a cross-community bridge._
 - **What connects `name`, `version`, `description` to the rest of the system?**
   _155 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `app.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.053555750658472345 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05547785547785548 - nodes in this community are weakly interconnected._
 - **Should `ApiError` be split into smaller, more focused modules?**
-  _Cohesion score 0.06738245094409478 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07042253521126761 - nodes in this community are weakly interconnected._
 - **Should `.notFound` be split into smaller, more focused modules?**
-  _Cohesion score 0.08732394366197183 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0985576923076923 - nodes in this community are weakly interconnected._

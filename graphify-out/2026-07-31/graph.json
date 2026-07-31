@@ -774,6 +774,28 @@
       "norm_label": "@scarf/scarf@1.4.0"
     },
     {
+      "label": "create-admin.js",
+      "file_type": "code",
+      "source_file": "scripts/create-admin.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "scripts_create_admin",
+      "community": 14,
+      "community_name": "env.js",
+      "norm_label": "create-admin.js"
+    },
+    {
+      "label": "createAdmin()",
+      "file_type": "code",
+      "source_file": "scripts/create-admin.js",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "scripts_create_admin_createadmin",
+      "community": 14,
+      "community_name": "env.js",
+      "norm_label": "createadmin()"
+    },
+    {
       "label": "frontend_expected_endpoints.test.js",
       "file_type": "code",
       "source_file": "src/__tests__/frontend_expected_endpoints.test.js",
@@ -791,8 +813,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_merchant_verification_test",
-      "community": 0,
-      "community_name": "app.js",
+      "community": 14,
+      "community_name": "env.js",
       "norm_label": "merchant-verification.test.js"
     },
     {
@@ -802,8 +824,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_tests_merchant_verification_test_generatetoken",
-      "community": 0,
-      "community_name": "app.js",
+      "community": 14,
+      "community_name": "env.js",
       "norm_label": "generatetoken()"
     },
     {
@@ -813,8 +835,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_notification_e2e_test",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 14,
+      "community_name": "env.js",
       "norm_label": "notification-e2e.test.js"
     },
     {
@@ -1033,8 +1055,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_phase26_test",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 5,
+      "community_name": "auth.service.js",
       "norm_label": "phase26.test.js"
     },
     {
@@ -1055,8 +1077,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_phase28_test",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 6,
+      "community_name": "admin.service.js",
       "norm_label": "phase28.test.js"
     },
     {
@@ -1088,8 +1110,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_phase30_test",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 14,
+      "community_name": "env.js",
       "norm_label": "phase30.test.js"
     },
     {
@@ -1099,8 +1121,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_phase31_test",
-      "community": 14,
-      "community_name": "Review",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "phase31.test.js"
     },
     {
@@ -1440,8 +1462,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_phase6_test",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 14,
+      "community_name": "env.js",
       "norm_label": "phase6.test.js"
     },
     {
@@ -1594,8 +1616,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_rbac_test",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 14,
+      "community_name": "env.js",
       "norm_label": "rbac.test.js"
     },
     {
@@ -1605,8 +1627,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_tests_rbac_test_generatetoken",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 14,
+      "community_name": "env.js",
       "norm_label": "generatetoken()"
     },
     {
@@ -1616,8 +1638,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_security_test",
-      "community": 0,
-      "community_name": "app.js",
+      "community": 14,
+      "community_name": "env.js",
       "norm_label": "security.test.js"
     },
     {
@@ -1627,8 +1649,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_tests_security_test_generatetesttoken",
-      "community": 0,
-      "community_name": "app.js",
+      "community": 14,
+      "community_name": "env.js",
       "norm_label": "generatetesttoken()"
     },
     {
@@ -1693,8 +1715,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_config_db",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 14,
+      "community_name": "env.js",
       "norm_label": "db.js"
     },
     {
@@ -1704,8 +1726,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_config_db_connectdb",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 14,
+      "community_name": "env.js",
       "norm_label": "connectdb()"
     },
     {
@@ -1715,8 +1737,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "src_config_db_disconnectdb",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 14,
+      "community_name": "env.js",
       "norm_label": "disconnectdb()"
     },
     {
@@ -1726,8 +1748,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_config_env",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 14,
+      "community_name": "env.js",
       "norm_label": "env.js"
     },
     {
@@ -1737,8 +1759,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_config_env_parseport",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 14,
+      "community_name": "env.js",
       "norm_label": "parseport()"
     },
     {
@@ -1748,8 +1770,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_config_env_requiredenv",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 14,
+      "community_name": "env.js",
       "norm_label": "requiredenv"
     },
     {
@@ -1759,8 +1781,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_config_env_validnodeenvs",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 14,
+      "community_name": "env.js",
       "norm_label": "validnodeenvs"
     },
     {
@@ -1770,8 +1792,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "src_config_env_env",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 14,
+      "community_name": "env.js",
       "norm_label": "env"
     },
     {
@@ -2980,8 +3002,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_middlewares_authorize_ensureowneroradmin",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 1,
+      "community_name": "ApiError",
       "norm_label": "ensureowneroradmin()"
     },
     {
@@ -3035,8 +3057,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_middlewares_notfoundhandler",
-      "community": 1,
-      "community_name": "ApiError",
+      "community": 0,
+      "community_name": "app.js",
       "norm_label": "notfoundhandler.js"
     },
     {
@@ -3046,8 +3068,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_middlewares_notfoundhandler_notfoundhandler",
-      "community": 1,
-      "community_name": "ApiError",
+      "community": 0,
+      "community_name": "app.js",
       "norm_label": "notfoundhandler()"
     },
     {
@@ -3068,8 +3090,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_middlewares_rbac_middleware_injectguestactor",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "injectguestactor()"
     },
     {
@@ -3200,8 +3222,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_middlewares_upload_middleware_filefilter",
-      "community": 1,
-      "community_name": "ApiError",
+      "community": 6,
+      "community_name": "admin.service.js",
       "norm_label": "filefilter()"
     },
     {
@@ -3266,8 +3288,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_models_agent_model",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 5,
+      "community_name": "auth.service.js",
       "norm_label": "agent.model.js"
     },
     {
@@ -3277,8 +3299,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_models_agent_model_agentschema",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 5,
+      "community_name": "auth.service.js",
       "norm_label": "agentschema"
     },
     {
@@ -3299,8 +3321,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_models_appointment_model",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 14,
+      "community_name": "env.js",
       "norm_label": "appointment.model.js"
     },
     {
@@ -3310,8 +3332,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_models_appointment_model_appointmentschema",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 14,
+      "community_name": "env.js",
       "norm_label": "appointmentschema"
     },
     {
@@ -3585,8 +3607,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_models_review_model",
-      "community": 14,
-      "community_name": "Review",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "review.model.js"
     },
     {
@@ -3596,8 +3618,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_models_review_model_reviewschema",
-      "community": 14,
-      "community_name": "Review",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "reviewschema"
     },
     {
@@ -3607,8 +3629,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_models_review_model_review",
-      "community": 14,
-      "community_name": "Review",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "review"
     },
     {
@@ -3651,8 +3673,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_models_user_model",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 6,
+      "community_name": "admin.service.js",
       "norm_label": "user.model.js"
     },
     {
@@ -3662,8 +3684,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_models_user_model_userschema",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 6,
+      "community_name": "admin.service.js",
       "norm_label": "userschema"
     },
     {
@@ -3673,8 +3695,8 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "src_models_user_model_user",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 6,
+      "community_name": "admin.service.js",
       "norm_label": "user"
     },
     {
@@ -3981,8 +4003,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_server",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 14,
+      "community_name": "env.js",
       "norm_label": "server.js"
     },
     {
@@ -3992,8 +4014,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_server_startserver",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 14,
+      "community_name": "env.js",
       "norm_label": "startserver()"
     },
     {
@@ -4058,8 +4080,8 @@
       "source_location": "L108",
       "_origin": "ast",
       "id": "src_services_admin_service_getuserdetail",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 6,
+      "community_name": "admin.service.js",
       "norm_label": "getuserdetail()"
     },
     {
@@ -4069,8 +4091,8 @@
       "source_location": "L127",
       "_origin": "ast",
       "id": "src_services_admin_service_updateuser",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 6,
+      "community_name": "admin.service.js",
       "norm_label": "updateuser()"
     },
     {
@@ -4080,8 +4102,8 @@
       "source_location": "L154",
       "_origin": "ast",
       "id": "src_services_admin_service_deleteuser",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 6,
+      "community_name": "admin.service.js",
       "norm_label": "deleteuser()"
     },
     {
@@ -4091,8 +4113,8 @@
       "source_location": "L166",
       "_origin": "ast",
       "id": "src_services_admin_service_banuser",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 6,
+      "community_name": "admin.service.js",
       "norm_label": "banuser()"
     },
     {
@@ -4102,8 +4124,8 @@
       "source_location": "L195",
       "_origin": "ast",
       "id": "src_services_admin_service_unbanuser",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 6,
+      "community_name": "admin.service.js",
       "norm_label": "unbanuser()"
     },
     {
@@ -4113,8 +4135,8 @@
       "source_location": "L220",
       "_origin": "ast",
       "id": "src_services_admin_service_manageroles",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 6,
+      "community_name": "admin.service.js",
       "norm_label": "manageroles()"
     },
     {
@@ -4146,8 +4168,8 @@
       "source_location": "L312",
       "_origin": "ast",
       "id": "src_services_admin_service_rejectproperty",
-      "community": 6,
-      "community_name": "admin.service.js",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "rejectproperty()"
     },
     {
@@ -4157,8 +4179,8 @@
       "source_location": "L339",
       "_origin": "ast",
       "id": "src_services_admin_service_flagproperty",
-      "community": 6,
-      "community_name": "admin.service.js",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "flagproperty()"
     },
     {
@@ -5279,8 +5301,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_services_review_service",
-      "community": 14,
-      "community_name": "Review",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "review.service.js"
     },
     {
@@ -5290,8 +5312,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_services_review_service_createreview",
-      "community": 14,
-      "community_name": "Review",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "createreview()"
     },
     {
@@ -5301,8 +5323,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "src_services_review_service_getreviews",
-      "community": 14,
-      "community_name": "Review",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "getreviews()"
     },
     {
@@ -5312,8 +5334,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "src_services_review_service_getreviewbyid",
-      "community": 14,
-      "community_name": "Review",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "getreviewbyid()"
     },
     {
@@ -5323,8 +5345,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "src_services_review_service_updatereview",
-      "community": 14,
-      "community_name": "Review",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "updatereview()"
     },
     {
@@ -5334,8 +5356,8 @@
       "source_location": "L71",
       "_origin": "ast",
       "id": "src_services_review_service_deletereview",
-      "community": 14,
-      "community_name": "Review",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "deletereview()"
     },
     {
@@ -5367,8 +5389,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "src_services_user_service_getusers",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 6,
+      "community_name": "admin.service.js",
       "norm_label": "getusers()"
     },
     {
@@ -5389,8 +5411,8 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "src_services_user_service_getuserwishlist",
-      "community": 5,
-      "community_name": "auth.service.js",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "getuserwishlist()"
     },
     {
@@ -5730,8 +5752,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_utils_socket",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 14,
+      "community_name": "env.js",
       "norm_label": "socket.js"
     },
     {
@@ -5741,8 +5763,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_utils_socket_initsocket",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 14,
+      "community_name": "env.js",
       "norm_label": "initsocket()"
     },
     {
@@ -6909,6 +6931,125 @@
       "source": "package_allowscripts",
       "target": "package_allowscripts_scarf_scarf_1_4_0",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/create-admin.js",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_create_admin",
+      "target": "scripts_create_admin_createadmin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/create-admin.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_create_admin",
+      "target": "src_config_db",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/create-admin.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_create_admin",
+      "target": "src_config_db_connectdb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/create-admin.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_create_admin",
+      "target": "src_config_db_disconnectdb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/create-admin.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_create_admin",
+      "target": "src_models_user_model",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/create-admin.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_create_admin",
+      "target": "src_models_user_model_user",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/create-admin.js",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_create_admin_createadmin",
+      "target": "src_config_db_connectdb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/create-admin.js",
+      "source_location": "L58",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_create_admin_createadmin",
+      "target": "src_config_db_disconnectdb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/create-admin.js",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_create_admin_createadmin",
+      "target": "src_models_user_model_user"
+    },
+    {
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "scripts/create-admin.js",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_create_admin_createadmin",
+      "target": "src_utils_apiresponse_apiresponse_error"
     },
     {
       "relation": "imports_from",

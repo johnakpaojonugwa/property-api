@@ -55,10 +55,16 @@ const login = async ({ email, password, actor_type }) => {
     throw ApiError.unauthorized('Invalid credentials');
   }
 
+  let userRole = resolvedActorType || 'USER';
+  
+  if (principal.role && resolvedActorType === 'USER') {
+    userRole = principal.role;
+  }
+
   const jwtPayload = {
     id: principal._id.toString(),
     actor_type: resolvedActorType || principal.role || 'USER',
-    role: resolvedActorType || principal.role || 'USER',
+    role: userRole, 
   };
 
   if (resolvedActorType === 'AGENT' && principal.merchant) {
@@ -72,7 +78,7 @@ const login = async ({ email, password, actor_type }) => {
 
   return {
     token,
-    role: resolvedActorType || 'USER',
+    role: userRole,
     user: userObj,
   };
 };
