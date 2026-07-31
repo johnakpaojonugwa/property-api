@@ -27,151 +27,432 @@
       "ApiResponse": {
         "type": "object",
         "properties": {
-          "success": { "type": "boolean" },
-          "message": { "type": "string" },
-          "data": { "type": "object" }
+          "success": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string"
+          },
+          "data": {
+            "type": "object"
+          }
         }
       },
       "ErrorResponse": {
         "type": "object",
         "properties": {
-          "success": { "type": "boolean", "example": false },
-          "message": { "type": "string" },
-          "errors": { "type": "array", "items": { "type": "object" } }
+          "success": {
+            "type": "boolean",
+            "example": false
+          },
+          "message": {
+            "type": "string"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
         }
       },
       "LoginRequest": {
         "type": "object",
-        "required": ["email", "password"],
+        "required": [
+          "email",
+          "password"
+        ],
         "properties": {
-          "email": { "type": "string", "format": "email", "example": "user@example.com" },
-          "password": { "type": "string", "example": "Password123!" }
+          "email": {
+            "type": "string",
+            "format": "email",
+            "example": "user@example.com"
+          },
+          "password": {
+            "type": "string",
+            "example": "Password123!"
+          }
         }
       },
       "CreateUserRequest": {
         "type": "object",
-        "required": ["email", "password", "name"],
+        "required": [
+          "email",
+          "password",
+          "name"
+        ],
         "properties": {
-          "name": { "type": "string", "example": "John Doe" },
-          "email": { "type": "string", "format": "email", "example": "johndoe@example.com" },
-          "password": { "type": "string", "example": "SecurePass123!" },
-          "role": { "type": "string", "enum": ["user", "agent", "merchant", "admin"], "default": "user" },
-          "phone": { "type": "string", "example": "+1234567890" }
+          "name": {
+            "type": "string",
+            "example": "John Doe"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "example": "johndoe@example.com"
+          },
+          "password": {
+            "type": "string",
+            "example": "SecurePass123!"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "user",
+              "agent",
+              "merchant",
+              "admin"
+            ],
+            "default": "user"
+          },
+          "phone": {
+            "type": "string",
+            "example": "+1234567890"
+          }
         }
       },
       "CreatePropertyRequest": {
         "type": "object",
-        "required": ["title", "description", "price", "location", "propertyType"],
+        "required": [
+          "title",
+          "description",
+          "price",
+          "location",
+          "propertyType"
+        ],
         "properties": {
-          "title": { "type": "string", "example": "Modern 3 Bedroom Apartment" },
-          "description": { "type": "string", "example": "Spacious apartment located in downtown." },
-          "price": { "type": "number", "example": 250000 },
-          "propertyType": { "type": "string", "example": "apartment" },
+          "title": {
+            "type": "string",
+            "example": "Modern 3 Bedroom Apartment"
+          },
+          "description": {
+            "type": "string",
+            "example": "Spacious apartment located in downtown."
+          },
+          "price": {
+            "type": "number",
+            "example": 250000
+          },
+          "propertyType": {
+            "type": "string",
+            "example": "apartment"
+          },
           "location": {
             "type": "object",
             "properties": {
-              "address": { "type": "string", "example": "123 Main Street" },
-              "city": { "type": "string", "example": "Metropolis" },
-              "state": { "type": "string", "example": "NY" }
+              "address": {
+                "type": "string",
+                "example": "123 Main Street"
+              },
+              "city": {
+                "type": "string",
+                "example": "Metropolis"
+              },
+              "state": {
+                "type": "string",
+                "example": "NY"
+              }
             }
           },
-          "bedrooms": { "type": "integer", "example": 3 },
-          "bathrooms": { "type": "integer", "example": 2 },
-          "images": { "type": "array", "items": { "type": "string" } }
+          "bedrooms": {
+            "type": "integer",
+            "example": 3
+          },
+          "bathrooms": {
+            "type": "integer",
+            "example": 2
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
         }
       },
       "CreateAppointmentRequest": {
         "type": "object",
-        "required": ["property_id", "appointment_date"],
+        "required": [
+          "property_id",
+          "appointment_date"
+        ],
         "properties": {
-          "property_id": { "type": "string", "example": "60d5ec49f1b2c811845e2111" },
-          "appointment_date": { "type": "string", "format": "date-time", "example": "2026-08-01T10:00:00.000Z" },
-          "notes": { "type": "string", "example": "Interested in morning viewing" }
+          "property_id": {
+            "type": "string",
+            "example": "60d5ec49f1b2c811845e2111"
+          },
+          "appointment_date": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2026-08-01T10:00:00.000Z"
+          },
+          "notes": {
+            "type": "string",
+            "example": "Interested in morning viewing"
+          }
         }
       },
       "CreateReviewRequest": {
         "type": "object",
-        "required": ["property_id", "rating", "comment"],
+        "required": [
+          "property_id",
+          "rating",
+          "comment"
+        ],
         "properties": {
-          "property_id": { "type": "string", "example": "60d5ec49f1b2c811845e2111" },
-          "rating": { "type": "integer", "minimum": 1, "maximum": 5, "example": 5 },
-          "comment": { "type": "string", "example": "Great location and wonderful neighborhood!" }
+          "property_id": {
+            "type": "string",
+            "example": "60d5ec49f1b2c811845e2111"
+          },
+          "rating": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5,
+            "example": 5
+          },
+          "comment": {
+            "type": "string",
+            "example": "Great location and wonderful neighborhood!"
+          }
         }
       },
       "CreateWishlistRequest": {
         "type": "object",
-        "required": ["property_id"],
+        "required": [
+          "property_id"
+        ],
         "properties": {
-          "property_id": { "type": "string", "example": "60d5ec49f1b2c811845e2111" }
+          "property_id": {
+            "type": "string",
+            "example": "60d5ec49f1b2c811845e2111"
+          }
         }
       },
       "Notification": {
         "type": "object",
         "properties": {
-          "_id": { "type": "string", "example": "60d5ec49f1b2c811845e9999" },
-          "recipientId": { "type": "string", "example": "60d5ec49f1b2c811845e2111" },
-          "guestSessionId": { "type": "string", "example": "guest-session-456" },
-          "recipientRole": { "type": "string", "enum": ["guest", "user", "agent", "merchant", "admin"], "example": "user" },
-          "actorRole": { "type": "string", "enum": ["guest", "user", "agent", "merchant", "admin", "system"], "example": "system" },
-          "triggeredByUserId": { "type": "string", "example": "60d5ec49f1b2c811845e2111" },
-          "sourceType": { "type": "string", "enum": ["property", "inquiry", "offer", "showing", "lease", "system"], "example": "showing" },
-          "sourceId": { "type": "string", "example": "60d5ec49f1b2c811845e3333" },
-          "type": { "type": "string", "example": "showing_request" },
-          "category": { "type": "string", "enum": ["engagement", "management", "sales", "system", "compliance"], "example": "management" },
-          "priority": { "type": "string", "enum": ["low", "medium", "high", "critical"], "example": "medium" },
-          "title": { "type": "string", "example": "New Showing Request" },
-          "message": { "type": "string", "example": "A tour request has been made." },
-          "isRead": { "type": "boolean", "example": false },
-          "readAt": { "type": "string", "format": "date-time" },
-          "isArchived": { "type": "boolean", "example": false },
+          "_id": {
+            "type": "string",
+            "example": "60d5ec49f1b2c811845e9999"
+          },
+          "recipientId": {
+            "type": "string",
+            "example": "60d5ec49f1b2c811845e2111"
+          },
+          "guestSessionId": {
+            "type": "string",
+            "example": "guest-session-456"
+          },
+          "recipientRole": {
+            "type": "string",
+            "enum": [
+              "guest",
+              "user",
+              "agent",
+              "merchant",
+              "admin"
+            ],
+            "example": "user"
+          },
+          "actorRole": {
+            "type": "string",
+            "enum": [
+              "guest",
+              "user",
+              "agent",
+              "merchant",
+              "admin",
+              "system"
+            ],
+            "example": "system"
+          },
+          "triggeredByUserId": {
+            "type": "string",
+            "example": "60d5ec49f1b2c811845e2111"
+          },
+          "sourceType": {
+            "type": "string",
+            "enum": [
+              "property",
+              "inquiry",
+              "offer",
+              "showing",
+              "lease",
+              "system"
+            ],
+            "example": "showing"
+          },
+          "sourceId": {
+            "type": "string",
+            "example": "60d5ec49f1b2c811845e3333"
+          },
+          "type": {
+            "type": "string",
+            "example": "showing_request"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "engagement",
+              "management",
+              "sales",
+              "system",
+              "compliance"
+            ],
+            "example": "management"
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "critical"
+            ],
+            "example": "medium"
+          },
+          "title": {
+            "type": "string",
+            "example": "New Showing Request"
+          },
+          "message": {
+            "type": "string",
+            "example": "A tour request has been made."
+          },
+          "isRead": {
+            "type": "boolean",
+            "example": false
+          },
+          "readAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isArchived": {
+            "type": "boolean",
+            "example": false
+          },
           "channels": {
             "type": "object",
             "properties": {
-              "inApp": { "type": "boolean", "example": true },
-              "email": { "type": "boolean", "example": false },
-              "push": { "type": "boolean", "example": false },
-              "sms": { "type": "boolean", "example": false }
+              "inApp": {
+                "type": "boolean",
+                "example": true
+              },
+              "email": {
+                "type": "boolean",
+                "example": false
+              },
+              "push": {
+                "type": "boolean",
+                "example": false
+              },
+              "sms": {
+                "type": "boolean",
+                "example": false
+              }
             }
           },
-          "createdAt": { "type": "string", "format": "date-time" },
-          "updatedAt": { "type": "string", "format": "date-time" }
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
         }
       },
       "NotificationPreference": {
         "type": "object",
         "properties": {
-          "_id": { "type": "string", "example": "60d5ec49f1b2c811845e8888" },
-          "userId": { "type": "string", "example": "60d5ec49f1b2c811845e2111" },
-          "guestSessionId": { "type": "string", "example": "guest-session-456" },
+          "_id": {
+            "type": "string",
+            "example": "60d5ec49f1b2c811845e8888"
+          },
+          "userId": {
+            "type": "string",
+            "example": "60d5ec49f1b2c811845e2111"
+          },
+          "guestSessionId": {
+            "type": "string",
+            "example": "guest-session-456"
+          },
           "channels": {
             "type": "object",
             "properties": {
-              "inApp": { "type": "boolean", "default": true },
-              "email": { "type": "boolean", "default": true },
-              "push": { "type": "boolean", "default": true },
-              "sms": { "type": "boolean", "default": false }
+              "inApp": {
+                "type": "boolean",
+                "default": true
+              },
+              "email": {
+                "type": "boolean",
+                "default": true
+              },
+              "push": {
+                "type": "boolean",
+                "default": true
+              },
+              "sms": {
+                "type": "boolean",
+                "default": false
+              }
             }
           },
           "categories": {
             "type": "object",
             "properties": {
-              "engagement": { "type": "boolean", "default": true },
-              "management": { "type": "boolean", "default": true },
-              "sales": { "type": "boolean", "default": true },
-              "system": { "type": "boolean", "default": true },
-              "compliance": { "type": "boolean", "default": true }
+              "engagement": {
+                "type": "boolean",
+                "default": true
+              },
+              "management": {
+                "type": "boolean",
+                "default": true
+              },
+              "sales": {
+                "type": "boolean",
+                "default": true
+              },
+              "system": {
+                "type": "boolean",
+                "default": true
+              },
+              "compliance": {
+                "type": "boolean",
+                "default": true
+              }
             }
           },
           "quietHours": {
             "type": "object",
             "properties": {
-              "enabled": { "type": "boolean", "default": false },
-              "start": { "type": "string", "default": "22:00" },
-              "end": { "type": "string", "default": "07:00" },
-              "timezone": { "type": "string", "default": "UTC" }
+              "enabled": {
+                "type": "boolean",
+                "default": false
+              },
+              "start": {
+                "type": "string",
+                "default": "22:00"
+              },
+              "end": {
+                "type": "string",
+                "default": "07:00"
+              },
+              "timezone": {
+                "type": "string",
+                "default": "UTC"
+              }
             }
           },
-          "digestFrequency": { "type": "string", "enum": ["instant", "daily", "weekly"], "default": "instant" }
+          "digestFrequency": {
+            "type": "string",
+            "enum": [
+              "instant",
+              "daily",
+              "weekly"
+            ],
+            "default": "instant"
+          }
         }
       },
       "UpdatePreferencesRequest": {
@@ -180,56 +461,135 @@
           "channels": {
             "type": "object",
             "properties": {
-              "inApp": { "type": "boolean" },
-              "email": { "type": "boolean" },
-              "push": { "type": "boolean" },
-              "sms": { "type": "boolean" }
+              "inApp": {
+                "type": "boolean"
+              },
+              "email": {
+                "type": "boolean"
+              },
+              "push": {
+                "type": "boolean"
+              },
+              "sms": {
+                "type": "boolean"
+              }
             }
           },
           "categories": {
             "type": "object",
             "properties": {
-              "engagement": { "type": "boolean" },
-              "management": { "type": "boolean" },
-              "sales": { "type": "boolean" },
-              "system": { "type": "boolean" },
-              "compliance": { "type": "boolean" }
+              "engagement": {
+                "type": "boolean"
+              },
+              "management": {
+                "type": "boolean"
+              },
+              "sales": {
+                "type": "boolean"
+              },
+              "system": {
+                "type": "boolean"
+              },
+              "compliance": {
+                "type": "boolean"
+              }
             }
           },
           "quietHours": {
             "type": "object",
             "properties": {
-              "enabled": { "type": "boolean" },
-              "start": { "type": "string", "example": "22:00" },
-              "end": { "type": "string", "example": "07:00" },
-              "timezone": { "type": "string", "example": "UTC" }
+              "enabled": {
+                "type": "boolean"
+              },
+              "start": {
+                "type": "string",
+                "example": "22:00"
+              },
+              "end": {
+                "type": "string",
+                "example": "07:00"
+              },
+              "timezone": {
+                "type": "string",
+                "example": "UTC"
+              }
             }
           },
-          "digestFrequency": { "type": "string", "enum": ["instant", "daily", "weekly"] }
+          "digestFrequency": {
+            "type": "string",
+            "enum": [
+              "instant",
+              "daily",
+              "weekly"
+            ]
+          }
         }
       },
       "BroadcastNotificationRequest": {
         "type": "object",
-        "required": ["recipientRoles", "title", "message"],
+        "required": [
+          "recipientRoles",
+          "title",
+          "message"
+        ],
         "properties": {
           "recipientRoles": {
             "type": "array",
-            "items": { "type": "string" },
-            "example": ["user", "agent"]
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "user",
+              "agent"
+            ]
           },
-          "title": { "type": "string", "example": "System Maintenance Notice" },
-          "message": { "type": "string", "example": "The platform will undergo scheduled maintenance." },
-          "priority": { "type": "string", "enum": ["low", "medium", "high", "critical"], "default": "medium" },
-          "data": { "type": "object" },
+          "title": {
+            "type": "string",
+            "example": "System Maintenance Notice"
+          },
+          "message": {
+            "type": "string",
+            "example": "The platform will undergo scheduled maintenance."
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "critical"
+            ],
+            "default": "medium"
+          },
+          "data": {
+            "type": "object"
+          },
           "actions": {
             "type": "array",
             "items": {
               "type": "object",
-              "required": ["label", "url"],
+              "required": [
+                "label",
+                "url"
+              ],
               "properties": {
-                "label": { "type": "string" },
-                "url": { "type": "string" },
-                "method": { "type": "string", "enum": ["GET", "POST", "PUT", "PATCH", "DELETE"], "default": "GET" }
+                "label": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ],
+                  "default": "GET"
+                }
               }
             }
           }
@@ -245,7 +605,9 @@
   "paths": {
     "/auth/login": {
       "post": {
-        "tags": ["Authentication"],
+        "tags": [
+          "Authentication"
+        ],
         "summary": "User Login",
         "description": "Authenticate user credentials and receive JWT access token",
         "security": [],
@@ -253,61 +615,115 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/LoginRequest" }
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
             }
           }
         },
         "responses": {
-          "200": { "description": "Login successful" },
-          "401": { "description": "Invalid credentials" }
+          "200": {
+            "description": "Login successful"
+          },
+          "401": {
+            "description": "Invalid credentials"
+          }
         }
       }
     },
     "/token": {
       "post": {
-        "tags": ["Authentication"],
+        "tags": [
+          "Authentication"
+        ],
         "summary": "Create Token",
         "security": [],
         "responses": {
-          "200": { "description": "Token generated successfully" }
+          "200": {
+            "description": "Token generated successfully"
+          }
         }
       }
     },
     "/properties": {
       "get": {
-        "tags": ["Properties"],
+        "tags": [
+          "Properties"
+        ],
         "summary": "Get All Properties",
         "description": "Retrieve property listings with optional search, sorting, and pagination filters",
         "parameters": [
-          { "name": "page", "in": "query", "schema": { "type": "integer", "default": 1 } },
-          { "name": "limit", "in": "query", "schema": { "type": "integer", "default": 10 } },
-          { "name": "city", "in": "query", "schema": { "type": "string" } },
-          { "name": "minPrice", "in": "query", "schema": { "type": "number" } },
-          { "name": "maxPrice", "in": "query", "schema": { "type": "number" } }
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          },
+          {
+            "name": "city",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "minPrice",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "maxPrice",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          }
         ],
         "responses": {
-          "200": { "description": "Properties retrieved successfully" }
+          "200": {
+            "description": "Properties retrieved successfully"
+          }
         }
       },
       "post": {
-        "tags": ["Properties"],
+        "tags": [
+          "Properties"
+        ],
         "summary": "Create Property Listing",
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/CreatePropertyRequest" }
+              "schema": {
+                "$ref": "#/components/schemas/CreatePropertyRequest"
+              }
             }
           }
         },
         "responses": {
-          "201": { "description": "Property created successfully" }
+          "201": {
+            "description": "Property created successfully"
+          }
         }
       }
     },
     "/properties/buy": {
       "post": {
-        "tags": ["Properties"],
+        "tags": [
+          "Properties"
+        ],
         "summary": "Purchase Property",
         "requestBody": {
           "required": true,
@@ -316,501 +732,2444 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "property_id": { "type": "string" }
+                  "property_id": {
+                    "type": "string"
+                  }
                 }
               }
             }
           }
         },
         "responses": {
-          "200": { "description": "Purchase transaction initiated" }
+          "200": {
+            "description": "Purchase transaction initiated"
+          }
         }
       }
     },
     "/properties/{property_id}": {
       "get": {
-        "tags": ["Properties"],
+        "tags": [
+          "Properties"
+        ],
         "summary": "Get Property Details",
         "parameters": [
-          { "name": "property_id", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "property_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
-          "200": { "description": "Property details retrieved" },
-          "404": { "description": "Property not found" }
+          "200": {
+            "description": "Property details retrieved"
+          },
+          "404": {
+            "description": "Property not found"
+          }
         }
       },
       "put": {
-        "tags": ["Properties"],
+        "tags": [
+          "Properties"
+        ],
         "summary": "Update Property Listing",
         "parameters": [
-          { "name": "property_id", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "property_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/CreatePropertyRequest" }
+              "schema": {
+                "$ref": "#/components/schemas/CreatePropertyRequest"
+              }
             }
           }
         },
         "responses": {
-          "200": { "description": "Property updated successfully" }
+          "200": {
+            "description": "Property updated successfully"
+          }
         }
       },
       "delete": {
-        "tags": ["Properties"],
+        "tags": [
+          "Properties"
+        ],
         "summary": "Delete Property Listing",
         "parameters": [
-          { "name": "property_id", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "property_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
-          "200": { "description": "Property deleted successfully" }
+          "200": {
+            "description": "Property deleted successfully"
+          }
         }
       }
     },
     "/properties/{property_id}/resource": {
       "put": {
-        "tags": ["Properties"],
+        "tags": [
+          "Properties"
+        ],
         "summary": "Update Property Resource / Upload Media",
         "parameters": [
-          { "name": "property_id", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "property_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
-          "200": { "description": "Property resource updated" }
+          "200": {
+            "description": "Property resource updated"
+          }
         }
       }
     },
     "/properties/{property_id}/set-verified": {
       "put": {
-        "tags": ["Properties"],
+        "tags": [
+          "Properties"
+        ],
         "summary": "Verify Property Listing",
         "parameters": [
-          { "name": "property_id", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "property_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
-          "200": { "description": "Property verification status updated" }
+          "200": {
+            "description": "Property verification status updated"
+          }
         }
       }
     },
     "/users": {
       "get": {
-        "tags": ["Users"],
+        "tags": [
+          "Users"
+        ],
         "summary": "Get All Users",
         "responses": {
-          "200": { "description": "Users retrieved successfully" }
+          "200": {
+            "description": "Users retrieved successfully"
+          }
         }
       },
       "post": {
-        "tags": ["Users"],
+        "tags": [
+          "Users"
+        ],
         "summary": "Register New User",
         "security": [],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/CreateUserRequest" }
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserRequest"
+              }
             }
           }
         },
         "responses": {
-          "201": { "description": "User created successfully" }
+          "201": {
+            "description": "User created successfully"
+          }
         }
       }
     },
     "/users/{user_id}": {
       "get": {
-        "tags": ["Users"],
+        "tags": [
+          "Users"
+        ],
         "summary": "Get User Details",
         "parameters": [
-          { "name": "user_id", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
-          "200": { "description": "User details retrieved" },
-          "404": { "description": "User not found" }
+          "200": {
+            "description": "User details retrieved"
+          },
+          "404": {
+            "description": "User not found"
+          }
         }
       },
       "put": {
-        "tags": ["Users"],
+        "tags": [
+          "Users"
+        ],
         "summary": "Update User",
         "parameters": [
-          { "name": "user_id", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
-          "200": { "description": "User updated successfully" }
+          "200": {
+            "description": "User updated successfully"
+          }
         }
       },
       "delete": {
-        "tags": ["Users"],
+        "tags": [
+          "Users"
+        ],
         "summary": "Delete User",
         "parameters": [
-          { "name": "user_id", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
-          "200": { "description": "User deleted successfully" }
+          "200": {
+            "description": "User deleted successfully"
+          }
         }
       }
     },
     "/users/{user_id}/resource": {
       "put": {
-        "tags": ["Users"],
+        "tags": [
+          "Users"
+        ],
         "summary": "Update User Resource / Upload Media",
         "parameters": [
-          { "name": "user_id", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
-          "200": { "description": "User resource updated" },
-          "404": { "description": "User not found" }
+          "200": {
+            "description": "User resource updated"
+          },
+          "404": {
+            "description": "User not found"
+          }
         }
       }
     },
     "/users/{user_id}/wishlist": {
       "get": {
-        "tags": ["Users"],
+        "tags": [
+          "Users"
+        ],
         "summary": "Get User Wishlist",
         "parameters": [
-          { "name": "user_id", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
-          "200": { "description": "User wishlist retrieved" }
+          "200": {
+            "description": "User wishlist retrieved"
+          }
         }
       }
     },
     "/users/{user_id}/properties": {
       "get": {
-        "tags": ["Users"],
+        "tags": [
+          "Users"
+        ],
         "summary": "Get User Listed Properties",
         "parameters": [
-          { "name": "user_id", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
-          "200": { "description": "User properties retrieved" }
+          "200": {
+            "description": "User properties retrieved"
+          }
         }
       }
     },
     "/users/wishlist": {
       "post": {
-        "tags": ["Wishlist"],
+        "tags": [
+          "Wishlist"
+        ],
         "summary": "Add Property to Wishlist",
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/CreateWishlistRequest" }
+              "schema": {
+                "$ref": "#/components/schemas/CreateWishlistRequest"
+              }
             }
           }
         },
         "responses": {
-          "201": { "description": "Property added to wishlist" }
+          "201": {
+            "description": "Property added to wishlist"
+          }
         }
       }
     },
     "/agents": {
       "get": {
-        "tags": ["Agents"],
+        "tags": [
+          "Agents"
+        ],
         "summary": "Get All Agents",
         "responses": {
-          "200": { "description": "Agents retrieved successfully" }
+          "200": {
+            "description": "Agents retrieved successfully"
+          }
         }
       },
       "post": {
-        "tags": ["Agents"],
+        "tags": [
+          "Agents"
+        ],
         "summary": "Register Agent",
         "responses": {
-          "201": { "description": "Agent created successfully" }
+          "201": {
+            "description": "Agent created successfully"
+          }
         }
       }
     },
     "/agents/{agent_id}": {
       "delete": {
-        "tags": ["Agents"],
+        "tags": [
+          "Agents"
+        ],
         "summary": "Delete Agent",
         "parameters": [
-          { "name": "agent_id", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "agent_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
-          "200": { "description": "Agent deleted successfully" },
-          "404": { "description": "Agent not found" }
+          "200": {
+            "description": "Agent deleted successfully"
+          },
+          "404": {
+            "description": "Agent not found"
+          }
         }
       }
     },
     "/agents/{agent_id}/resource": {
       "put": {
-        "tags": ["Agents"],
+        "tags": [
+          "Agents"
+        ],
         "summary": "Update Agent Resource / Upload Media",
         "parameters": [
-          { "name": "agent_id", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "agent_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
-          "200": { "description": "Agent resource updated" },
-          "404": { "description": "Agent not found" }
+          "200": {
+            "description": "Agent resource updated"
+          },
+          "404": {
+            "description": "Agent not found"
+          }
         }
       }
     },
     "/agents/{agent_id}/wishlist": {
       "get": {
-        "tags": ["Agents"],
+        "tags": [
+          "Agents"
+        ],
         "summary": "Get Agent Wishlist",
         "parameters": [
-          { "name": "agent_id", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "agent_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
-          "200": { "description": "Wishlist retrieved" }
+          "200": {
+            "description": "Wishlist retrieved"
+          }
         }
       }
     },
     "/merchants": {
       "get": {
-        "tags": ["Merchants"],
+        "tags": [
+          "Merchants"
+        ],
         "summary": "Get All Merchants",
         "responses": {
-          "200": { "description": "Merchants retrieved successfully" }
+          "200": {
+            "description": "Merchants retrieved successfully"
+          }
         }
       },
       "post": {
-        "tags": ["Merchants"],
+        "tags": [
+          "Merchants"
+        ],
         "summary": "Register Merchant",
         "security": [],
         "responses": {
-          "201": { "description": "Merchant registered successfully" }
+          "201": {
+            "description": "Merchant registered successfully"
+          }
         }
       }
     },
     "/merchants/agents": {
       "get": {
-        "tags": ["Merchants"],
+        "tags": [
+          "Merchants"
+        ],
         "summary": "Get Merchant Agents",
         "responses": {
-          "200": { "description": "Merchant agents retrieved" }
+          "200": {
+            "description": "Merchant agents retrieved"
+          }
         }
       },
       "post": {
-        "tags": ["Merchants"],
+        "tags": [
+          "Merchants"
+        ],
         "summary": "Create Agent under Merchant",
         "responses": {
-          "201": { "description": "Agent created" }
+          "201": {
+            "description": "Agent created"
+          }
         }
       }
     },
     "/merchants/verify-agent": {
       "post": {
-        "tags": ["Merchants"],
+        "tags": [
+          "Merchants"
+        ],
         "summary": "Verify Agent status",
         "responses": {
-          "200": { "description": "Agent verified" }
+          "200": {
+            "description": "Agent verified"
+          }
         }
       }
     },
     "/merchants/{merchant_id}/wishlist": {
       "get": {
-        "tags": ["Merchants"],
+        "tags": [
+          "Merchants"
+        ],
         "summary": "Get Merchant Wishlist",
         "parameters": [
-          { "name": "merchant_id", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "merchant_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
-          "200": { "description": "Merchant wishlist retrieved" }
+          "200": {
+            "description": "Merchant wishlist retrieved"
+          }
         }
       }
     },
     "/appointments": {
       "get": {
-        "tags": ["Appointments"],
+        "tags": [
+          "Appointments"
+        ],
         "summary": "Get Appointments",
         "responses": {
-          "200": { "description": "Appointments retrieved successfully" }
+          "200": {
+            "description": "Appointments retrieved successfully"
+          }
         }
       },
       "post": {
-        "tags": ["Appointments"],
+        "tags": [
+          "Appointments"
+        ],
         "summary": "Create Viewing Appointment",
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/CreateAppointmentRequest" }
+              "schema": {
+                "$ref": "#/components/schemas/CreateAppointmentRequest"
+              }
             }
           }
         },
         "responses": {
-          "201": { "description": "Appointment scheduled successfully" }
+          "201": {
+            "description": "Appointment scheduled successfully"
+          }
         }
       }
     },
     "/appointments/{appointment_id}": {
       "put": {
-        "tags": ["Appointments"],
+        "tags": [
+          "Appointments"
+        ],
         "summary": "Update Appointment Details",
         "parameters": [
-          { "name": "appointment_id", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "appointment_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
-          "200": { "description": "Appointment updated" }
+          "200": {
+            "description": "Appointment updated"
+          }
         }
       },
       "delete": {
-        "tags": ["Appointments"],
+        "tags": [
+          "Appointments"
+        ],
         "summary": "Delete Appointment",
         "parameters": [
-          { "name": "appointment_id", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "appointment_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
-          "200": { "description": "Appointment deleted" }
+          "200": {
+            "description": "Appointment deleted"
+          }
         }
       }
     },
     "/appointments/{appointment_id}/confirm-meeting": {
       "put": {
-        "tags": ["Appointments"],
+        "tags": [
+          "Appointments"
+        ],
         "summary": "Confirm Appointment Meeting",
         "parameters": [
-          { "name": "appointment_id", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "appointment_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
-          "200": { "description": "Meeting confirmed" }
+          "200": {
+            "description": "Meeting confirmed"
+          }
         }
       }
     },
     "/appointments/{appointment_id}/set-agent-appointment-completion": {
       "put": {
-        "tags": ["Appointments"],
+        "tags": [
+          "Appointments"
+        ],
         "summary": "Set Agent Appointment Completion",
         "parameters": [
-          { "name": "appointment_id", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "appointment_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
-          "200": { "description": "Agent appointment completion updated" }
+          "200": {
+            "description": "Agent appointment completion updated"
+          }
         }
       }
     },
     "/appointments/{appointment_id}/set-user-appointment-completion": {
       "put": {
-        "tags": ["Appointments"],
+        "tags": [
+          "Appointments"
+        ],
         "summary": "Set User Appointment Completion",
         "parameters": [
-          { "name": "appointment_id", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "appointment_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
-          "200": { "description": "User appointment completion updated" }
+          "200": {
+            "description": "User appointment completion updated"
+          }
         }
       }
     },
     "/reviews": {
       "get": {
-        "tags": ["Reviews"],
+        "tags": [
+          "Reviews"
+        ],
         "summary": "Get Property Reviews",
         "responses": {
-          "200": { "description": "Reviews retrieved successfully" }
+          "200": {
+            "description": "Reviews retrieved successfully"
+          }
         }
       },
       "post": {
-        "tags": ["Reviews"],
+        "tags": [
+          "Reviews"
+        ],
         "summary": "Submit Property Review",
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/CreateReviewRequest" }
+              "schema": {
+                "$ref": "#/components/schemas/CreateReviewRequest"
+              }
             }
           }
         },
         "responses": {
-          "201": { "description": "Review created successfully" }
+          "201": {
+            "description": "Review created successfully"
+          }
         }
       }
     },
     "/reviews/{review_id}": {
       "put": {
-        "tags": ["Reviews"],
+        "tags": [
+          "Reviews"
+        ],
         "summary": "Update Property Review",
         "parameters": [
-          { "name": "review_id", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "review_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
-          "200": { "description": "Review updated" }
+          "200": {
+            "description": "Review updated"
+          }
         }
       },
       "delete": {
-        "tags": ["Reviews"],
+        "tags": [
+          "Reviews"
+        ],
         "summary": "Delete Review",
         "parameters": [
-          { "name": "review_id", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "review_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
-          "200": { "description": "Review deleted" }
+          "200": {
+            "description": "Review deleted"
+          }
         }
       }
     },
     "/notifications": {
       "get": {
-        "tags": ["Notifications"],
+        "tags": [
+          "Notifications"
+        ],
         "summary": "Get Notifications",
         "description": "Retrieve notifications for the authenticated user, guest, or scoped recipient.",
         "parameters": [
-          { "name": "page", "in": "query", "schema": { "type": "integer", "default": 1 } },
-          { "name": "limit", "in": "query", "schema": { "type": "integer", "default": 10 } },
-          { "name": "isRead", "in": "query", "schema": { "type": "string", "enum": ["true", "false"] } },
-          { "name": "category", "in": "query", "schema": { "type": "string", "enum": ["engagement", "management", "sales", "system", "compliance"] } },
-          { "name": "priority", "in": "query", "schema": { "type": "string", "enum": ["low", "medium", "high", "critical"] } },
-          { "name": "sourceType", "in": "query", "schema": { "type": "string", "enum": ["property", "inquiry", "offer", "showing", "lease", "system"] } },
-          { "name": "recipientId", "in": "query", "schema": { "type": "string" }, "description": "Admin or privileged scopes can filter by specific recipient." }
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          },
+          {
+            "name": "isRead",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true",
+                "false"
+              ]
+            }
+          },
+          {
+            "name": "category",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "engagement",
+                "management",
+                "sales",
+                "system",
+                "compliance"
+              ]
+            }
+          },
+          {
+            "name": "priority",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "low",
+                "medium",
+                "high",
+                "critical"
+              ]
+            }
+          },
+          {
+            "name": "sourceType",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "property",
+                "inquiry",
+                "offer",
+                "showing",
+                "lease",
+                "system"
+              ]
+            }
+          },
+          {
+            "name": "recipientId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Admin or privileged scopes can filter by specific recipient."
+          }
         ],
         "responses": {
           "200": {
             "description": "Notifications retrieved successfully"
           },
-          "401": { "description": "Unauthorized" },
-          "403": { "description": "Forbidden" }
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
         }
       }
     },
     "/notifications/{id}/read": {
       "patch": {
-        "tags": ["Notifications"],
+        "tags": [
+          "Notifications"
+        ],
         "summary": "Mark Notification as Read",
         "parameters": [
-          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
-          "200": { "description": "Notification marked as read successfully" },
-          "401": { "description": "Unauthorized" },
-          "404": { "description": "Notification not found" }
+          "200": {
+            "description": "Notification marked as read successfully"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Notification not found"
+          }
         }
       }
     },
     "/admin/notifications/broadcast": {
       "post": {
-        "tags": ["Notifications"],
+        "tags": [
+          "Notifications"
+        ],
         "summary": "Broadcast Notification (Admin Only)",
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/BroadcastNotificationRequest" }
+              "schema": {
+                "$ref": "#/components/schemas/BroadcastNotificationRequest"
+              }
             }
           }
         },
         "responses": {
-          "201": { "description": "Broadcast succeeded" },
-          "401": { "description": "Unauthorized" },
-          "403": { "description": "Forbidden" }
+          "201": {
+            "description": "Broadcast succeeded"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
         }
       }
     },
     "/notifications/preferences": {
       "put": {
-        "tags": ["Notifications"],
+        "tags": [
+          "Notifications"
+        ],
         "summary": "Update Notification Preferences",
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/UpdatePreferencesRequest" }
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePreferencesRequest"
+              }
             }
           }
         },
         "responses": {
-          "200": { "description": "Preferences updated successfully" },
-          "401": { "description": "Unauthorized" }
+          "200": {
+            "description": "Preferences updated successfully"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/admin/dashboard": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get Admin Dashboard data",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Dashboard data retrieved successfully"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/metrics": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get system metrics",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Metrics retrieved successfully"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/users": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "List all users (paginated/filtered)",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          },
+          {
+            "name": "role",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Users list retrieved successfully"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/users/search": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Search users",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Search results retrieved"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/users/{id}": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get detailed user info by ID",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User details retrieved"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Update user account info",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "phone": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "User updated successfully"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Delete a user account",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User deleted successfully"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      }
+    },
+    "/admin/users/{id}/ban": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Ban a user",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "reason"
+                ],
+                "properties": {
+                  "reason": {
+                    "type": "string",
+                    "example": "Violated terms of service"
+                  },
+                  "duration": {
+                    "type": "string",
+                    "example": "7d"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "User banned successfully"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/users/{id}/unban": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Unban a user",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User unbanned successfully"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/users/{id}/role": {
+      "patch": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Manage user role and permissions",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "role"
+                ],
+                "properties": {
+                  "role": {
+                    "type": "string",
+                    "enum": [
+                      "user",
+                      "agent",
+                      "merchant",
+                      "admin"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "User role updated successfully"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/properties": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "List properties for moderation",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Properties retrieved"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/properties/{id}/approve": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Approve a property listing",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "notes": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Property approved"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/properties/{id}/reject": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Reject a property listing",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "reason"
+                ],
+                "properties": {
+                  "reason": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Property rejected"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/properties/{id}/flag": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Flag a property listing",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "reason"
+                ],
+                "properties": {
+                  "reason": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Property flagged"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/flagged-content": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get flagged content list",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Flagged content list retrieved"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/moderation-rules": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Manage or create content moderation rules",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Moderation rules updated"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/audit-logs": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get audit logs",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "action",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Audit logs retrieved"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/reports": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "List administrative reports",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Reports list retrieved"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Generate a new system report",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "type"
+                ],
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "example": "activity"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Report generated successfully"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/reports/{id}/export": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Export a report (supports CSV format)",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "csv",
+                "json"
+              ],
+              "default": "json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Report exported successfully"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/config": {
+      "patch": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Update system configuration settings",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "System configuration updated"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/system-status": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get system status and health info",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "System status retrieved"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/feature-flags": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "List all feature flags",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Feature flags list retrieved"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Update feature flag values",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Feature flags updated"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/backups": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Create/Initiate a new database backup",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Backup created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "List existing backups",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Backups list retrieved"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/backups/{id}/restore": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Restore a database backup",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "confirm"
+                ],
+                "properties": {
+                  "confirm": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Backup restore completed"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/email-templates": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Manage or create email templates",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Email template managed"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/email-templates/{id}/test": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Send test email using template ID",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Test email sent"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/api-keys": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Manage or generate system API keys",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "API key generated"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/api-keys/{id}": {
+      "delete": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Revoke an API key",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API key revoked"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/api-keys/{id}/usage": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get API key usage statistics",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API key usage stats retrieved"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/webhooks": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Register or manage system webhooks",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Webhook registered"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/webhooks/{id}/test": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Test webhook delivery by ID",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Webhook test delivery completed"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/webhooks/{id}/logs": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get webhook delivery logs",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Webhook logs retrieved"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/health": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get system health status",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Health status retrieved"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/logs": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get system logs",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "System logs retrieved"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/rate-limits": {
+      "patch": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Update system rate limits configuration",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Rate limits updated"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/rate-limits/stats": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get system rate limits statistics",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Rate limits stats retrieved"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/banned-ips": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Ban an IP address",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "ip"
+                ],
+                "properties": {
+                  "ip": {
+                    "type": "string",
+                    "example": "192.168.1.1"
+                  },
+                  "reason": {
+                    "type": "string",
+                    "example": "DDoS attempt"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "IP banned"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/banned-ips/{id}": {
+      "delete": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Unban a banned IP address record ID",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "IP unbanned"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
+        }
+      }
+    },
+    "/admin/analytics": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get overall system analytics",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Analytics retrieved"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
+          }
         }
       }
     }

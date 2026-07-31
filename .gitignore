@@ -21,3 +21,5 @@ thumbs.db
 .qodo
 .__tests__
 .agents
+# Graphify local configs
+graphify-out/.*
