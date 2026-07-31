@@ -24,6 +24,7 @@ const merchantSchema = new mongoose.Schema(
     },
     password_hash: { type: String, required: true, select: false },
     avatar: { type: String, default: '' },
+    is_verified: { type: Boolean, default: false },
   },
   { timestamps: true },
 );

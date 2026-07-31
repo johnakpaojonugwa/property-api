@@ -2,6 +2,8 @@ import { Router } from 'express';
 import { authenticate } from '../middlewares/authenticate.js';
 import authorize from '../middlewares/authorize.js';
 import adminController from '../controllers/admin.controller.js';
+import validate from '../middlewares/validate.js';
+import { verifyMerchantSchema } from '../validators/merchant.validator.js';
 
 const router = Router();
 
@@ -22,6 +24,10 @@ router.delete('/admin/users/:id', adminController.deleteUser);
 router.post('/admin/users/:id/ban', adminController.banUser);
 router.post('/admin/users/:id/unban', adminController.unbanUser);
 router.patch('/admin/users/:id/role', adminController.manageRoles);
+
+// Merchant verification
+router.patch('/admin/merchants/:id/verification', validate(verifyMerchantSchema), adminController.verifyMerchant);
+router.post('/admin/merchants/:id/verify', validate(verifyMerchantSchema), adminController.verifyMerchant);
 
 // Property moderation
 router.get('/admin/properties', adminController.getProperties);

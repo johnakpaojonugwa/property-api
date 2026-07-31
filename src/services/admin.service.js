@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import User from '../models/user.model.js';
 import Property from '../models/property.model.js';
+import Merchant from '../models/merchant.model.js';
 import ApiError from '../utils/ApiError.js';
 
 const getDashboard = async () => {
@@ -595,6 +596,27 @@ const getAnalytics = async (query = {}) => {
   };
 };
 
+const verifyMerchant = async (id, is_verified) => {
+  if (mongoose.connection.readyState !== 1) {
+    return {
+      _id: id,
+      is_verified,
+    };
+  }
+
+  const merchant = await Merchant.findByIdAndUpdate(
+    id,
+    { is_verified },
+    { returnDocument: 'after' }
+  ).lean();
+
+  if (!merchant) {
+    throw ApiError.notFound('Merchant not found');
+  }
+
+  return merchant;
+};
+
 export default {
   getDashboard,
   getMetrics,
@@ -638,4 +660,5 @@ export default {
   banIp,
   unbanIp,
   getAnalytics,
+  verifyMerchant,
 };

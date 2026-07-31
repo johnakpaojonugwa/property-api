@@ -8,3 +8,7 @@ export const createMerchantSchema = Joi.object({
   password_hash: Joi.string().min(8).optional(),
   avatar: Joi.string().uri().optional(),
 }).or('password', 'password_hash').unknown(false);
+
+export const verifyMerchantSchema = Joi.object({
+  is_verified: Joi.boolean().required(),
+});

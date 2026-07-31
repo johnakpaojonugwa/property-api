@@ -218,6 +218,13 @@ const getAnalytics = asyncHandler(async (req, res) => {
   return res.status(200).json(ApiResponse.success(result, 'Analytics retrieved'));
 });
 
+const verifyMerchant = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+  const { is_verified } = req.body;
+  const result = await adminService.verifyMerchant(id, is_verified);
+  return res.status(200).json(ApiResponse.success(result, 'Merchant verification status updated'));
+});
+
 export default {
   getDashboard,
   getMetrics,
@@ -261,4 +268,5 @@ export default {
   banIp,
   unbanIp,
   getAnalytics,
+  verifyMerchant,
 };
