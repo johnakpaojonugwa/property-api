@@ -87,7 +87,7 @@ const updateAgentResource = async (id, data = {}, file = null, actor) => {
     throw ApiError.forbidden('You do not have permission to update this agent');
   }
 
-  const updated = await Agent.findByIdAndUpdate(id, { avatar: avatarUrl }, { new: true }).lean();
+  const updated = await Agent.findByIdAndUpdate(id, { avatar: avatarUrl }, { returnDocument: 'after' }).lean();
   return updated;
 };
 

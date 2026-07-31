@@ -64,7 +64,7 @@ const updateReview = async (id, data, actor) => {
   if (mongoose.connection.readyState !== 1) {
     return { _id: id, ...data };
   }
-  const updated = await Review.findByIdAndUpdate(id, data, { new: true }).lean();
+  const updated = await Review.findByIdAndUpdate(id, data, { returnDocument: 'after' }).lean();
   return updated;
 };
 

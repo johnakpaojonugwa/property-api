@@ -159,7 +159,7 @@ const updateProperty = async (id, data, actor) => {
     delete data.is_verified;
   }
 
-  const updated = await Property.findByIdAndUpdate(id, data, { new: true }).lean();
+  const updated = await Property.findByIdAndUpdate(id, data, { returnDocument: 'after' }).lean();
   return updated;
 };
 
@@ -207,7 +207,7 @@ const updatePropertyResources = async (id, imagesData = {}, files = null, actor)
     throw ApiError.forbidden('You do not have permission to modify this property listing');
   }
 
-  const updated = await Property.findByIdAndUpdate(id, { images: maxImages }, { new: true }).lean();
+  const updated = await Property.findByIdAndUpdate(id, { images: maxImages }, { returnDocument: 'after' }).lean();
   return updated;
 };
 
@@ -218,7 +218,7 @@ const setVerified = async (id, is_verified, actor) => {
   if (actor.role !== 'ADMIN') {
     throw ApiError.forbidden('Only administrators can verify properties');
   }
-  const updated = await Property.findByIdAndUpdate(id, { is_verified }, { new: true }).lean();
+  const updated = await Property.findByIdAndUpdate(id, { is_verified }, { returnDocument: 'after' }).lean();
   if (!updated) {
     throw ApiError.notFound('Property not found');
   }
@@ -238,7 +238,7 @@ const buyProperty = async (property_id, user_id, actor) => {
   if (mongoose.connection.readyState !== 1) {
     return { property_id, user_id, status: 'BOUGHT' };
   }
-  const property = await Property.findByIdAndUpdate(property_id, { is_sold: true }, { new: true }).lean();
+  const property = await Property.findByIdAndUpdate(property_id, { is_sold: true }, { returnDocument: 'after' }).lean();
   if (!property) {
     throw ApiError.notFound('Property not found');
   }
@@ -264,6 +264,7 @@ const deleteProperty = async (id, actor) => {
                           (actor.merchant_id && property.merchant?.toString() === actor.merchant_id);
   const isAdmin = actor.role === 'ADMIN';
 
+  
   if (!isAgentOwner && !isMerchantOwner && !isAdmin) {
     throw ApiError.forbidden('You do not have permission to delete this property');
   }

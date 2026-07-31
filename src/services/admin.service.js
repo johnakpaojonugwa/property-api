@@ -143,7 +143,7 @@ const updateUser = async (id, data) => {
     updates.role = updates.role.toUpperCase();
   }
 
-  const user = await User.findByIdAndUpdate(id, updates, { new: true }).lean();
+  const user = await User.findByIdAndUpdate(id, updates, { returnDocument: 'after' }).lean();
   if (!user) {
     throw ApiError.notFound('User not found');
   }
@@ -176,7 +176,7 @@ const banUser = async (id, reason, duration) => {
   const user = await User.findByIdAndUpdate(
     id,
     { isActive: false },
-    { new: true }
+    { returnDocument: 'after' }
   ).lean();
 
   if (!user) {
@@ -203,7 +203,7 @@ const unbanUser = async (id) => {
   const user = await User.findByIdAndUpdate(
     id,
     { isActive: true },
-    { new: true }
+    { returnDocument: 'after' }
   ).lean();
 
   if (!user) {
@@ -233,7 +233,7 @@ const manageRoles = async (id, data) => {
   const user = await User.findByIdAndUpdate(
     id,
     { role: role.toUpperCase() },
-    { new: true }
+    { returnDocument: 'after' }
   ).lean();
 
   if (!user) {
@@ -295,7 +295,7 @@ const approveProperty = async (id, notes) => {
   const property = await Property.findByIdAndUpdate(
     id,
     { is_verified: true },
-    { new: true }
+    { returnDocument: 'after' }
   ).lean();
 
   if (!property) {
@@ -321,7 +321,7 @@ const rejectProperty = async (id, reason) => {
   const property = await Property.findByIdAndUpdate(
     id,
     { is_verified: false },
-    { new: true }
+    { returnDocument: 'after' }
   ).lean();
 
   if (!property) {

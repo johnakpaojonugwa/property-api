@@ -77,7 +77,7 @@ const verifyAgent = async (agent_id, is_verified, actor) => {
     throw ApiError.forbidden('You do not have permission to verify this agent');
   }
 
-  const updatedAgent = await Agent.findByIdAndUpdate(agent_id, { is_verified }, { new: true }).lean();
+  const updatedAgent = await Agent.findByIdAndUpdate(agent_id, { is_verified }, { returnDocument: 'after' }).lean();
   return updatedAgent;
 };
 

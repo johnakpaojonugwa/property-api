@@ -413,7 +413,7 @@ export class NotificationService {
       await NotificationTemplate.findOneAndUpdate(
         { type: temp.type },
         temp,
-        { upsert: true, new: true }
+        { upsert: true, returnDocument: 'after' }
       );
     }
   }

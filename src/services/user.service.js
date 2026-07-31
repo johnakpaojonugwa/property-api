@@ -87,7 +87,7 @@ const updateUser = async (id, data, actor) => {
   if (mongoose.connection.readyState !== 1) {
     return { _id: id, ...data };
   }
-  const updated = await User.findByIdAndUpdate(id, data, { new: true }).lean();
+  const updated = await User.findByIdAndUpdate(id, data, { returnDocument: 'after' }).lean();
   if (!updated) {
     throw ApiError.notFound('User not found');
   }
@@ -114,7 +114,7 @@ const updateUserResource = async (id, data = {}, file = null, actor) => {
     return { _id: id, avatar: avatarUrl };
   }
 
-  const updated = await User.findByIdAndUpdate(id, { avatar: avatarUrl }, { new: true }).lean();
+  const updated = await User.findByIdAndUpdate(id, { avatar: avatarUrl }, { returnDocument: 'after' }).lean();
   if (!updated) {
     throw ApiError.notFound('User not found');
   }

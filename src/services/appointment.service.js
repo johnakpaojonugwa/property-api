@@ -140,7 +140,7 @@ const updateAppointment = async (id, data, actor) => {
   if (mongoose.connection.readyState !== 1) {
     return { _id: id, ...data };
   }
-  const updated = await Appointment.findByIdAndUpdate(id, data, { new: true }).lean();
+  const updated = await Appointment.findByIdAndUpdate(id, data, { returnDocument: 'after' }).lean();
   return updated;
 };
 
@@ -163,7 +163,7 @@ const confirmMeeting = async (id, actor) => {
   if (mongoose.connection.readyState !== 1) {
     return { _id: id, confirmed: true };
   }
-  const updated = await Appointment.findByIdAndUpdate(id, { confirmed: true }, { new: true }).lean();
+  const updated = await Appointment.findByIdAndUpdate(id, { confirmed: true }, { returnDocument: 'after' }).lean();
 
   // Trigger showing_confirmed to the User and showing_scheduled to the Merchant
   try {
@@ -240,7 +240,7 @@ const setAgentCompletion = async (id, actor) => {
   if (mongoose.connection.readyState !== 1) {
     return { _id: id, agent_completed: true };
   }
-  const updated = await Appointment.findByIdAndUpdate(id, { agent_completed: true }, { new: true }).lean();
+  const updated = await Appointment.findByIdAndUpdate(id, { agent_completed: true }, { returnDocument: 'after' }).lean();
   return updated;
 };
 
@@ -263,7 +263,7 @@ const setUserCompletion = async (id, actor) => {
   if (mongoose.connection.readyState !== 1) {
     return { _id: id, user_completed: true };
   }
-  const updated = await Appointment.findByIdAndUpdate(id, { user_completed: true }, { new: true }).lean();
+  const updated = await Appointment.findByIdAndUpdate(id, { user_completed: true }, { returnDocument: 'after' }).lean();
   return updated;
 };
 
