@@ -4,6 +4,8 @@ import User from '../models/user.model.js';
 import Wishlist from '../models/wishlist.model.js';
 import Property from '../models/property.model.js';
 import ApiError from '../utils/ApiError.js';
+import compressImage from '../utils/imageCompressor.js';
+import uploadToCloudinary from '../utils/cloudinary.js';
 
 const createUser = async (data) => {
   if (mongoose.connection.readyState !== 1) {
@@ -92,18 +94,27 @@ const updateUser = async (id, data, actor) => {
   return updated;
 };
 
-const updateUserResource = async (id, data, actor) => {
+const updateUserResource = async (id, data = {}, file = null, actor) => {
   if (!actor) {
     throw ApiError.unauthorized('Authentication required');
   }
   if (id !== actor.id && actor.role !== 'ADMIN') {
     throw ApiError.forbidden('You do not have permission to update this user resource');
   }
-  if (mongoose.connection.readyState !== 1) {
-    return { _id: id, avatar: data.avatar || data.image || data.resource };
+
+  let avatarUrl = data.avatar || data.image || data.resource || '';
+
+  if (file && (file.buffer || Buffer.isBuffer(file))) {
+    const inputBuffer = file.buffer || file;
+    const { buffer } = await compressImage(inputBuffer, { maxWidth: 800, quality: 80, format: 'webp' });
+    avatarUrl = await uploadToCloudinary(buffer, 'users/avatars');
   }
-  const avatar = data.avatar || data.image || data.resource;
-  const updated = await User.findByIdAndUpdate(id, { avatar }, { new: true }).lean();
+
+  if (mongoose.connection.readyState !== 1) {
+    return { _id: id, avatar: avatarUrl };
+  }
+
+  const updated = await User.findByIdAndUpdate(id, { avatar: avatarUrl }, { new: true }).lean();
   if (!updated) {
     throw ApiError.notFound('User not found');
   }

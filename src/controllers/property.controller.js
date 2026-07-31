@@ -32,7 +32,8 @@ const updateProperty = asyncHandler(async (req, res) => {
 
 const updatePropertyResource = asyncHandler(async (req, res) => {
   const id = req.params.property_id || req.params.id;
-  const updated = await propertyService.updatePropertyResources(id, req.body, req.actor);
+  const files = req.files || req.file;
+  const updated = await propertyService.updatePropertyResources(id, req.body, files, req.actor);
   return res.status(200).json(ApiResponse.success(updated, 'Property resources updated'));
 });
 

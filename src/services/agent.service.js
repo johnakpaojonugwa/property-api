@@ -3,6 +3,8 @@ import bcrypt from 'bcryptjs';
 import Agent from '../models/agent.model.js';
 import Wishlist from '../models/wishlist.model.js';
 import ApiError from '../utils/ApiError.js';
+import compressImage from '../utils/imageCompressor.js';
+import uploadToCloudinary from '../utils/cloudinary.js';
 
 const createAgent = async (data, actor) => {
   if (!actor && process.env.NODE_ENV !== 'test' && !process.env.VITEST) {
@@ -55,13 +57,21 @@ const getAgentById = async (id) => {
   return agent;
 };
 
-const updateAgentResource = async (id, data, actor) => {
+const updateAgentResource = async (id, data = {}, file = null, actor) => {
   if (!actor) {
     throw ApiError.unauthorized('Authentication required');
   }
 
+  let avatarUrl = data.avatar || data.image || data.resource || '';
+
+  if (file && (file.buffer || Buffer.isBuffer(file))) {
+    const inputBuffer = file.buffer || file;
+    const { buffer } = await compressImage(inputBuffer, { maxWidth: 800, quality: 80, format: 'webp' });
+    avatarUrl = await uploadToCloudinary(buffer, 'agents/avatars');
+  }
+
   if (mongoose.connection.readyState !== 1) {
-    return { _id: id, avatar: data.avatar || data.image || data.resource };
+    return { _id: id, avatar: avatarUrl };
   }
 
   const agent = await Agent.findById(id);
@@ -77,8 +87,7 @@ const updateAgentResource = async (id, data, actor) => {
     throw ApiError.forbidden('You do not have permission to update this agent');
   }
 
-  const avatar = data.avatar || data.image || data.resource;
-  const updated = await Agent.findByIdAndUpdate(id, { avatar }, { new: true }).lean();
+  const updated = await Agent.findByIdAndUpdate(id, { avatar: avatarUrl }, { new: true }).lean();
   return updated;
 };
 

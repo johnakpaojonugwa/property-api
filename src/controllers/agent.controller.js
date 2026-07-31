@@ -18,7 +18,7 @@ const getAgentWishlist = asyncHandler(async (req, res) => {
 });
 
 const updateAgentResource = asyncHandler(async (req, res) => {
-  const updatedAgent = await agentService.updateAgentResource(req.params.agent_id, req.body, req.actor);
+  const updatedAgent = await agentService.updateAgentResource(req.params.agent_id, req.body, req.file, req.actor);
   return res.status(200).json(ApiResponse.success(updatedAgent, 'Agent resource updated'));
 });
 

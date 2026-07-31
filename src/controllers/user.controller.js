@@ -33,7 +33,7 @@ const updateUser = asyncHandler(async (req, res) => {
 });
 
 const updateUserResource = asyncHandler(async (req, res) => {
-  const updated = await userService.updateUserResource(req.params.user_id, req.body, req.actor);
+  const updated = await userService.updateUserResource(req.params.user_id, req.body, req.file, req.actor);
   return res.status(200).json(ApiResponse.success(updated, 'User resource updated'));
 });
 

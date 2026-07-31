@@ -2,6 +2,8 @@ import mongoose from 'mongoose';
 import Property from '../models/property.model.js';
 import Agent from '../models/agent.model.js';
 import ApiError from '../utils/ApiError.js';
+import compressImage from '../utils/imageCompressor.js';
+import uploadToCloudinary from '../utils/cloudinary.js';
 
 const buildFilters = (query = {}) => {
   const filters = {};
@@ -161,13 +163,34 @@ const updateProperty = async (id, data, actor) => {
   return updated;
 };
 
-const updatePropertyResources = async (id, imagesData, actor) => {
+const updatePropertyResources = async (id, imagesData = {}, files = null, actor) => {
   if (!actor) {
     throw ApiError.unauthorized('Authentication required');
   }
 
+  let uploadedImages = [];
+
+  const fileList = Array.isArray(files) ? files : files ? [files] : [];
+  if (fileList.length > 0) {
+    for (const fileItem of fileList) {
+      const inputBuffer = fileItem.buffer || (Buffer.isBuffer(fileItem) ? fileItem : null);
+      if (inputBuffer) {
+        const { buffer } = await compressImage(inputBuffer, { maxWidth: 1200, quality: 80, format: 'webp' });
+        const url = await uploadToCloudinary(buffer, 'properties/images');
+        uploadedImages.push(url);
+      }
+    }
+  }
+
+  if (uploadedImages.length === 0) {
+    const imagesVal = imagesData.images || imagesData.image || imagesData.resource || imagesData;
+    uploadedImages = Array.isArray(imagesVal) ? imagesVal : typeof imagesVal === 'string' && imagesVal ? [imagesVal] : [];
+  }
+
+  const maxImages = uploadedImages.slice(0, 5);
+
   if (mongoose.connection.readyState !== 1) {
-    return { _id: id, images: Array.isArray(imagesData) ? imagesData : [imagesData.images || imagesData].flat().slice(0, 5) };
+    return { _id: id, images: maxImages };
   }
 
   const property = await Property.findById(id);
@@ -184,8 +207,6 @@ const updatePropertyResources = async (id, imagesData, actor) => {
     throw ApiError.forbidden('You do not have permission to modify this property listing');
   }
 
-  const images = Array.isArray(imagesData) ? imagesData : [imagesData.images || imagesData].flat();
-  const maxImages = images.slice(0, 5);
   const updated = await Property.findByIdAndUpdate(id, { images: maxImages }, { new: true }).lean();
   return updated;
 };
