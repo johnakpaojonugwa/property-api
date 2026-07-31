@@ -61,6 +61,10 @@ const login = async ({ email, password, actor_type }) => {
     userRole = principal.role;
   }
 
+  if (userRole === 'ADMIN') {
+    resolvedActorType = 'ADMIN';
+  }
+
   const jwtPayload = {
     id: principal._id.toString(),
     actor_type: resolvedActorType || principal.role || 'USER',
