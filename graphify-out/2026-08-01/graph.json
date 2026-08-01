@@ -791,8 +791,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_merchant_verification_test",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 0,
+      "community_name": "app.js",
       "norm_label": "merchant-verification.test.js"
     },
     {
@@ -802,8 +802,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_tests_merchant_verification_test_generatetoken",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 0,
+      "community_name": "app.js",
       "norm_label": "generatetoken()"
     },
     {
@@ -1055,8 +1055,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_phase28_test",
-      "community": 6,
-      "community_name": "admin.service.js",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "phase28.test.js"
     },
     {
@@ -1066,8 +1066,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_phase29_test",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "phase29.test.js"
     },
     {
@@ -1088,8 +1088,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_phase30_test",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "phase30.test.js"
     },
     {
@@ -1594,8 +1594,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_rbac_test",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "rbac.test.js"
     },
     {
@@ -1605,8 +1605,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_tests_rbac_test_generatetoken",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "generatetoken()"
     },
     {
@@ -1616,8 +1616,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_security_test",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 0,
+      "community_name": "app.js",
       "norm_label": "security.test.js"
     },
     {
@@ -1627,8 +1627,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_tests_security_test_generatetesttoken",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 0,
+      "community_name": "app.js",
       "norm_label": "generatetesttoken()"
     },
     {
@@ -2980,8 +2980,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_middlewares_authorize_ensureowneroradmin",
-      "community": 1,
-      "community_name": "ApiError",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "ensureowneroradmin()"
     },
     {
@@ -3035,8 +3035,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_middlewares_notfoundhandler",
-      "community": 0,
-      "community_name": "app.js",
+      "community": 1,
+      "community_name": "ApiError",
       "norm_label": "notfoundhandler.js"
     },
     {
@@ -3046,8 +3046,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_middlewares_notfoundhandler_notfoundhandler",
-      "community": 0,
-      "community_name": "app.js",
+      "community": 1,
+      "community_name": "ApiError",
       "norm_label": "notfoundhandler()"
     },
     {
@@ -3057,8 +3057,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_middlewares_rbac_middleware",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "rbac.middleware.js"
     },
     {
@@ -3068,8 +3068,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_middlewares_rbac_middleware_injectguestactor",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "injectguestactor()"
     },
     {
@@ -3200,8 +3200,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_middlewares_upload_middleware_filefilter",
-      "community": 6,
-      "community_name": "admin.service.js",
+      "community": 1,
+      "community_name": "ApiError",
       "norm_label": "filefilter()"
     },
     {
@@ -3299,8 +3299,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_models_appointment_model",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "appointment.model.js"
     },
     {
@@ -3310,8 +3310,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_models_appointment_model_appointmentschema",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "appointmentschema"
     },
     {
@@ -3552,8 +3552,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_models_property_model",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "property.model.js"
     },
     {
@@ -3563,8 +3563,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_models_property_model_propertyschema",
-      "community": 3,
-      "community_name": "notification.controller.js",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "propertyschema"
     },
     {
@@ -3673,8 +3673,8 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "src_models_user_model_user",
-      "community": 6,
-      "community_name": "admin.service.js",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "user"
     },
     {
@@ -4058,8 +4058,8 @@
       "source_location": "L108",
       "_origin": "ast",
       "id": "src_services_admin_service_getuserdetail",
-      "community": 6,
-      "community_name": "admin.service.js",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "getuserdetail()"
     },
     {
@@ -4069,8 +4069,8 @@
       "source_location": "L127",
       "_origin": "ast",
       "id": "src_services_admin_service_updateuser",
-      "community": 6,
-      "community_name": "admin.service.js",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "updateuser()"
     },
     {
@@ -4080,8 +4080,8 @@
       "source_location": "L154",
       "_origin": "ast",
       "id": "src_services_admin_service_deleteuser",
-      "community": 6,
-      "community_name": "admin.service.js",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "deleteuser()"
     },
     {
@@ -4091,8 +4091,8 @@
       "source_location": "L166",
       "_origin": "ast",
       "id": "src_services_admin_service_banuser",
-      "community": 6,
-      "community_name": "admin.service.js",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "banuser()"
     },
     {
@@ -4102,8 +4102,8 @@
       "source_location": "L195",
       "_origin": "ast",
       "id": "src_services_admin_service_unbanuser",
-      "community": 6,
-      "community_name": "admin.service.js",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "unbanuser()"
     },
     {
@@ -4113,8 +4113,8 @@
       "source_location": "L220",
       "_origin": "ast",
       "id": "src_services_admin_service_manageroles",
-      "community": 6,
-      "community_name": "admin.service.js",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "manageroles()"
     },
     {
@@ -4146,8 +4146,8 @@
       "source_location": "L312",
       "_origin": "ast",
       "id": "src_services_admin_service_rejectproperty",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 6,
+      "community_name": "admin.service.js",
       "norm_label": "rejectproperty()"
     },
     {
@@ -4157,8 +4157,8 @@
       "source_location": "L339",
       "_origin": "ast",
       "id": "src_services_admin_service_flagproperty",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 6,
+      "community_name": "admin.service.js",
       "norm_label": "flagproperty()"
     },
     {
@@ -4693,7 +4693,7 @@
       "label": "verifyToken()",
       "file_type": "code",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L90",
+      "source_location": "L80",
       "_origin": "ast",
       "id": "src_services_auth_service_verifytoken",
       "community": 5,
@@ -4704,7 +4704,7 @@
       "label": "storeToken()",
       "file_type": "code",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L98",
+      "source_location": "L88",
       "_origin": "ast",
       "id": "src_services_auth_service_storetoken",
       "community": 5,
@@ -4715,7 +4715,7 @@
       "label": "createGuestToken()",
       "file_type": "code",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L104",
+      "source_location": "L94",
       "_origin": "ast",
       "id": "src_services_auth_service_createguesttoken",
       "community": 5,
@@ -5323,8 +5323,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "src_services_review_service_updatereview",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 14,
+      "community_name": "Review",
       "norm_label": "updatereview()"
     },
     {
@@ -5334,8 +5334,8 @@
       "source_location": "L71",
       "_origin": "ast",
       "id": "src_services_review_service_deletereview",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 14,
+      "community_name": "Review",
       "norm_label": "deletereview()"
     },
     {
@@ -5367,8 +5367,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "src_services_user_service_getusers",
-      "community": 6,
-      "community_name": "admin.service.js",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "getusers()"
     },
     {
@@ -5953,204 +5953,6 @@
       "community": 1,
       "community_name": "ApiError",
       "norm_label": "createwishlistschema"
-    },
-    {
-      "label": "codebase_documentation.md",
-      "file_type": "document",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "codebase_documentation",
-      "community": 39,
-      "community_name": "Codebase Documentation: Property API",
-      "norm_label": "codebase_documentation.md"
-    },
-    {
-      "label": "Codebase Documentation: Property API",
-      "file_type": "document",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "codebase_documentation_codebase_documentation_property_api",
-      "community": 39,
-      "community_name": "Codebase Documentation: Property API",
-      "norm_label": "codebase documentation: property api"
-    },
-    {
-      "label": "1. Executive Summary & Problem Space",
-      "file_type": "document",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L7",
-      "_origin": "ast",
-      "id": "codebase_documentation_1_executive_summary_problem_space",
-      "community": 39,
-      "community_name": "Codebase Documentation: Property API",
-      "norm_label": "1. executive summary & problem space"
-    },
-    {
-      "label": "Core Problems Solved",
-      "file_type": "document",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L11",
-      "_origin": "ast",
-      "id": "codebase_documentation_core_problems_solved",
-      "community": 39,
-      "community_name": "Codebase Documentation: Property API",
-      "norm_label": "core problems solved"
-    },
-    {
-      "label": "2. System Architecture & Component Design",
-      "file_type": "document",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L32",
-      "_origin": "ast",
-      "id": "codebase_documentation_2_system_architecture_component_design",
-      "community": 39,
-      "community_name": "Codebase Documentation: Property API",
-      "norm_label": "2. system architecture & component design"
-    },
-    {
-      "label": "Component Breakdown",
-      "file_type": "document",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L74",
-      "_origin": "ast",
-      "id": "codebase_documentation_component_breakdown",
-      "community": 39,
-      "community_name": "Codebase Documentation: Property API",
-      "norm_label": "component breakdown"
-    },
-    {
-      "label": "3. Detailed Data Models & Relationships",
-      "file_type": "document",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L90",
-      "_origin": "ast",
-      "id": "codebase_documentation_3_detailed_data_models_relationships",
-      "community": 39,
-      "community_name": "Codebase Documentation: Property API",
-      "norm_label": "3. detailed data models & relationships"
-    },
-    {
-      "label": "Core Schema Configurations",
-      "file_type": "document",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L158",
-      "_origin": "ast",
-      "id": "codebase_documentation_core_schema_configurations",
-      "community": 39,
-      "community_name": "Codebase Documentation: Property API",
-      "norm_label": "core schema configurations"
-    },
-    {
-      "label": "4. Key Subsystem Workflows",
-      "file_type": "document",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L168",
-      "_origin": "ast",
-      "id": "codebase_documentation_4_key_subsystem_workflows",
-      "community": 39,
-      "community_name": "Codebase Documentation: Property API",
-      "norm_label": "4. key subsystem workflows"
-    },
-    {
-      "label": "4.1 Notification Pipeline & Quiet-Hours Engine",
-      "file_type": "document",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L170",
-      "_origin": "ast",
-      "id": "codebase_documentation_4_1_notification_pipeline_quiet_hours_engine",
-      "community": 39,
-      "community_name": "Codebase Documentation: Property API",
-      "norm_label": "4.1 notification pipeline & quiet-hours engine"
-    },
-    {
-      "label": "4.2 Local Image Compression & Cloudinary Storage",
-      "file_type": "document",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L212",
-      "_origin": "ast",
-      "id": "codebase_documentation_4_2_local_image_compression_cloudinary_storage",
-      "community": 39,
-      "community_name": "Codebase Documentation: Property API",
-      "norm_label": "4.2 local image compression & cloudinary storage"
-    },
-    {
-      "label": "5. Complete API Routes Table",
-      "file_type": "document",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L220",
-      "_origin": "ast",
-      "id": "codebase_documentation_5_complete_api_routes_table",
-      "community": 39,
-      "community_name": "Codebase Documentation: Property API",
-      "norm_label": "5. complete api routes table"
-    },
-    {
-      "label": "6. Architectural Trade-offs & Engineering Decisions",
-      "file_type": "document",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L320",
-      "_origin": "ast",
-      "id": "codebase_documentation_6_architectural_trade_offs_engineering_decisions",
-      "community": 39,
-      "community_name": "Codebase Documentation: Property API",
-      "norm_label": "6. architectural trade-offs & engineering decisions"
-    },
-    {
-      "label": "6.1 Fallback-Mode Caching & Resilience",
-      "file_type": "document",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L324",
-      "_origin": "ast",
-      "id": "codebase_documentation_6_1_fallback_mode_caching_resilience",
-      "community": 39,
-      "community_name": "Codebase Documentation: Property API",
-      "norm_label": "6.1 fallback-mode caching & resilience"
-    },
-    {
-      "label": "6.2 Separate Collections for Actors (Users, Agents, Merchants)",
-      "file_type": "document",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L329",
-      "_origin": "ast",
-      "id": "codebase_documentation_6_2_separate_collections_for_actors_users_agents_merchants",
-      "community": 39,
-      "community_name": "Codebase Documentation: Property API",
-      "norm_label": "6.2 separate collections for actors (users, agents, merchants)"
-    },
-    {
-      "label": "6.3 Local Image Processing vs. Background Workers",
-      "file_type": "document",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L334",
-      "_origin": "ast",
-      "id": "codebase_documentation_6_3_local_image_processing_vs_background_workers",
-      "community": 39,
-      "community_name": "Codebase Documentation: Property API",
-      "norm_label": "6.3 local image processing vs. background workers"
-    },
-    {
-      "label": "6.4 Dynamic Quiet-Hours Calculation",
-      "file_type": "document",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L339",
-      "_origin": "ast",
-      "id": "codebase_documentation_6_4_dynamic_quiet_hours_calculation",
-      "community": 39,
-      "community_name": "Codebase Documentation: Property API",
-      "norm_label": "6.4 dynamic quiet-hours calculation"
-    },
-    {
-      "label": "6.5 Strict HTTP Parameter Pollution (HPP) Prevention",
-      "file_type": "document",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L344",
-      "_origin": "ast",
-      "id": "codebase_documentation_6_5_strict_http_parameter_pollution_hpp_prevention",
-      "community": 39,
-      "community_name": "Codebase Documentation: Property API",
-      "norm_label": "6.5 strict http parameter pollution (hpp) prevention"
     },
     {
       "label": "Property API",
@@ -15499,7 +15301,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/auth.service.js",
-      "source_location": "L100",
+      "source_location": "L90",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service_storetoken",
@@ -18156,7 +17958,7 @@
       "relation": "indirect_call",
       "confidence": "INFERRED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L113",
+      "source_location": "L103",
       "weight": 1.0,
       "_origin": "ast",
       "context": "collection",
@@ -18179,7 +17981,7 @@
       "relation": "indirect_call",
       "confidence": "INFERRED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L110",
+      "source_location": "L100",
       "weight": 1.0,
       "_origin": "ast",
       "context": "collection",
@@ -18191,7 +17993,7 @@
       "relation": "indirect_call",
       "confidence": "INFERRED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L112",
+      "source_location": "L102",
       "weight": 1.0,
       "_origin": "ast",
       "context": "collection",
@@ -18203,7 +18005,7 @@
       "relation": "indirect_call",
       "confidence": "INFERRED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L111",
+      "source_location": "L101",
       "weight": 1.0,
       "_origin": "ast",
       "context": "collection",
@@ -18240,7 +18042,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L105",
+      "source_location": "L95",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service_createguesttoken",
@@ -18252,7 +18054,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L78",
+      "source_location": "L68",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service_login",
@@ -18277,7 +18079,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/auth.service.js",
-      "source_location": "L94",
+      "source_location": "L84",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service_verifytoken",
@@ -20458,193 +20260,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "codebase_documentation",
-      "target": "codebase_documentation_codebase_documentation_property_api",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "codebase_documentation_codebase_documentation_property_api",
-      "target": "codebase_documentation_1_executive_summary_problem_space",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L32",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "codebase_documentation_codebase_documentation_property_api",
-      "target": "codebase_documentation_2_system_architecture_component_design",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L90",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "codebase_documentation_codebase_documentation_property_api",
-      "target": "codebase_documentation_3_detailed_data_models_relationships",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L168",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "codebase_documentation_codebase_documentation_property_api",
-      "target": "codebase_documentation_4_key_subsystem_workflows",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L220",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "codebase_documentation_codebase_documentation_property_api",
-      "target": "codebase_documentation_5_complete_api_routes_table",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L320",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "codebase_documentation_codebase_documentation_property_api",
-      "target": "codebase_documentation_6_architectural_trade_offs_engineering_decisions",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L11",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "codebase_documentation_1_executive_summary_problem_space",
-      "target": "codebase_documentation_core_problems_solved",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L74",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "codebase_documentation_2_system_architecture_component_design",
-      "target": "codebase_documentation_component_breakdown",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L158",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "codebase_documentation_3_detailed_data_models_relationships",
-      "target": "codebase_documentation_core_schema_configurations",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L170",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "codebase_documentation_4_key_subsystem_workflows",
-      "target": "codebase_documentation_4_1_notification_pipeline_quiet_hours_engine",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L212",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "codebase_documentation_4_key_subsystem_workflows",
-      "target": "codebase_documentation_4_2_local_image_compression_cloudinary_storage",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L324",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "codebase_documentation_6_architectural_trade_offs_engineering_decisions",
-      "target": "codebase_documentation_6_1_fallback_mode_caching_resilience",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L329",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "codebase_documentation_6_architectural_trade_offs_engineering_decisions",
-      "target": "codebase_documentation_6_2_separate_collections_for_actors_users_agents_merchants",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L334",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "codebase_documentation_6_architectural_trade_offs_engineering_decisions",
-      "target": "codebase_documentation_6_3_local_image_processing_vs_background_workers",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L339",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "codebase_documentation_6_architectural_trade_offs_engineering_decisions",
-      "target": "codebase_documentation_6_4_dynamic_quiet_hours_calculation",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "codebase_documentation.md",
-      "source_location": "L344",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "codebase_documentation_6_architectural_trade_offs_engineering_decisions",
-      "target": "codebase_documentation_6_5_strict_http_parameter_pollution_hpp_prevention",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "conceptually_related_to",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -20776,5 +20391,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "6074f2293c10d9f0b9fae7bdb5475738f3591f34"
+  "built_at_commit": "dfb0ac4cce64aa97edcd739cebde416bd7ca842f"
 }

@@ -650,9 +650,9 @@
     "semantic_hash": ""
   },
   "src/services/auth.service.js": {
-    "mtime": 1785502751.1303923,
-    "ast_hash": "189a309aff94af2135be7d52e8f936ba",
-    "semantic_hash": ""
+    "mtime": 1785420263.9768786,
+    "ast_hash": "0987de0c701615897984b0661078bc77",
+    "semantic_hash": "0987de0c701615897984b0661078bc77"
   },
   "src/services/merchant.service.js": {
     "mtime": 1785492006.7418137,
@@ -787,11 +787,6 @@
   "src/__tests__/merchant-verification.test.js": {
     "mtime": 1785498849.5697744,
     "ast_hash": "3fddbb42294b419c3841caeec08d0a1d",
-    "semantic_hash": ""
-  },
-  "codebase_documentation.md": {
-    "mtime": 1785604775.1421692,
-    "ast_hash": "33bf17218a10a1b9a1eb2a043ce1863d",
     "semantic_hash": ""
   }
 }
