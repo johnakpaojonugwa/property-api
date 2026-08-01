@@ -22,4 +22,5 @@ thumbs.db
 .__tests__
 .agents
 # Graphify local configs
-graphify-out/.*
+graphify-out/.*
+graphify-out/obsidian/
