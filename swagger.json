@@ -35,6 +35,23 @@
           },
           "data": {
             "type": "object"
+          },
+          "meta": {
+            "type": "object",
+            "properties": {
+              "total": {
+                "type": "integer"
+              },
+              "page": {
+                "type": "integer"
+              },
+              "limit": {
+                "type": "integer"
+              },
+              "totalPages": {
+                "type": "integer"
+              }
+            }
           }
         }
       },
@@ -53,6 +70,10 @@
             "items": {
               "type": "object"
             }
+          },
+          "statusCode": {
+            "type": "integer",
+            "example": 500
           }
         }
       },
@@ -78,95 +99,203 @@
         "type": "object",
         "required": [
           "email",
-          "password",
-          "name"
+          "phone",
+          "first_name",
+          "last_name"
         ],
         "properties": {
-          "name": {
+          "first_name": {
             "type": "string",
-            "example": "John Doe"
+            "example": "John"
+          },
+          "last_name": {
+            "type": "string",
+            "example": "Doe"
           },
           "email": {
             "type": "string",
             "format": "email",
             "example": "johndoe@example.com"
           },
+          "phone": {
+            "type": "string",
+            "example": "+1234567890"
+          },
           "password": {
             "type": "string",
             "example": "SecurePass123!"
           },
+          "password_hash": {
+            "type": "string",
+            "example": "$2a$10$..."
+          },
           "role": {
             "type": "string",
             "enum": [
-              "user",
-              "agent",
-              "merchant",
-              "admin"
+              "USER"
             ],
-            "default": "user"
-          },
-          "phone": {
-            "type": "string",
-            "example": "+1234567890"
+            "default": "USER"
           }
         }
       },
       "CreatePropertyRequest": {
         "type": "object",
         "required": [
-          "title",
-          "description",
+          "name",
           "price",
-          "location",
-          "propertyType"
+          "country",
+          "state",
+          "city",
+          "category",
+          "property_use",
+          "payment_plan",
+          "type",
+          "agent"
         ],
         "properties": {
-          "title": {
+          "name": {
             "type": "string",
+            "minLength": 2,
+            "maxLength": 120,
             "example": "Modern 3 Bedroom Apartment"
+          },
+          "price": {
+            "type": "number",
+            "minimum": 1000,
+            "example": 250000
+          },
+          "country": {
+            "type": "string",
+            "default": "NIGERIA",
+            "example": "NIGERIA"
+          },
+          "state": {
+            "type": "string",
+            "default": "ABUJA",
+            "example": "ABUJA"
+          },
+          "city": {
+            "type": "string",
+            "example": "Metropolis"
+          },
+          "address": {
+            "type": "string",
+            "example": "123 Main Street"
+          },
+          "lat": {
+            "type": "number",
+            "example": 9.0765
+          },
+          "lng": {
+            "type": "number",
+            "example": 7.3986
           },
           "description": {
             "type": "string",
             "example": "Spacious apartment located in downtown."
           },
-          "price": {
-            "type": "number",
-            "example": 250000
-          },
-          "propertyType": {
+          "category": {
             "type": "string",
-            "example": "apartment"
+            "enum": [
+              "FLAT",
+              "APARTMENT",
+              "LAND",
+              "DUPLEX",
+              "WAREHOUSE",
+              "SHOP"
+            ],
+            "example": "APARTMENT"
           },
-          "location": {
-            "type": "object",
-            "properties": {
-              "address": {
-                "type": "string",
-                "example": "123 Main Street"
-              },
-              "city": {
-                "type": "string",
-                "example": "Metropolis"
-              },
-              "state": {
-                "type": "string",
-                "example": "NY"
-              }
-            }
+          "total_area": {
+            "type": "string",
+            "example": "150 sq meters"
           },
-          "bedrooms": {
+          "property_use": {
+            "type": "string",
+            "enum": [
+              "RESIDENTIAL",
+              "COMMERCIAL"
+            ],
+            "example": "RESIDENTIAL"
+          },
+          "payment_plan": {
+            "type": "string",
+            "enum": [
+              "PER_ANNUM",
+              "MONTHLY",
+              "PER_PLOT",
+              "PER_DAY"
+            ],
+            "example": "PER_ANNUM"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "RENT",
+              "LEASE",
+              "SALES"
+            ],
+            "example": "SALES"
+          },
+          "bedroom": {
             "type": "integer",
             "example": 3
           },
-          "bathrooms": {
+          "bathroom": {
             "type": "integer",
             "example": 2
+          },
+          "toilet": {
+            "type": "integer",
+            "example": 3
+          },
+          "parking_space": {
+            "type": "integer",
+            "example": 1
+          },
+          "furnishing": {
+            "type": "string",
+            "enum": [
+              "FURNISHED",
+              "UNFURNISHED"
+            ],
+            "example": "FURNISHED"
+          },
+          "disclaimer": {
+            "type": "string",
+            "example": "Subject to availability"
+          },
+          "amenities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "Wifi",
+              "Pool"
+            ]
           },
           "images": {
             "type": "array",
             "items": {
               "type": "string"
             }
+          },
+          "agent": {
+            "type": "string",
+            "example": "60d5ec49f1b2c811845e2111"
+          },
+          "merchant": {
+            "type": "string",
+            "example": "60d5ec49f1b2c811845e2222"
+          },
+          "is_verified": {
+            "type": "boolean",
+            "default": false
+          },
+          "is_sold": {
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -174,21 +303,60 @@
         "type": "object",
         "required": [
           "property_id",
-          "appointment_date"
+          "user_id",
+          "agent_id",
+          "date",
+          "time"
         ],
         "properties": {
           "property_id": {
             "type": "string",
             "example": "60d5ec49f1b2c811845e2111"
           },
-          "appointment_date": {
+          "user_id": {
             "type": "string",
-            "format": "date-time",
-            "example": "2026-08-01T10:00:00.000Z"
+            "example": "60d5ec49f1b2c811845e2222"
           },
-          "notes": {
+          "agent_id": {
+            "type": "string",
+            "example": "60d5ec49f1b2c811845e3333"
+          },
+          "date": {
+            "type": "string",
+            "example": "2026-08-05"
+          },
+          "time": {
+            "type": "object",
+            "required": [
+              "from",
+              "to"
+            ],
+            "properties": {
+              "from": {
+                "type": "string",
+                "example": "10:00"
+              },
+              "to": {
+                "type": "string",
+                "example": "11:00"
+              }
+            }
+          },
+          "msg": {
             "type": "string",
             "example": "Interested in morning viewing"
+          },
+          "agent_completed": {
+            "type": "boolean",
+            "default": false
+          },
+          "user_completed": {
+            "type": "boolean",
+            "default": false
+          },
+          "confirmed": {
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -196,22 +364,22 @@
         "type": "object",
         "required": [
           "property_id",
-          "rating",
-          "comment"
+          "user_id",
+          "text"
         ],
         "properties": {
           "property_id": {
             "type": "string",
             "example": "60d5ec49f1b2c811845e2111"
           },
-          "rating": {
-            "type": "integer",
-            "minimum": 1,
-            "maximum": 5,
-            "example": 5
-          },
-          "comment": {
+          "user_id": {
             "type": "string",
+            "example": "60d5ec49f1b2c811845e2222"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 1000,
             "example": "Great location and wonderful neighborhood!"
           }
         }
@@ -219,9 +387,14 @@
       "CreateWishlistRequest": {
         "type": "object",
         "required": [
+          "user_id",
           "property_id"
         ],
         "properties": {
+          "user_id": {
+            "type": "string",
+            "example": "60d5ec49f1b2c811845e2222"
+          },
           "property_id": {
             "type": "string",
             "example": "60d5ec49f1b2c811845e2111"
@@ -594,6 +767,112 @@
             }
           }
         }
+      },
+      "CreateAgentRequest": {
+        "type": "object",
+        "required": [
+          "full_name",
+          "email",
+          "phone"
+        ],
+        "properties": {
+          "full_name": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 100,
+            "example": "Jane Agent"
+          },
+          "company": {
+            "type": "string",
+            "maxLength": 100,
+            "example": "Filon Realty"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "example": "jane@example.com"
+          },
+          "phone": {
+            "type": "string",
+            "example": "+1234567890"
+          },
+          "password": {
+            "type": "string",
+            "example": "Password123!"
+          },
+          "password_hash": {
+            "type": "string",
+            "example": "$2a$10$..."
+          },
+          "avatar": {
+            "type": "string",
+            "format": "uri",
+            "example": "https://example.com/avatar.png"
+          },
+          "merchant": {
+            "type": "string",
+            "example": "60d5ec49f1b2c811845e2222"
+          },
+          "is_verified": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      },
+      "CreateMerchantRequest": {
+        "type": "object",
+        "required": [
+          "full_name",
+          "email",
+          "phone"
+        ],
+        "properties": {
+          "full_name": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 100,
+            "example": "Acme Merchants Ltd"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "example": "merchant@example.com"
+          },
+          "phone": {
+            "type": "string",
+            "example": "+1234567890"
+          },
+          "password": {
+            "type": "string",
+            "example": "Password123!"
+          },
+          "password_hash": {
+            "type": "string",
+            "example": "$2a$10$..."
+          },
+          "avatar": {
+            "type": "string",
+            "format": "uri",
+            "example": "https://example.com/avatar.png"
+          }
+        }
+      },
+      "VerifyAgentRequest": {
+        "type": "object",
+        "required": [
+          "agent_id",
+          "is_verified"
+        ],
+        "properties": {
+          "agent_id": {
+            "type": "string",
+            "example": "60d5ec49f1b2c811845e3333"
+          },
+          "is_verified": {
+            "type": "boolean",
+            "example": true
+          }
+        }
       }
     }
   },
@@ -652,6 +931,7 @@
         ],
         "summary": "Get All Properties",
         "description": "Retrieve property listings with optional search, sorting, and pagination filters",
+        "security": [],
         "parameters": [
           {
             "name": "page",
@@ -677,17 +957,66 @@
             }
           },
           {
-            "name": "minPrice",
+            "name": "verified",
             "in": "query",
             "schema": {
-              "type": "number"
+              "type": "string",
+              "enum": [
+                "true",
+                "false"
+              ]
             }
           },
           {
-            "name": "maxPrice",
+            "name": "agent",
             "in": "query",
             "schema": {
-              "type": "number"
+              "type": "string"
+            }
+          },
+          {
+            "name": "merchant",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "category",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "FLAT",
+                "APARTMENT",
+                "LAND",
+                "DUPLEX",
+                "WAREHOUSE",
+                "SHOP"
+              ]
+            }
+          },
+          {
+            "name": "property_use",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "RESIDENTIAL",
+                "COMMERCIAL"
+              ]
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "RENT",
+                "LEASE",
+                "SALES"
+              ]
             }
           }
         ],
@@ -731,8 +1060,15 @@
             "application/json": {
               "schema": {
                 "type": "object",
+                "required": [
+                  "property_id",
+                  "user_id"
+                ],
                 "properties": {
                   "property_id": {
+                    "type": "string"
+                  },
+                  "user_id": {
                     "type": "string"
                   }
                 }
@@ -753,6 +1089,7 @@
           "Properties"
         ],
         "summary": "Get Property Details",
+        "security": [],
         "parameters": [
           {
             "name": "property_id",
@@ -1075,6 +1412,7 @@
           "Agents"
         ],
         "summary": "Get All Agents",
+        "security": [],
         "responses": {
           "200": {
             "description": "Agents retrieved successfully"
@@ -1086,6 +1424,17 @@
           "Agents"
         ],
         "summary": "Register Agent",
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAgentRequest"
+              }
+            }
+          }
+        },
         "responses": {
           "201": {
             "description": "Agent created successfully"
@@ -1174,6 +1523,7 @@
           "Merchants"
         ],
         "summary": "Get All Merchants",
+        "security": [],
         "responses": {
           "200": {
             "description": "Merchants retrieved successfully"
@@ -1186,6 +1536,16 @@
         ],
         "summary": "Register Merchant",
         "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMerchantRequest"
+              }
+            }
+          }
+        },
         "responses": {
           "201": {
             "description": "Merchant registered successfully"
@@ -1199,6 +1559,17 @@
           "Merchants"
         ],
         "summary": "Get Merchant Agents",
+        "security": [],
+        "parameters": [
+          {
+            "name": "merchant_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Merchant agents retrieved"
@@ -1210,6 +1581,16 @@
           "Merchants"
         ],
         "summary": "Create Agent under Merchant",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAgentRequest"
+              }
+            }
+          }
+        },
         "responses": {
           "201": {
             "description": "Agent created"
@@ -1223,6 +1604,16 @@
           "Merchants"
         ],
         "summary": "Verify Agent status",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyAgentRequest"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "Agent verified"
@@ -1406,6 +1797,7 @@
           "Reviews"
         ],
         "summary": "Get Property Reviews",
+        "security": [],
         "responses": {
           "200": {
             "description": "Reviews retrieved successfully"
@@ -1485,6 +1877,7 @@
         ],
         "summary": "Get Notifications",
         "description": "Retrieve notifications for the authenticated user, guest, or scoped recipient.",
+        "security": [],
         "parameters": [
           {
             "name": "page",
@@ -1583,6 +1976,7 @@
           "Notifications"
         ],
         "summary": "Mark Notification as Read",
+        "security": [],
         "parameters": [
           {
             "name": "id",
