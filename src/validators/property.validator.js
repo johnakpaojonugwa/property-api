@@ -28,3 +28,33 @@ export const createPropertySchema = Joi.object({
   is_verified: Joi.boolean().optional(),
   is_sold: Joi.boolean().optional(),
 }).unknown(false);
+
+export const updatePropertySchema = Joi.object({
+  name: Joi.string().trim().min(2).max(120).optional(),
+  price: Joi.number().positive().optional(),
+  country: Joi.string().trim().optional(),
+  state: Joi.string().trim().optional(),
+  city: Joi.string().trim().optional(),
+  lat: Joi.number().optional(),
+  lng: Joi.number().optional(),
+  address: Joi.string().trim().optional(),
+  description: Joi.string().trim().optional(),
+  category: Joi.string().valid('FLAT', 'APARTMENT', 'LAND', 'DUPLEX', 'WAREHOUSE', 'SHOP').optional(),
+  total_area: Joi.string().trim().optional(),
+  property_use: Joi.string().valid('RESIDENTIAL', 'COMMERCIAL').optional(),
+  payment_plan: Joi.string().valid('PER_ANNUM', 'MONTHLY', 'PER_PLOT', 'PER_DAY').optional(),
+  type: Joi.string().valid('RENT', 'LEASE', 'SALES').optional(),
+  bedroom: Joi.number().integer().min(0).optional(),
+  bathroom: Joi.number().integer().min(0).optional(),
+  toilet: Joi.number().integer().min(0).optional(),
+  parking_space: Joi.number().integer().min(0).optional(),
+  furnishing: Joi.string().valid('FURNISHED', 'UNFURNISHED').optional(),
+  disclaimer: Joi.string().trim().optional(),
+  amenities: Joi.array().items(Joi.string()).optional(),
+  images: Joi.array().items(Joi.string()).optional(),
+  agent: Joi.string().optional(),
+  merchant: Joi.string().optional(),
+  is_verified: Joi.boolean().optional(),
+  is_sold: Joi.boolean().optional(),
+}).unknown(false);
+

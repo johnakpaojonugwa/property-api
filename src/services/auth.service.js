@@ -131,14 +131,19 @@ const forgotPassword = async (email) => {
   const token = crypto.randomBytes(32).toString('hex');
   const expires_at = new Date(Date.now() + 15 * 60 * 1000); // 15 minutes
 
-  await Token.create({
+  const createdToken = await Token.create({
     email: normalizedEmail,
     token,
     expires_at,
   });
 
-  // Return the token (in production, this would be emailed)
-  return { token, email: normalizedEmail };
+  const isTest = (process.env.NODE_ENV === 'test' || process.env.VITEST) && process.env.NODE_ENV !== 'production';
+
+  // Return the token only in test mode. Otherwise, redact it.
+  return {
+    token: isTest ? token : '[REDACTED]',
+    email: normalizedEmail,
+  };
 };
 
 const resetPassword = async (token, newPassword) => {

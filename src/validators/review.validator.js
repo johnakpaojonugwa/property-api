@@ -5,3 +5,8 @@ export const createReviewSchema = Joi.object({
   user_id: Joi.string().required(),
   text: Joi.string().trim().min(3).max(1000).required(),
 }).unknown(false);
+
+export const updateReviewSchema = Joi.object({
+  text: Joi.string().trim().min(3).max(1000).required(),
+}).unknown(false);
+

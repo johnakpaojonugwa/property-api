@@ -37,6 +37,7 @@ const agentSchema = new mongoose.Schema(
     avatar: { type: String, default: '' },
     merchant: { type: mongoose.Schema.Types.ObjectId, ref: 'Merchant' },
     is_verified: { type: Boolean, default: false },
+    isActive: { type: Boolean, default: true },
   },
   { timestamps: true },
 );

@@ -12,3 +12,9 @@ export const createMerchantSchema = Joi.object({
 export const verifyMerchantSchema = Joi.object({
   is_verified: Joi.boolean().required(),
 });
+
+export const verifyAgentSchema = Joi.object({
+  agent_id: Joi.string().required(),
+  is_verified: Joi.boolean().required(),
+}).unknown(false);
+

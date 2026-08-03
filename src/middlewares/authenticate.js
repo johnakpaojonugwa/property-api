@@ -47,13 +47,16 @@ export const authenticate = async (req, res, next) => {
           if (actorType === 'USER' || actorType === 'ADMIN') {
             principal = await User.findById(decoded.id).select('isActive').lean();
           } else if (actorType === 'AGENT') {
-            principal = await Agent.findById(decoded.id).select('is_verified').lean();
+            principal = await Agent.findById(decoded.id).select('isActive').lean();
           } else if (actorType === 'MERCHANT') {
-            principal = await Merchant.findById(decoded.id).select('is_verified').lean();
+            principal = await Merchant.findById(decoded.id).select('isActive').lean();
           }
         }
         
-        if (principal && principal.isActive === false) {
+        if (!principal) {
+          return next(ApiError.unauthorized('User account no longer exists'));
+        }
+        if (principal.isActive === false) {
           return next(ApiError.forbidden('Your account is deactivated or banned'));
         }
       }
@@ -119,14 +122,14 @@ export const optionalAuthenticate = async (req, res, next) => {
           if (actorType === 'USER' || actorType === 'ADMIN') {
             principal = await User.findById(decoded.id).select('isActive').lean();
           } else if (actorType === 'AGENT') {
-            principal = await Agent.findById(decoded.id).select('is_verified').lean();
+            principal = await Agent.findById(decoded.id).select('isActive').lean();
           } else if (actorType === 'MERCHANT') {
-            principal = await Merchant.findById(decoded.id).select('is_verified').lean();
+            principal = await Merchant.findById(decoded.id).select('isActive').lean();
           }
         }
         
-        if (principal && principal.isActive === false) {
-          req.actor = null; // Clear actor if banned
+        if (!principal || principal.isActive === false) {
+          req.actor = null; // Clear actor if banned or deleted
         }
       }
     }

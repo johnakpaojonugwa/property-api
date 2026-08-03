@@ -1,6 +1,8 @@
 import express from 'express';
 import { authenticate, optionalAuthenticate } from '../middlewares/authenticate.js';
 import { injectGuestActor, rbacGuard } from '../middlewares/rbac.middleware.js';
+import validate from '../middlewares/validate.js';
+import { broadcastNotificationSchema, updatePreferencesSchema } from '../validators/notification.validator.js';
 import {
   getNotifications,
   markAsRead,
@@ -33,6 +35,7 @@ router.post(
   '/admin/notifications/broadcast',
   authenticate,
   rbacGuard('create'),
+  validate(broadcastNotificationSchema),
   broadcastNotification
 );
 
@@ -41,6 +44,7 @@ router.put(
   '/notifications/preferences',
   authenticate,
   rbacGuard('preferences'),
+  validate(updatePreferencesSchema),
   updatePreferences
 );
 
