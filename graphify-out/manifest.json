@@ -455,9 +455,9 @@
     "semantic_hash": ""
   },
   "src/middlewares/authorize.js": {
-    "mtime": 1785438992.3981743,
-    "ast_hash": "c4576ef7b1f7a43b748e50b529df4875",
-    "semantic_hash": "c4576ef7b1f7a43b748e50b529df4875"
+    "mtime": 1785787885.8956268,
+    "ast_hash": "0477047d3e6eb0d394b8c5a7f6cbe576",
+    "semantic_hash": ""
   },
   "src/middlewares/cookieSecurity.js": {
     "mtime": 1783646754.211699,
@@ -620,9 +620,9 @@
     "semantic_hash": ""
   },
   "src/routes/user.routes.js": {
-    "mtime": 1785440099.1877675,
-    "ast_hash": "76386ea121eede30041dc60e19f3d04e",
-    "semantic_hash": "76386ea121eede30041dc60e19f3d04e"
+    "mtime": 1785787904.7856581,
+    "ast_hash": "0c800accbece43a25e2db4b893448dcb",
+    "semantic_hash": ""
   },
   "src/routes/wishlist.routes.js": {
     "mtime": 1785420472.9166477,
@@ -680,8 +680,8 @@
     "semantic_hash": ""
   },
   "src/services/user.service.js": {
-    "mtime": 1785492060.3198943,
-    "ast_hash": "57b4bdb69be1d38be93d582f5368e731",
+    "mtime": 1785787924.566027,
+    "ast_hash": "58c3b86976f227b339122a24a25cd639",
     "semantic_hash": ""
   },
   "src/services/wishlist.service.js": {

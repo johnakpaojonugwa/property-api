@@ -22,9 +22,9 @@ export const ensureOwnerOrAdmin = (paramName = 'user_id') => (req, res, next) =>
 
   const targetId = req.params[paramName];
   const isOwner = targetId && (actor.id === targetId || actor._id?.toString() === targetId);
-  const isAdmin = actor.role === 'ADMIN' || actor.type === 'ADMIN';
+  const isAdminOrMerchant = actor.role === 'ADMIN' || actor.type === 'ADMIN' || actor.role === 'MERCHANT' || actor.type === 'MERCHANT';
 
-  if (!isOwner && !isAdmin) {
+  if (!isOwner && !isAdminOrMerchant) {
     return next(ApiError.forbidden('You do not have permission to access this resource'));
   }
 

@@ -40,7 +40,7 @@ const getUsers = async (query = {}) => {
 };
 
 const getUserById = async (id, actor) => {
-  if (actor && actor.role !== 'ADMIN' && id !== actor.id) {
+  if (actor && actor.role !== 'ADMIN' && actor.role !== 'MERCHANT' && id !== actor.id) {
     throw ApiError.forbidden('You do not have permission to view this user information');
   }
   if (mongoose.connection.readyState !== 1) {
@@ -54,7 +54,7 @@ const getUserById = async (id, actor) => {
 };
 
 const getUserWishlist = async (user_id, actor) => {
-  if (actor && actor.role !== 'ADMIN' && user_id !== actor.id) {
+  if (actor && actor.role !== 'ADMIN' && actor.role !== 'MERCHANT' && user_id !== actor.id) {
     throw ApiError.forbidden('You do not have permission to view this wishlist');
   }
   if (mongoose.connection.readyState !== 1) {
@@ -64,7 +64,7 @@ const getUserWishlist = async (user_id, actor) => {
 };
 
 const getUserProperties = async (user_id, actor) => {
-  if (actor && actor.role !== 'ADMIN' && user_id !== actor.id) {
+  if (actor && actor.role !== 'ADMIN' && actor.role !== 'MERCHANT' && user_id !== actor.id) {
     throw ApiError.forbidden('You do not have permission to view these properties');
   }
   if (mongoose.connection.readyState !== 1) {
@@ -77,10 +77,10 @@ const updateUser = async (id, data, actor) => {
   if (!actor) {
     throw ApiError.unauthorized('Authentication required');
   }
-  if (id !== actor.id && actor.role !== 'ADMIN') {
+  if (id !== actor.id && actor.role !== 'ADMIN' && actor.role !== 'MERCHANT') {
     throw ApiError.forbidden('You do not have permission to update this user');
   }
-  if (actor.role !== 'ADMIN') {
+  if (actor.role !== 'ADMIN' && actor.role !== 'MERCHANT') {
     delete data.role;
     delete data.type;
   }
@@ -98,7 +98,7 @@ const updateUserResource = async (id, data = {}, file = null, actor) => {
   if (!actor) {
     throw ApiError.unauthorized('Authentication required');
   }
-  if (id !== actor.id && actor.role !== 'ADMIN') {
+  if (id !== actor.id && actor.role !== 'ADMIN' && actor.role !== 'MERCHANT') {
     throw ApiError.forbidden('You do not have permission to update this user resource');
   }
 
@@ -125,7 +125,7 @@ const deleteUser = async (id, actor) => {
   if (!actor) {
     throw ApiError.unauthorized('Authentication required');
   }
-  if (id !== actor.id && actor.role !== 'ADMIN') {
+  if (id !== actor.id && actor.role !== 'ADMIN' && actor.role !== 'MERCHANT') {
     throw ApiError.forbidden('You do not have permission to delete this user');
   }
   if (mongoose.connection.readyState !== 1) {
