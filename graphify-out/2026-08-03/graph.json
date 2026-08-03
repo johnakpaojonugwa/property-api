@@ -230,8 +230,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "package_dependencies_cloudinary",
-      "community": 38,
-      "community_name": "cloudinary",
+      "community": 11,
+      "community_name": "dependencies",
       "norm_label": "cloudinary"
     },
     {
@@ -241,8 +241,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "cloudinary",
-      "community": 38,
-      "community_name": "cloudinary",
+      "community": 11,
+      "community_name": "dependencies",
       "norm_label": "cloudinary"
     },
     {
@@ -274,8 +274,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "package_dependencies_cors",
-      "community": 11,
-      "community_name": "dependencies",
+      "community": 47,
+      "community_name": "cors",
       "norm_label": "cors"
     },
     {
@@ -285,8 +285,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "cors",
-      "community": 11,
-      "community_name": "dependencies",
+      "community": 47,
+      "community_name": "cors",
       "norm_label": "cors"
     },
     {
@@ -774,14 +774,36 @@
       "norm_label": "@scarf/scarf@1.4.0"
     },
     {
+      "label": "audit-hardening.test.js",
+      "file_type": "code",
+      "source_file": "src/__tests__/audit-hardening.test.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_tests_audit_hardening_test",
+      "community": 5,
+      "community_name": "ApiError",
+      "norm_label": "audit-hardening.test.js"
+    },
+    {
+      "label": "generateTestToken()",
+      "file_type": "code",
+      "source_file": "src/__tests__/audit-hardening.test.js",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "src_tests_audit_hardening_test_generatetesttoken",
+      "community": 5,
+      "community_name": "ApiError",
+      "norm_label": "generatetesttoken()"
+    },
+    {
       "label": "auth-hardening.test.js",
       "file_type": "code",
       "source_file": "src/__tests__/auth-hardening.test.js",
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_auth_hardening_test",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 16,
+      "community_name": "env.js",
       "norm_label": "auth-hardening.test.js"
     },
     {
@@ -802,8 +824,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_merchant_verification_test",
-      "community": 0,
-      "community_name": "app.js",
+      "community": 16,
+      "community_name": "env.js",
       "norm_label": "merchant-verification.test.js"
     },
     {
@@ -813,8 +835,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_tests_merchant_verification_test_generatetoken",
-      "community": 0,
-      "community_name": "app.js",
+      "community": 16,
+      "community_name": "env.js",
       "norm_label": "generatetoken()"
     },
     {
@@ -824,8 +846,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_notification_e2e_test",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "notification-e2e.test.js"
     },
     {
@@ -836,7 +858,7 @@
       "_origin": "ast",
       "id": "src_tests_notification_test",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "notification.test.js"
     },
     {
@@ -847,7 +869,7 @@
       "_origin": "ast",
       "id": "src_tests_notification_test_generatetoken",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "generatetoken()"
     },
     {
@@ -858,7 +880,7 @@
       "_origin": "ast",
       "id": "src_tests_phase10_test",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "phase10.test.js"
     },
     {
@@ -869,7 +891,7 @@
       "_origin": "ast",
       "id": "src_tests_phase11_test",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "phase11.test.js"
     },
     {
@@ -880,7 +902,7 @@
       "_origin": "ast",
       "id": "src_tests_phase12_test",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "phase12.test.js"
     },
     {
@@ -891,7 +913,7 @@
       "_origin": "ast",
       "id": "src_tests_phase13_test",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "phase13.test.js"
     },
     {
@@ -902,7 +924,7 @@
       "_origin": "ast",
       "id": "src_tests_phase14_test",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "phase14.test.js"
     },
     {
@@ -968,7 +990,7 @@
       "_origin": "ast",
       "id": "src_tests_phase2_test",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "phase2.test.js"
     },
     {
@@ -1044,8 +1066,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_phase26_test",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 5,
+      "community_name": "ApiError",
       "norm_label": "phase26.test.js"
     },
     {
@@ -1055,8 +1077,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_phase27_test",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 1,
+      "community_name": "authenticate.js",
       "norm_label": "phase27.test.js"
     },
     {
@@ -1066,8 +1088,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_phase28_test",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "phase28.test.js"
     },
     {
@@ -1088,8 +1110,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_phase3_test",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 1,
+      "community_name": "authenticate.js",
       "norm_label": "phase3.test.js"
     },
     {
@@ -1209,8 +1231,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_phase4_test",
-      "community": 16,
-      "community_name": "auth.routes.js",
+      "community": 1,
+      "community_name": "authenticate.js",
       "norm_label": "phase4.test.js"
     },
     {
@@ -1331,7 +1353,7 @@
       "_origin": "ast",
       "id": "src_tests_phase5_test",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "phase5.test.js"
     },
     {
@@ -1452,7 +1474,7 @@
       "_origin": "ast",
       "id": "src_tests_phase6_test",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "phase6.test.js"
     },
     {
@@ -1605,8 +1627,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_rbac_test",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 16,
+      "community_name": "env.js",
       "norm_label": "rbac.test.js"
     },
     {
@@ -1616,8 +1638,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_tests_rbac_test_generatetoken",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 16,
+      "community_name": "env.js",
       "norm_label": "generatetoken()"
     },
     {
@@ -1627,8 +1649,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_security_test",
-      "community": 0,
-      "community_name": "app.js",
+      "community": 16,
+      "community_name": "env.js",
       "norm_label": "security.test.js"
     },
     {
@@ -1638,8 +1660,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_tests_security_test_generatetesttoken",
-      "community": 0,
-      "community_name": "app.js",
+      "community": 16,
+      "community_name": "env.js",
       "norm_label": "generatetesttoken()"
     },
     {
@@ -1705,7 +1727,7 @@
       "_origin": "ast",
       "id": "src_config_db",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "db.js"
     },
     {
@@ -1716,7 +1738,7 @@
       "_origin": "ast",
       "id": "src_config_db_sanitizeuri",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "sanitizeuri()"
     },
     {
@@ -1727,7 +1749,7 @@
       "_origin": "ast",
       "id": "src_config_db_connectdb",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "connectdb()"
     },
     {
@@ -1738,7 +1760,7 @@
       "_origin": "ast",
       "id": "src_config_db_disconnectdb",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "disconnectdb()"
     },
     {
@@ -1748,8 +1770,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_config_env",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 16,
+      "community_name": "env.js",
       "norm_label": "env.js"
     },
     {
@@ -1759,8 +1781,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_config_env_parseport",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 16,
+      "community_name": "env.js",
       "norm_label": "parseport()"
     },
     {
@@ -1770,8 +1792,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_config_env_requiredenv",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 16,
+      "community_name": "env.js",
       "norm_label": "requiredenv"
     },
     {
@@ -1781,8 +1803,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_config_env_validnodeenvs",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 16,
+      "community_name": "env.js",
       "norm_label": "validnodeenvs"
     },
     {
@@ -1792,8 +1814,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "src_config_env_env",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 16,
+      "community_name": "env.js",
       "norm_label": "env"
     },
     {
@@ -1803,8 +1825,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_config_swagger",
-      "community": 0,
-      "community_name": "app.js",
+      "community": 38,
+      "community_name": "swagger.js",
       "norm_label": "swagger.js"
     },
     {
@@ -1814,8 +1836,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_config_swagger_filename",
-      "community": 0,
-      "community_name": "app.js",
+      "community": 38,
+      "community_name": "swagger.js",
       "norm_label": "__filename"
     },
     {
@@ -1825,8 +1847,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_config_swagger_dirname",
-      "community": 0,
-      "community_name": "app.js",
+      "community": 38,
+      "community_name": "swagger.js",
       "norm_label": "__dirname"
     },
     {
@@ -1836,8 +1858,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_config_swagger_swaggerpath",
-      "community": 0,
-      "community_name": "app.js",
+      "community": 38,
+      "community_name": "swagger.js",
       "norm_label": "swaggerpath"
     },
     {
@@ -1847,8 +1869,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_config_swagger_swaggerspec",
-      "community": 0,
-      "community_name": "app.js",
+      "community": 38,
+      "community_name": "swagger.js",
       "norm_label": "swaggerspec"
     },
     {
@@ -1858,8 +1880,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "src_config_swagger_setupswagger",
-      "community": 0,
-      "community_name": "app.js",
+      "community": 38,
+      "community_name": "swagger.js",
       "norm_label": "setupswagger()"
     },
     {
@@ -2508,7 +2530,7 @@
       "_origin": "ast",
       "id": "src_controllers_auth_controller",
       "community": 40,
-      "community_name": "authenticate",
+      "community_name": "ApiResponse",
       "norm_label": "auth.controller.js"
     },
     {
@@ -2519,7 +2541,7 @@
       "_origin": "ast",
       "id": "src_controllers_auth_controller_login",
       "community": 40,
-      "community_name": "authenticate",
+      "community_name": "ApiResponse",
       "norm_label": "login"
     },
     {
@@ -2530,7 +2552,7 @@
       "_origin": "ast",
       "id": "src_controllers_auth_controller_createtoken",
       "community": 40,
-      "community_name": "authenticate",
+      "community_name": "ApiResponse",
       "norm_label": "createtoken"
     },
     {
@@ -2541,7 +2563,7 @@
       "_origin": "ast",
       "id": "src_controllers_auth_controller_forgotpassword",
       "community": 40,
-      "community_name": "authenticate",
+      "community_name": "ApiResponse",
       "norm_label": "forgotpassword"
     },
     {
@@ -2552,7 +2574,7 @@
       "_origin": "ast",
       "id": "src_controllers_auth_controller_resetpassword",
       "community": 40,
-      "community_name": "authenticate",
+      "community_name": "ApiResponse",
       "norm_label": "resetpassword"
     },
     {
@@ -2562,7 +2584,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_controllers_merchant_controller",
-      "community": 4,
+      "community": 19,
       "community_name": "merchant.controller.js",
       "norm_label": "merchant.controller.js"
     },
@@ -2573,7 +2595,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_controllers_merchant_controller_createmerchant",
-      "community": 4,
+      "community": 19,
       "community_name": "merchant.controller.js",
       "norm_label": "createmerchant"
     },
@@ -2584,7 +2606,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_controllers_merchant_controller_getmerchants",
-      "community": 4,
+      "community": 19,
       "community_name": "merchant.controller.js",
       "norm_label": "getmerchants"
     },
@@ -2595,7 +2617,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "src_controllers_merchant_controller_getmerchantagents",
-      "community": 4,
+      "community": 19,
       "community_name": "merchant.controller.js",
       "norm_label": "getmerchantagents"
     },
@@ -2606,7 +2628,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "src_controllers_merchant_controller_getmerchantwishlist",
-      "community": 4,
+      "community": 19,
       "community_name": "merchant.controller.js",
       "norm_label": "getmerchantwishlist"
     },
@@ -2617,7 +2639,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "src_controllers_merchant_controller_createagentbymerchant",
-      "community": 4,
+      "community": 19,
       "community_name": "merchant.controller.js",
       "norm_label": "createagentbymerchant"
     },
@@ -2628,7 +2650,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "src_controllers_merchant_controller_verifyagent",
-      "community": 4,
+      "community": 19,
       "community_name": "merchant.controller.js",
       "norm_label": "verifyagent"
     },
@@ -2639,7 +2661,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_controllers_notification_controller",
-      "community": 19,
+      "community": 3,
       "community_name": "notification.controller.js",
       "norm_label": "notification.controller.js"
     },
@@ -2650,7 +2672,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_controllers_notification_controller_getnotifications",
-      "community": 19,
+      "community": 3,
       "community_name": "notification.controller.js",
       "norm_label": "getnotifications()"
     },
@@ -2661,7 +2683,7 @@
       "source_location": "L117",
       "_origin": "ast",
       "id": "src_controllers_notification_controller_markasread",
-      "community": 19,
+      "community": 3,
       "community_name": "notification.controller.js",
       "norm_label": "markasread()"
     },
@@ -2672,7 +2694,7 @@
       "source_location": "L132",
       "_origin": "ast",
       "id": "src_controllers_notification_controller_broadcastnotification",
-      "community": 19,
+      "community": 3,
       "community_name": "notification.controller.js",
       "norm_label": "broadcastnotification()"
     },
@@ -2683,7 +2705,7 @@
       "source_location": "L203",
       "_origin": "ast",
       "id": "src_controllers_notification_controller_updatepreferences",
-      "community": 19,
+      "community": 3,
       "community_name": "notification.controller.js",
       "norm_label": "updatepreferences()"
     },
@@ -2794,7 +2816,7 @@
       "_origin": "ast",
       "id": "src_controllers_review_controller",
       "community": 4,
-      "community_name": "merchant.controller.js",
+      "community_name": "asyncHandler.js",
       "norm_label": "review.controller.js"
     },
     {
@@ -2805,7 +2827,7 @@
       "_origin": "ast",
       "id": "src_controllers_review_controller_createreview",
       "community": 4,
-      "community_name": "merchant.controller.js",
+      "community_name": "asyncHandler.js",
       "norm_label": "createreview"
     },
     {
@@ -2816,7 +2838,7 @@
       "_origin": "ast",
       "id": "src_controllers_review_controller_getreviews",
       "community": 4,
-      "community_name": "merchant.controller.js",
+      "community_name": "asyncHandler.js",
       "norm_label": "getreviews"
     },
     {
@@ -2827,7 +2849,7 @@
       "_origin": "ast",
       "id": "src_controllers_review_controller_updatereview",
       "community": 4,
-      "community_name": "merchant.controller.js",
+      "community_name": "asyncHandler.js",
       "norm_label": "updatereview"
     },
     {
@@ -2838,7 +2860,7 @@
       "_origin": "ast",
       "id": "src_controllers_review_controller_deletereview",
       "community": 4,
-      "community_name": "merchant.controller.js",
+      "community_name": "asyncHandler.js",
       "norm_label": "deletereview"
     },
     {
@@ -2947,8 +2969,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_controllers_wishlist_controller",
-      "community": 40,
-      "community_name": "authenticate",
+      "community": 4,
+      "community_name": "asyncHandler.js",
       "norm_label": "wishlist.controller.js"
     },
     {
@@ -2958,8 +2980,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_controllers_wishlist_controller_createwishlist",
-      "community": 40,
-      "community_name": "authenticate",
+      "community": 4,
+      "community_name": "asyncHandler.js",
       "norm_label": "createwishlist"
     },
     {
@@ -2969,8 +2991,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_middlewares_authlimiter",
-      "community": 16,
-      "community_name": "auth.routes.js",
+      "community": 40,
+      "community_name": "ApiResponse",
       "norm_label": "authlimiter.js"
     },
     {
@@ -2980,8 +3002,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_middlewares_authlimiter_authlimiter",
-      "community": 16,
-      "community_name": "auth.routes.js",
+      "community": 40,
+      "community_name": "ApiResponse",
       "norm_label": "authlimiter"
     },
     {
@@ -2991,8 +3013,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_middlewares_authenticate",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 1,
+      "community_name": "authenticate.js",
       "norm_label": "authenticate.js"
     },
     {
@@ -3002,19 +3024,19 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_middlewares_authenticate_authenticate",
-      "community": 40,
-      "community_name": "authenticate",
+      "community": 1,
+      "community_name": "authenticate.js",
       "norm_label": "authenticate()"
     },
     {
       "label": "optionalAuthenticate()",
       "file_type": "code",
       "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L90",
+      "source_location": "L93",
       "_origin": "ast",
       "id": "src_middlewares_authenticate_optionalauthenticate",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "optionalauthenticate()"
     },
     {
@@ -3025,7 +3047,7 @@
       "_origin": "ast",
       "id": "src_middlewares_authorize",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "authorize.js"
     },
     {
@@ -3036,7 +3058,7 @@
       "_origin": "ast",
       "id": "src_middlewares_authorize_authorize",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "authorize()"
     },
     {
@@ -3057,8 +3079,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_middlewares_cookiesecurity",
-      "community": 0,
-      "community_name": "app.js",
+      "community": 48,
+      "community_name": "cookieSecurity.js",
       "norm_label": "cookiesecurity.js"
     },
     {
@@ -3068,8 +3090,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_middlewares_cookiesecurity_cookiesecurity",
-      "community": 0,
-      "community_name": "app.js",
+      "community": 48,
+      "community_name": "cookieSecurity.js",
       "norm_label": "cookiesecurity()"
     },
     {
@@ -3079,8 +3101,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_middlewares_errorhandler",
-      "community": 16,
-      "community_name": "auth.routes.js",
+      "community": 1,
+      "community_name": "authenticate.js",
       "norm_label": "errorhandler.js"
     },
     {
@@ -3090,8 +3112,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_middlewares_errorhandler_errorhandler",
-      "community": 16,
-      "community_name": "auth.routes.js",
+      "community": 1,
+      "community_name": "authenticate.js",
       "norm_label": "errorhandler()"
     },
     {
@@ -3123,8 +3145,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_middlewares_rbac_middleware",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "rbac.middleware.js"
     },
     {
@@ -3134,7 +3156,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_middlewares_rbac_middleware_injectguestactor",
-      "community": 19,
+      "community": 3,
       "community_name": "notification.controller.js",
       "norm_label": "injectguestactor()"
     },
@@ -3189,8 +3211,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_middlewares_requestlogger",
-      "community": 0,
-      "community_name": "app.js",
+      "community": 46,
+      "community_name": "requestLogger.js",
       "norm_label": "requestlogger.js"
     },
     {
@@ -3200,8 +3222,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_middlewares_requestlogger_masksensitive",
-      "community": 0,
-      "community_name": "app.js",
+      "community": 46,
+      "community_name": "requestLogger.js",
       "norm_label": "masksensitive()"
     },
     {
@@ -3211,8 +3233,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_middlewares_requestlogger_requestlogger",
-      "community": 0,
-      "community_name": "app.js",
+      "community": 46,
+      "community_name": "requestLogger.js",
       "norm_label": "requestlogger()"
     },
     {
@@ -3245,7 +3267,7 @@
       "_origin": "ast",
       "id": "src_middlewares_upload_middleware",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "upload.middleware.js"
     },
     {
@@ -3256,7 +3278,7 @@
       "_origin": "ast",
       "id": "src_middlewares_upload_middleware_storage",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "storage"
     },
     {
@@ -3267,7 +3289,7 @@
       "_origin": "ast",
       "id": "src_middlewares_upload_middleware_filefilter",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "filefilter()"
     },
     {
@@ -3278,7 +3300,7 @@
       "_origin": "ast",
       "id": "src_middlewares_upload_middleware_upload",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "upload"
     },
     {
@@ -3289,7 +3311,7 @@
       "_origin": "ast",
       "id": "src_middlewares_upload_middleware_uploadsingle",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "uploadsingle()"
     },
     {
@@ -3300,7 +3322,7 @@
       "_origin": "ast",
       "id": "src_middlewares_upload_middleware_uploadarray",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "uploadarray()"
     },
     {
@@ -3311,7 +3333,7 @@
       "_origin": "ast",
       "id": "src_middlewares_validate",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "validate.js"
     },
     {
@@ -3322,7 +3344,7 @@
       "_origin": "ast",
       "id": "src_middlewares_validate_validate",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "validate()"
     },
     {
@@ -3332,8 +3354,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_models_agent_model",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 5,
+      "community_name": "ApiError",
       "norm_label": "agent.model.js"
     },
     {
@@ -3343,19 +3365,19 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_models_agent_model_agentschema",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 5,
+      "community_name": "ApiError",
       "norm_label": "agentschema"
     },
     {
       "label": "Agent",
       "file_type": "code",
       "source_file": "src/models/agent.model.js",
-      "source_location": "L44",
+      "source_location": "L45",
       "_origin": "ast",
       "id": "src_models_agent_model_agent",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 5,
+      "community_name": "ApiError",
       "norm_label": "agent"
     },
     {
@@ -3365,8 +3387,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_models_appointment_model",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "appointment.model.js"
     },
     {
@@ -3376,8 +3398,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_models_appointment_model_appointmentschema",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "appointmentschema"
     },
     {
@@ -3417,11 +3439,11 @@
       "label": "Merchant",
       "file_type": "code",
       "source_file": "src/models/merchant.model.js",
-      "source_location": "L32",
+      "source_location": "L33",
       "_origin": "ast",
       "id": "src_models_merchant_model_merchant",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 1,
+      "community_name": "authenticate.js",
       "norm_label": "merchant"
     },
     {
@@ -3432,7 +3454,7 @@
       "_origin": "ast",
       "id": "src_models_notification_model",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "notification.model.js"
     },
     {
@@ -3443,7 +3465,7 @@
       "_origin": "ast",
       "id": "src_models_notification_model_actionschema",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "actionschema"
     },
     {
@@ -3454,7 +3476,7 @@
       "_origin": "ast",
       "id": "src_models_notification_model_deliverystatusschema",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "deliverystatusschema"
     },
     {
@@ -3465,7 +3487,7 @@
       "_origin": "ast",
       "id": "src_models_notification_model_notificationschema",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "notificationschema"
     },
     {
@@ -3475,7 +3497,7 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "src_models_notification_model_notification",
-      "community": 19,
+      "community": 3,
       "community_name": "notification.controller.js",
       "norm_label": "notification"
     },
@@ -3486,7 +3508,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_models_notificationauditlog_model",
-      "community": 19,
+      "community": 3,
       "community_name": "notification.controller.js",
       "norm_label": "notificationauditlog.model.js"
     },
@@ -3497,7 +3519,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_models_notificationauditlog_model_notificationauditlogschema",
-      "community": 19,
+      "community": 3,
       "community_name": "notification.controller.js",
       "norm_label": "notificationauditlogschema"
     },
@@ -3508,7 +3530,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "src_models_notificationauditlog_model_notificationauditlog",
-      "community": 19,
+      "community": 3,
       "community_name": "notification.controller.js",
       "norm_label": "notificationauditlog"
     },
@@ -3553,7 +3575,7 @@
       "_origin": "ast",
       "id": "src_models_notificationpreference_model",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "notificationpreference.model.js"
     },
     {
@@ -3564,7 +3586,7 @@
       "_origin": "ast",
       "id": "src_models_notificationpreference_model_notificationpreferenceschema",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "notificationpreferenceschema"
     },
     {
@@ -3575,7 +3597,7 @@
       "_origin": "ast",
       "id": "src_models_notificationpreference_model_notificationpreference",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "notificationpreference"
     },
     {
@@ -3586,7 +3608,7 @@
       "_origin": "ast",
       "id": "src_models_notificationtemplate_model",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "notificationtemplate.model.js"
     },
     {
@@ -3597,7 +3619,7 @@
       "_origin": "ast",
       "id": "src_models_notificationtemplate_model_notificationtemplateschema",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "notificationtemplateschema"
     },
     {
@@ -3608,7 +3630,7 @@
       "_origin": "ast",
       "id": "src_models_notificationtemplate_model_notificationtemplate",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "notificationtemplate"
     },
     {
@@ -3618,8 +3640,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_models_property_model",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "property.model.js"
     },
     {
@@ -3629,8 +3651,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_models_property_model_propertyschema",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "propertyschema"
     },
     {
@@ -3717,8 +3739,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_models_user_model",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "user.model.js"
     },
     {
@@ -3728,8 +3750,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_models_user_model_userschema",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "userschema"
     },
     {
@@ -3784,7 +3806,7 @@
       "_origin": "ast",
       "id": "src_routes_admin_routes",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "admin.routes.js"
     },
     {
@@ -3795,7 +3817,7 @@
       "_origin": "ast",
       "id": "src_routes_admin_routes_router",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "router"
     },
     {
@@ -3806,7 +3828,7 @@
       "_origin": "ast",
       "id": "src_routes_agent_routes",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "agent.routes.js"
     },
     {
@@ -3817,7 +3839,7 @@
       "_origin": "ast",
       "id": "src_routes_agent_routes_router",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "router"
     },
     {
@@ -3828,7 +3850,7 @@
       "_origin": "ast",
       "id": "src_routes_appointment_routes",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "appointment.routes.js"
     },
     {
@@ -3839,7 +3861,7 @@
       "_origin": "ast",
       "id": "src_routes_appointment_routes_router",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "router"
     },
     {
@@ -3849,8 +3871,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_routes_auth_routes",
-      "community": 16,
-      "community_name": "auth.routes.js",
+      "community": 1,
+      "community_name": "authenticate.js",
       "norm_label": "auth.routes.js"
     },
     {
@@ -3860,8 +3882,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_routes_auth_routes_router",
-      "community": 16,
-      "community_name": "auth.routes.js",
+      "community": 1,
+      "community_name": "authenticate.js",
       "norm_label": "router"
     },
     {
@@ -3872,7 +3894,7 @@
       "_origin": "ast",
       "id": "src_routes_index",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "index.js"
     },
     {
@@ -3883,7 +3905,7 @@
       "_origin": "ast",
       "id": "src_routes_index_router",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "router"
     },
     {
@@ -3894,18 +3916,18 @@
       "_origin": "ast",
       "id": "src_routes_merchant_routes",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "merchant.routes.js"
     },
     {
       "label": "router",
       "file_type": "code",
       "source_file": "src/routes/merchant.routes.js",
-      "source_location": "L8",
+      "source_location": "L9",
       "_origin": "ast",
       "id": "src_routes_merchant_routes_router",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "router"
     },
     {
@@ -3915,7 +3937,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_routes_notification_routes",
-      "community": 19,
+      "community": 3,
       "community_name": "notification.controller.js",
       "norm_label": "notification.routes.js"
     },
@@ -3923,11 +3945,11 @@
       "label": "router",
       "file_type": "code",
       "source_file": "src/routes/notification.routes.js",
-      "source_location": "L11",
+      "source_location": "L13",
       "_origin": "ast",
       "id": "src_routes_notification_routes_router",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "router"
     },
     {
@@ -3938,7 +3960,7 @@
       "_origin": "ast",
       "id": "src_routes_property_routes",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "property.routes.js"
     },
     {
@@ -3949,7 +3971,7 @@
       "_origin": "ast",
       "id": "src_routes_property_routes_router",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "router"
     },
     {
@@ -3960,7 +3982,7 @@
       "_origin": "ast",
       "id": "src_routes_review_routes",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "review.routes.js"
     },
     {
@@ -3971,7 +3993,7 @@
       "_origin": "ast",
       "id": "src_routes_review_routes_router",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "router"
     },
     {
@@ -3981,8 +4003,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_routes_token_routes",
-      "community": 16,
-      "community_name": "auth.routes.js",
+      "community": 40,
+      "community_name": "ApiResponse",
       "norm_label": "token.routes.js"
     },
     {
@@ -3992,8 +4014,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_routes_token_routes_router",
-      "community": 16,
-      "community_name": "auth.routes.js",
+      "community": 40,
+      "community_name": "ApiResponse",
       "norm_label": "router"
     },
     {
@@ -4004,7 +4026,7 @@
       "_origin": "ast",
       "id": "src_routes_user_routes",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "user.routes.js"
     },
     {
@@ -4015,7 +4037,7 @@
       "_origin": "ast",
       "id": "src_routes_user_routes_router",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "router"
     },
     {
@@ -4026,7 +4048,7 @@
       "_origin": "ast",
       "id": "src_routes_wishlist_routes",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "wishlist.routes.js"
     },
     {
@@ -4037,7 +4059,7 @@
       "_origin": "ast",
       "id": "src_routes_wishlist_routes_router",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "router"
     },
     {
@@ -4048,7 +4070,7 @@
       "_origin": "ast",
       "id": "src_server",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "server.js"
     },
     {
@@ -4059,7 +4081,7 @@
       "_origin": "ast",
       "id": "src_server_startserver",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "startserver()"
     },
     {
@@ -4124,8 +4146,8 @@
       "source_location": "L108",
       "_origin": "ast",
       "id": "src_services_admin_service_getuserdetail",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 6,
+      "community_name": "admin.service.js",
       "norm_label": "getuserdetail()"
     },
     {
@@ -4168,8 +4190,8 @@
       "source_location": "L195",
       "_origin": "ast",
       "id": "src_services_admin_service_unbanuser",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 6,
+      "community_name": "admin.service.js",
       "norm_label": "unbanuser()"
     },
     {
@@ -4542,8 +4564,8 @@
       "source_location": "L599",
       "_origin": "ast",
       "id": "src_services_admin_service_verifymerchant",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 1,
+      "community_name": "authenticate.js",
       "norm_label": "verifymerchant()"
     },
     {
@@ -4553,8 +4575,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_services_agent_service",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 5,
+      "community_name": "ApiError",
       "norm_label": "agent.service.js"
     },
     {
@@ -4575,8 +4597,8 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "src_services_agent_service_getagents",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 5,
+      "community_name": "ApiError",
       "norm_label": "getagents()"
     },
     {
@@ -4586,8 +4608,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "src_services_agent_service_getagentbyid",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 5,
+      "community_name": "ApiError",
       "norm_label": "getagentbyid()"
     },
     {
@@ -4803,7 +4825,7 @@
       "label": "resetPassword()",
       "file_type": "code",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L144",
+      "source_location": "L149",
       "_origin": "ast",
       "id": "src_services_auth_service_resetpassword",
       "community": 5,
@@ -4828,8 +4850,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_services_merchant_service_createmerchant",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 1,
+      "community_name": "authenticate.js",
       "norm_label": "createmerchant()"
     },
     {
@@ -4839,8 +4861,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "src_services_merchant_service_getmerchants",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 1,
+      "community_name": "authenticate.js",
       "norm_label": "getmerchants()"
     },
     {
@@ -4850,8 +4872,8 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "src_services_merchant_service_getmerchantbyid",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 1,
+      "community_name": "authenticate.js",
       "norm_label": "getmerchantbyid()"
     },
     {
@@ -4872,8 +4894,8 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "src_services_merchant_service_verifyagent",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 5,
+      "community_name": "ApiError",
       "norm_label": "verifyagent()"
     },
     {
@@ -4895,7 +4917,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "notification.service.js"
     },
     {
@@ -4906,7 +4928,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service_interpolate",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "interpolate()"
     },
     {
@@ -4917,7 +4939,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service_inquiethours",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "inquiethours()"
     },
     {
@@ -4928,7 +4950,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service_notificationservice",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "notificationservice"
     },
     {
@@ -4939,7 +4961,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service_notificationservice_getpreferences",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": ".getpreferences()"
     },
     {
@@ -4950,7 +4972,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service_notificationservice_resolvetemplate",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": ".resolvetemplate()"
     },
     {
@@ -4961,7 +4983,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service_notificationservice_send",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": ".send()"
     },
     {
@@ -4972,7 +4994,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service_notificationservice_deliver",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": ".deliver()"
     },
     {
@@ -4983,7 +5005,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service_notificationservice_dispatchinapp",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": ".dispatchinapp()"
     },
     {
@@ -4994,7 +5016,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service_notificationservice_emitlocal",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": ".emitlocal()"
     },
     {
@@ -5005,7 +5027,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service_notificationservice_sendmockemail",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": ".sendmockemail()"
     },
     {
@@ -5016,7 +5038,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service_notificationservice_sendmockpush",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": ".sendmockpush()"
     },
     {
@@ -5027,7 +5049,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service_notificationservice_sendmocksms",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": ".sendmocksms()"
     },
     {
@@ -5038,7 +5060,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service_notificationservice_seeddefaulttemplates",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": ".seeddefaulttemplates()"
     },
     {
@@ -5543,8 +5565,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_services_wishlist_service_createwishlist",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": "createwishlist()"
     },
     {
@@ -5642,8 +5664,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "src_utils_apierror_apierror_conflict",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 2,
+      "community_name": ".notFound",
       "norm_label": ".conflict()"
     },
     {
@@ -5665,7 +5687,7 @@
       "_origin": "ast",
       "id": "src_utils_apiresponse",
       "community": 40,
-      "community_name": "authenticate",
+      "community_name": "ApiResponse",
       "norm_label": "apiresponse.js"
     },
     {
@@ -5676,7 +5698,7 @@
       "_origin": "ast",
       "id": "src_utils_apiresponse_apiresponse",
       "community": 40,
-      "community_name": "authenticate",
+      "community_name": "ApiResponse",
       "norm_label": "apiresponse"
     },
     {
@@ -5686,7 +5708,7 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "src_utils_apiresponse_apiresponse_success",
-      "community": 19,
+      "community": 3,
       "community_name": "notification.controller.js",
       "norm_label": ".success()"
     },
@@ -5698,7 +5720,7 @@
       "_origin": "ast",
       "id": "src_utils_apiresponse_apiresponse_error",
       "community": 40,
-      "community_name": "authenticate",
+      "community_name": "ApiResponse",
       "norm_label": ".error()"
     },
     {
@@ -5708,8 +5730,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_utils_tests_phase1_test",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 40,
+      "community_name": "ApiResponse",
       "norm_label": "phase1.test.js"
     },
     {
@@ -5720,7 +5742,7 @@
       "_origin": "ast",
       "id": "src_utils_asynchandler",
       "community": 4,
-      "community_name": "merchant.controller.js",
+      "community_name": "asyncHandler.js",
       "norm_label": "asynchandler.js"
     },
     {
@@ -5731,7 +5753,7 @@
       "_origin": "ast",
       "id": "src_utils_asynchandler_asynchandler",
       "community": 4,
-      "community_name": "merchant.controller.js",
+      "community_name": "asyncHandler.js",
       "norm_label": "asynchandler()"
     },
     {
@@ -5819,7 +5841,7 @@
       "_origin": "ast",
       "id": "src_utils_socket",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "socket.js"
     },
     {
@@ -5830,7 +5852,7 @@
       "_origin": "ast",
       "id": "src_utils_socket_initsocket",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "initsocket()"
     },
     {
@@ -5841,7 +5863,7 @@
       "_origin": "ast",
       "id": "src_utils_socket_getio",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "getio()"
     },
     {
@@ -5852,7 +5874,7 @@
       "_origin": "ast",
       "id": "src_validators_agent_validator",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "agent.validator.js"
     },
     {
@@ -5863,7 +5885,7 @@
       "_origin": "ast",
       "id": "src_validators_agent_validator_createagentschema",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "createagentschema"
     },
     {
@@ -5874,7 +5896,7 @@
       "_origin": "ast",
       "id": "src_validators_appointment_validator",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "appointment.validator.js"
     },
     {
@@ -5885,8 +5907,19 @@
       "_origin": "ast",
       "id": "src_validators_appointment_validator_createappointmentschema",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "createappointmentschema"
+    },
+    {
+      "label": "updateAppointmentSchema",
+      "file_type": "code",
+      "source_file": "src/validators/appointment.validator.js",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "src_validators_appointment_validator_updateappointmentschema",
+      "community": 1,
+      "community_name": "authenticate.js",
+      "norm_label": "updateappointmentschema"
     },
     {
       "label": "auth.validator.js",
@@ -5895,8 +5928,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_validators_auth_validator",
-      "community": 16,
-      "community_name": "auth.routes.js",
+      "community": 1,
+      "community_name": "authenticate.js",
       "norm_label": "auth.validator.js"
     },
     {
@@ -5906,8 +5939,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_validators_auth_validator_loginschema",
-      "community": 16,
-      "community_name": "auth.routes.js",
+      "community": 1,
+      "community_name": "authenticate.js",
       "norm_label": "loginschema"
     },
     {
@@ -5917,8 +5950,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_validators_auth_validator_forgotpasswordschema",
-      "community": 16,
-      "community_name": "auth.routes.js",
+      "community": 1,
+      "community_name": "authenticate.js",
       "norm_label": "forgotpasswordschema"
     },
     {
@@ -5928,8 +5961,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_validators_auth_validator_resetpasswordschema",
-      "community": 16,
-      "community_name": "auth.routes.js",
+      "community": 1,
+      "community_name": "authenticate.js",
       "norm_label": "resetpasswordschema"
     },
     {
@@ -5940,7 +5973,7 @@
       "_origin": "ast",
       "id": "src_validators_merchant_validator",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "merchant.validator.js"
     },
     {
@@ -5951,7 +5984,7 @@
       "_origin": "ast",
       "id": "src_validators_merchant_validator_createmerchantschema",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "createmerchantschema"
     },
     {
@@ -5962,8 +5995,52 @@
       "_origin": "ast",
       "id": "src_validators_merchant_validator_verifymerchantschema",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "verifymerchantschema"
+    },
+    {
+      "label": "verifyAgentSchema",
+      "file_type": "code",
+      "source_file": "src/validators/merchant.validator.js",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "src_validators_merchant_validator_verifyagentschema",
+      "community": 1,
+      "community_name": "authenticate.js",
+      "norm_label": "verifyagentschema"
+    },
+    {
+      "label": "notification.validator.js",
+      "file_type": "code",
+      "source_file": "src/validators/notification.validator.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_validators_notification_validator",
+      "community": 3,
+      "community_name": "notification.controller.js",
+      "norm_label": "notification.validator.js"
+    },
+    {
+      "label": "broadcastNotificationSchema",
+      "file_type": "code",
+      "source_file": "src/validators/notification.validator.js",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "src_validators_notification_validator_broadcastnotificationschema",
+      "community": 3,
+      "community_name": "notification.controller.js",
+      "norm_label": "broadcastnotificationschema"
+    },
+    {
+      "label": "updatePreferencesSchema",
+      "file_type": "code",
+      "source_file": "src/validators/notification.validator.js",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "src_validators_notification_validator_updatepreferencesschema",
+      "community": 3,
+      "community_name": "notification.controller.js",
+      "norm_label": "updatepreferencesschema"
     },
     {
       "label": "property.validator.js",
@@ -5973,7 +6050,7 @@
       "_origin": "ast",
       "id": "src_validators_property_validator",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "property.validator.js"
     },
     {
@@ -5984,8 +6061,19 @@
       "_origin": "ast",
       "id": "src_validators_property_validator_createpropertyschema",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "createpropertyschema"
+    },
+    {
+      "label": "updatePropertySchema",
+      "file_type": "code",
+      "source_file": "src/validators/property.validator.js",
+      "source_location": "L32",
+      "_origin": "ast",
+      "id": "src_validators_property_validator_updatepropertyschema",
+      "community": 1,
+      "community_name": "authenticate.js",
+      "norm_label": "updatepropertyschema"
     },
     {
       "label": "review.validator.js",
@@ -5995,7 +6083,7 @@
       "_origin": "ast",
       "id": "src_validators_review_validator",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "review.validator.js"
     },
     {
@@ -6006,8 +6094,19 @@
       "_origin": "ast",
       "id": "src_validators_review_validator_createreviewschema",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "createreviewschema"
+    },
+    {
+      "label": "updateReviewSchema",
+      "file_type": "code",
+      "source_file": "src/validators/review.validator.js",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "src_validators_review_validator_updatereviewschema",
+      "community": 1,
+      "community_name": "authenticate.js",
+      "norm_label": "updatereviewschema"
     },
     {
       "label": "user.validator.js",
@@ -6017,7 +6116,7 @@
       "_origin": "ast",
       "id": "src_validators_user_validator",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "user.validator.js"
     },
     {
@@ -6028,7 +6127,7 @@
       "_origin": "ast",
       "id": "src_validators_user_validator_createuserschema",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "createuserschema"
     },
     {
@@ -6039,7 +6138,7 @@
       "_origin": "ast",
       "id": "src_validators_user_validator_updateuserschema",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "updateuserschema"
     },
     {
@@ -6050,7 +6149,7 @@
       "_origin": "ast",
       "id": "src_validators_wishlist_validator",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "wishlist.validator.js"
     },
     {
@@ -6061,7 +6160,7 @@
       "_origin": "ast",
       "id": "src_validators_wishlist_validator_createwishlistschema",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "authenticate.js",
       "norm_label": "createwishlistschema"
     },
     {
@@ -7216,6 +7315,137 @@
       "_origin": "ast",
       "source": "package_allowscripts",
       "target": "package_allowscripts_scarf_scarf_1_4_0",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/__tests__/audit-hardening.test.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_tests_audit_hardening_test",
+      "target": "src_app",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/__tests__/audit-hardening.test.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_tests_audit_hardening_test",
+      "target": "src_app_app",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/__tests__/audit-hardening.test.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_tests_audit_hardening_test",
+      "target": "src_config_env",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/__tests__/audit-hardening.test.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_tests_audit_hardening_test",
+      "target": "src_config_env_env",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/__tests__/audit-hardening.test.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_tests_audit_hardening_test",
+      "target": "src_models_agent_model",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/__tests__/audit-hardening.test.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_tests_audit_hardening_test",
+      "target": "src_models_agent_model_agent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/__tests__/audit-hardening.test.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_tests_audit_hardening_test",
+      "target": "src_models_merchant_model",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/__tests__/audit-hardening.test.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_tests_audit_hardening_test",
+      "target": "src_models_merchant_model_merchant",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/__tests__/audit-hardening.test.js",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_tests_audit_hardening_test",
+      "target": "src_models_user_model",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/__tests__/audit-hardening.test.js",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_tests_audit_hardening_test",
+      "target": "src_models_user_model_user",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/__tests__/audit-hardening.test.js",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_tests_audit_hardening_test",
+      "target": "src_tests_audit_hardening_test_generatetesttoken",
       "confidence_score": 1.0
     },
     {
@@ -11975,7 +12205,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/routes/merchant.routes.js",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_merchant_routes",
@@ -12247,7 +12477,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/routes/notification.routes.js",
-      "source_location": "L4",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_notification_routes",
@@ -12307,7 +12537,7 @@
       "context": "argument",
       "confidence": "INFERRED",
       "source_file": "src/routes/notification.routes.js",
-      "source_location": "L19",
+      "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
       "confidence_score": 0.8,
@@ -12331,7 +12561,7 @@
       "context": "argument",
       "confidence": "INFERRED",
       "source_file": "src/routes/notification.routes.js",
-      "source_location": "L28",
+      "source_location": "L30",
       "weight": 1.0,
       "_origin": "ast",
       "confidence_score": 0.8,
@@ -12415,7 +12645,7 @@
       "context": "argument",
       "confidence": "INFERRED",
       "source_file": "src/routes/notification.routes.js",
-      "source_location": "L36",
+      "source_location": "L39",
       "weight": 1.0,
       "_origin": "ast",
       "confidence_score": 0.8,
@@ -12463,7 +12693,7 @@
       "context": "argument",
       "confidence": "INFERRED",
       "source_file": "src/routes/notification.routes.js",
-      "source_location": "L44",
+      "source_location": "L48",
       "weight": 1.0,
       "_origin": "ast",
       "confidence_score": 0.8,
@@ -13087,7 +13317,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L90",
+      "source_location": "L93",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_middlewares_authenticate",
@@ -13364,7 +13594,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L57",
+      "source_location": "L60",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_middlewares_authenticate_authenticate",
@@ -13388,7 +13618,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L76",
+      "source_location": "L79",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_middlewares_authenticate_authenticate",
@@ -13435,7 +13665,7 @@
       "context": "argument",
       "confidence": "INFERRED",
       "source_file": "src/routes/merchant.routes.js",
-      "source_location": "L12",
+      "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
       "confidence_score": 0.8,
@@ -13447,7 +13677,7 @@
       "context": "argument",
       "confidence": "INFERRED",
       "source_file": "src/routes/notification.routes.js",
-      "source_location": "L34",
+      "source_location": "L36",
       "weight": 1.0,
       "_origin": "ast",
       "confidence_score": 0.8,
@@ -13508,7 +13738,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L122",
+      "source_location": "L125",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_middlewares_authenticate_optionalauthenticate",
@@ -13520,7 +13750,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L124",
+      "source_location": "L127",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_middlewares_authenticate_optionalauthenticate",
@@ -13532,7 +13762,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L120",
+      "source_location": "L123",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_middlewares_authenticate_optionalauthenticate",
@@ -13555,7 +13785,7 @@
       "context": "argument",
       "confidence": "INFERRED",
       "source_file": "src/routes/merchant.routes.js",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
       "confidence_score": 0.8,
@@ -13567,7 +13797,7 @@
       "context": "argument",
       "confidence": "INFERRED",
       "source_file": "src/routes/notification.routes.js",
-      "source_location": "L16",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
       "confidence_score": 0.8,
@@ -14075,7 +14305,7 @@
       "context": "argument",
       "confidence": "INFERRED",
       "source_file": "src/routes/notification.routes.js",
-      "source_location": "L17",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
       "confidence_score": 0.8,
@@ -14595,6 +14825,18 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/routes/notification.routes.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_routes_notification_routes",
+      "target": "src_middlewares_validate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "src/routes/property.routes.js",
       "source_location": "L2",
       "weight": 1.0,
@@ -14715,6 +14957,18 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/routes/notification.routes.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_routes_notification_routes",
+      "target": "src_middlewares_validate_validate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "src/routes/property.routes.js",
       "source_location": "L2",
       "weight": 1.0,
@@ -14763,7 +15017,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/models/agent.model.js",
-      "source_location": "L44",
+      "source_location": "L45",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_models_agent_model",
@@ -15179,7 +15433,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/models/merchant.model.js",
-      "source_location": "L32",
+      "source_location": "L33",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_models_merchant_model",
@@ -16061,7 +16315,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/auth.service.js",
-      "source_location": "L152",
+      "source_location": "L157",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service_resetpassword",
@@ -16311,7 +16565,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/auth.service.js",
-      "source_location": "L162",
+      "source_location": "L167",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service_resetpassword",
@@ -16757,6 +17011,18 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/routes/appointment.routes.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_routes_appointment_routes",
+      "target": "src_validators_appointment_validator_updateappointmentschema",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -17046,11 +17312,35 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/routes/merchant.routes.js",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_merchant_routes",
       "target": "src_routes_merchant_routes_router",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/routes/merchant.routes.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_routes_merchant_routes",
+      "target": "src_validators_agent_validator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/routes/merchant.routes.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_routes_merchant_routes",
+      "target": "src_validators_agent_validator_createagentschema",
       "confidence_score": 1.0
     },
     {
@@ -17078,14 +17368,62 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/routes/merchant.routes.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_routes_merchant_routes",
+      "target": "src_validators_merchant_validator_verifyagentschema",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/routes/notification.routes.js",
-      "source_location": "L11",
+      "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_notification_routes",
       "target": "src_routes_notification_routes_router",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/routes/notification.routes.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_routes_notification_routes",
+      "target": "src_validators_notification_validator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/routes/notification.routes.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_routes_notification_routes",
+      "target": "src_validators_notification_validator_broadcastnotificationschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/routes/notification.routes.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_routes_notification_routes",
+      "target": "src_validators_notification_validator_updatepreferencesschema",
       "confidence_score": 1.0
     },
     {
@@ -17124,6 +17462,18 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/routes/property.routes.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_routes_property_routes",
+      "target": "src_validators_property_validator_updatepropertyschema",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/routes/review.routes.js",
@@ -17156,6 +17506,18 @@
       "_origin": "ast",
       "source": "src_routes_review_routes",
       "target": "src_validators_review_validator_createreviewschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/routes/review.routes.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_routes_review_routes",
+      "target": "src_validators_review_validator_updatereviewschema",
       "confidence_score": 1.0
     },
     {
@@ -18802,7 +19164,7 @@
       "relation": "indirect_call",
       "confidence": "INFERRED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L182",
+      "source_location": "L187",
       "weight": 1.0,
       "_origin": "ast",
       "context": "collection",
@@ -18825,7 +19187,7 @@
       "relation": "indirect_call",
       "confidence": "INFERRED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L183",
+      "source_location": "L188",
       "weight": 1.0,
       "_origin": "ast",
       "context": "collection",
@@ -18837,7 +19199,7 @@
       "relation": "indirect_call",
       "confidence": "INFERRED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L179",
+      "source_location": "L184",
       "weight": 1.0,
       "_origin": "ast",
       "context": "collection",
@@ -18849,7 +19211,7 @@
       "relation": "indirect_call",
       "confidence": "INFERRED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L184",
+      "source_location": "L189",
       "weight": 1.0,
       "_origin": "ast",
       "context": "collection",
@@ -18861,7 +19223,7 @@
       "relation": "indirect_call",
       "confidence": "INFERRED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L181",
+      "source_location": "L186",
       "weight": 1.0,
       "_origin": "ast",
       "context": "collection",
@@ -18873,7 +19235,7 @@
       "relation": "indirect_call",
       "confidence": "INFERRED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L180",
+      "source_location": "L185",
       "weight": 1.0,
       "_origin": "ast",
       "context": "collection",
@@ -18995,7 +19357,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/auth.service.js",
-      "source_location": "L154",
+      "source_location": "L159",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service_resetpassword",
@@ -19007,7 +19369,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/auth.service.js",
-      "source_location": "L149",
+      "source_location": "L154",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service_resetpassword",
@@ -19019,7 +19381,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/auth.service.js",
-      "source_location": "L164",
+      "source_location": "L169",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service_resetpassword",
@@ -21114,6 +21476,17 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/validators/appointment.validator.js",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_validators_appointment_validator",
+      "target": "src_validators_appointment_validator_updateappointmentschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/validators/auth.validator.js",
       "source_location": "L9",
       "weight": 1.0,
@@ -21159,11 +21532,44 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/validators/merchant.validator.js",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_validators_merchant_validator",
+      "target": "src_validators_merchant_validator_verifyagentschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/validators/merchant.validator.js",
       "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_validators_merchant_validator",
       "target": "src_validators_merchant_validator_verifymerchantschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/validators/notification.validator.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_validators_notification_validator",
+      "target": "src_validators_notification_validator_broadcastnotificationschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/validators/notification.validator.js",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_validators_notification_validator",
+      "target": "src_validators_notification_validator_updatepreferencesschema",
       "confidence_score": 1.0
     },
     {
@@ -21180,12 +21586,34 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/validators/property.validator.js",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_validators_property_validator",
+      "target": "src_validators_property_validator_updatepropertyschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/validators/review.validator.js",
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_validators_review_validator",
       "target": "src_validators_review_validator_createreviewschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/validators/review.validator.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_validators_review_validator",
+      "target": "src_validators_review_validator_updatereviewschema",
       "confidence_score": 1.0
     },
     {
@@ -21540,5 +21968,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "5ccbd1f7e7d84d1beccf788b7dc79592ee6cc8d8"
+  "built_at_commit": "bcaf1c2668fa25f1233a1429cf645b32a2930b1b"
 }

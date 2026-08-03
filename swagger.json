@@ -873,6 +873,141 @@
             "example": true
           }
         }
+      },
+      "ForgotPasswordRequest": {
+        "type": "object",
+        "required": [
+          "email"
+        ],
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "example": "user@example.com"
+          }
+        }
+      },
+      "ResetPasswordRequest": {
+        "type": "object",
+        "required": [
+          "token",
+          "password"
+        ],
+        "properties": {
+          "token": {
+            "type": "string",
+            "example": "a1b2c3d4e5f6g7h8..."
+          },
+          "password": {
+            "type": "string",
+            "example": "NewSecurePassword123!"
+          }
+        }
+      },
+      "BroadcastNotificationRequest": {
+        "type": "object",
+        "required": [
+          "recipientRoles",
+          "title",
+          "message"
+        ],
+        "properties": {
+          "recipientRoles": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "USER",
+                "AGENT",
+                "MERCHANT",
+                "ADMIN",
+                "GUEST"
+              ]
+            }
+          },
+          "title": {
+            "type": "string",
+            "example": "System Maintenance"
+          },
+          "message": {
+            "type": "string",
+            "example": "Scheduled server maintenance tonight."
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ],
+            "default": "medium"
+          },
+          "data": {
+            "type": "object"
+          },
+          "actions": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "UpdatePreferencesRequest": {
+        "type": "object",
+        "properties": {
+          "channels": {
+            "type": "object",
+            "properties": {
+              "inApp": {
+                "type": "boolean"
+              },
+              "email": {
+                "type": "boolean"
+              },
+              "sms": {
+                "type": "boolean"
+              },
+              "push": {
+                "type": "boolean"
+              }
+            }
+          },
+          "categories": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "boolean"
+            }
+          },
+          "quietHours": {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "boolean"
+              },
+              "start": {
+                "type": "string",
+                "example": "22:00"
+              },
+              "end": {
+                "type": "string",
+                "example": "07:00"
+              },
+              "timezone": {
+                "type": "string",
+                "example": "Africa/Lagos"
+              }
+            }
+          },
+          "digestFrequency": {
+            "type": "string",
+            "enum": [
+              "instant",
+              "daily",
+              "weekly"
+            ]
+          }
+        }
       }
     }
   },
@@ -910,6 +1045,65 @@
         }
       }
     },
+    "/auth/forgot-password": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Forgot Password",
+        "description": "Generates a password reset token and saves it to the database.",
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForgotPasswordRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Password reset link/token generated successfully"
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      }
+    },
+    "/auth/reset-password": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Reset Password",
+        "description": "Validates the reset token and updates the user's password.",
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Password has been reset successfully"
+          },
+          "400": {
+            "description": "Invalid or expired password reset token"
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      }
+    },
     "/token": {
       "post": {
         "tags": [
@@ -920,6 +1114,182 @@
         "responses": {
           "200": {
             "description": "Token generated successfully"
+          }
+        }
+      }
+    },
+    "/notifications": {
+      "get": {
+        "tags": [
+          "Notifications"
+        ],
+        "summary": "Get All Notifications",
+        "description": "Retrieve notification list for the authenticated user or guest session.",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          },
+          {
+            "name": "isRead",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true",
+                "false"
+              ]
+            }
+          },
+          {
+            "name": "category",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "priority",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "low",
+                "medium",
+                "high"
+              ]
+            }
+          },
+          {
+            "name": "sourceType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "recipientId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Notifications retrieved successfully"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/notifications/{id}/read": {
+      "patch": {
+        "tags": [
+          "Notifications"
+        ],
+        "summary": "Mark Notification as Read",
+        "description": "Marks a specific notification as read.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Notification marked as read successfully"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Notification not found"
+          }
+        }
+      }
+    },
+    "/notifications/preferences": {
+      "put": {
+        "tags": [
+          "Notifications"
+        ],
+        "summary": "Update Notification Preferences",
+        "description": "Updates channel and category preferences, quiet hours, and digest settings.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePreferencesRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Notification preferences updated successfully"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (e.g. guests)"
+          }
+        }
+      }
+    },
+    "/admin/notifications/broadcast": {
+      "post": {
+        "tags": [
+          "Admin",
+          "Notifications"
+        ],
+        "summary": "Broadcast System Notification",
+        "description": "Broadcasts a system-wide notification to selected roles (Admin only).",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BroadcastNotificationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Notification broadcast initiated successfully"
+          },
+          "400": {
+            "description": "Bad Request (e.g. missing title/message or empty target roles)"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden (Admin only)"
           }
         }
       }

@@ -770,8 +770,8 @@
     "semantic_hash": "d1be485978890476c9de1d9e0c557820"
   },
   "swagger.json": {
-    "mtime": 1785623065.7739592,
-    "ast_hash": "f74ebf27f5010bd2c29a15c91e086bfe",
+    "mtime": 1785760811.240838,
+    "ast_hash": "0cb425a7883b763f39bd74931613c01b",
     "semantic_hash": ""
   },
   "README.md": {
@@ -790,8 +790,8 @@
     "semantic_hash": ""
   },
   "codebase_documentation.md": {
-    "mtime": 1785604547.0647192,
-    "ast_hash": "33bf17218a10a1b9a1eb2a043ce1863d",
+    "mtime": 1785760904.3896868,
+    "ast_hash": "739e74b6dbd79e952524a5ccf6840d6f",
     "semantic_hash": ""
   },
   ".claude/settings.local.json": {

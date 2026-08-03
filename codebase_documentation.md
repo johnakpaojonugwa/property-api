@@ -227,6 +227,8 @@ All routes are prefixed with `/v1`. Auth and guest routes are publicly accessibl
 | | `GET` | `/api-docs` | No | Any | Renders the interactive Swagger UI documentation |
 | **Auth** | `POST` | `/v1/token` | No | Any | Issues a JWT guest token |
 | | `POST` | `/v1/auth/login` | No | Any | Logs in a user, agent, or merchant; returns JWT |
+| | `POST` | `/v1/auth/forgot-password` | No | Any | Generates a password reset token and returns it (redacted in non-test modes) |
+| | `POST` | `/v1/auth/reset-password` | No | Any | Validates reset token and updates the user's password |
 | **Properties** | `GET` | `/v1/properties` | Optional | Any | Lists properties with filters (city, type, price, etc.) |
 | | `GET` | `/v1/properties/:id` | Optional | Any | Retrieves detailed information of a property listing |
 | | `POST` | `/v1/properties` | Yes | `AGENT`, `MERCHANT`, `ADMIN` | Creates a property listing (sets `is_verified: false` by default) |
