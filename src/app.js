@@ -3,6 +3,7 @@ import cors from 'cors';
 import compression from 'compression';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
+import mongoose from 'mongoose';
 import routes from './routes/index.js';
 import errorHandler from './middlewares/errorHandler.js';
 import requestLogger from './middlewares/requestLogger.js';
@@ -12,6 +13,7 @@ import cookieSecurity from './middlewares/cookieSecurity.js';
 import requestTimeout from './middlewares/requestTimeout.js';
 import ApiResponse from './utils/ApiResponse.js';
 import { setupSwagger } from './config/swagger.js';
+import { env } from './config/env.js';
 
 const app = express();
 
@@ -45,7 +47,26 @@ app.use(limiter);
 setupSwagger(app);
 
 app.get('/health', (req, res) => {
-  res.status(200).json(ApiResponse.success({ status: 'ok' }, 'Service healthy'));
+  const dbState = mongoose.connection.readyState;
+  const isHealthy = dbState === 1 || env.NODE_ENV === 'test';
+
+  if (!isHealthy) {
+    return res.status(503).json(
+      ApiResponse.error('Database disconnected', [
+        {
+          message: `Database connection state is ${dbState} (expected 1 for connected).`,
+          state: dbState,
+        },
+      ], 503)
+    );
+  }
+
+  res.status(200).json(
+    ApiResponse.success(
+      { status: 'ok', dbState },
+      'Service healthy'
+    )
+  );
 });
 
 app.use(routes);

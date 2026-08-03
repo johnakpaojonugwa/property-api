@@ -415,9 +415,9 @@
     "semantic_hash": "0469371da3476f74f87759797bea60c6"
   },
   "src/controllers/auth.controller.js": {
-    "mtime": 1785757949.4487672,
-    "ast_hash": "f6ba1ccc3b8b04274a466f29ac2d2a46",
-    "semantic_hash": ""
+    "mtime": 1784988591.036348,
+    "ast_hash": "fab707523899597c3704b9ea46a2b94e",
+    "semantic_hash": "fab707523899597c3704b9ea46a2b94e"
   },
   "src/controllers/merchant.controller.js": {
     "mtime": 1785420377.5628004,
@@ -450,9 +450,9 @@
     "semantic_hash": "b70bd31bc818e129e36634516e3669b2"
   },
   "src/middlewares/authenticate.js": {
-    "mtime": 1785758002.073398,
-    "ast_hash": "ede372f57b8b93957aeb5709f1033c7c",
-    "semantic_hash": ""
+    "mtime": 1785420873.3650866,
+    "ast_hash": "c171e7530e0bb6fa0966488909328927",
+    "semantic_hash": "c171e7530e0bb6fa0966488909328927"
   },
   "src/middlewares/authorize.js": {
     "mtime": 1785438992.3981743,
@@ -585,9 +585,9 @@
     "semantic_hash": "76a3e75347d1453f959d6d471f167da5"
   },
   "src/routes/auth.routes.js": {
-    "mtime": 1785757954.2748375,
-    "ast_hash": "e2d0349b929467de392dd6ffc055f567",
-    "semantic_hash": ""
+    "mtime": 1783644914.9995427,
+    "ast_hash": "442bd7daec27a881614fab9484473c96",
+    "semantic_hash": "442bd7daec27a881614fab9484473c96"
   },
   "src/routes/index.js": {
     "mtime": 1785437338.3593578,
@@ -615,9 +615,9 @@
     "semantic_hash": "1aac4104eb620a5f0f755fe3aa16db1e"
   },
   "src/routes/token.routes.js": {
-    "mtime": 1785757896.8596015,
-    "ast_hash": "554f72f998be790711c64b1aed13ca99",
-    "semantic_hash": ""
+    "mtime": 1784988591.0765822,
+    "ast_hash": "d597f0420974afbf2fb387e4f0293e4c",
+    "semantic_hash": "d597f0420974afbf2fb387e4f0293e4c"
   },
   "src/routes/user.routes.js": {
     "mtime": 1785440099.1877675,
@@ -650,8 +650,8 @@
     "semantic_hash": ""
   },
   "src/services/auth.service.js": {
-    "mtime": 1785758128.2481017,
-    "ast_hash": "bdf0d2a0fbdc2514d9e39a08ace5bd1d",
+    "mtime": 1785502751.1303923,
+    "ast_hash": "189a309aff94af2135be7d52e8f936ba",
     "semantic_hash": ""
   },
   "src/services/merchant.service.js": {
@@ -740,9 +740,9 @@
     "semantic_hash": "1fe239fa43206a4750ce1a668caf7d8c"
   },
   "src/validators/auth.validator.js": {
-    "mtime": 1785757934.3659384,
-    "ast_hash": "448a895339aef545bfa79ad1202ebd1f",
-    "semantic_hash": ""
+    "mtime": 1783644810.2641413,
+    "ast_hash": "f37eec7ccd24309a85cb102e9720d538",
+    "semantic_hash": "f37eec7ccd24309a85cb102e9720d538"
   },
   "src/validators/merchant.validator.js": {
     "mtime": 1785498754.5207725,
@@ -797,16 +797,6 @@
   ".claude/settings.local.json": {
     "mtime": 1785668418.838678,
     "ast_hash": "44f334cbd1a544ae0285105920d01776",
-    "semantic_hash": ""
-  },
-  "src/__tests__/auth-hardening.test.js": {
-    "mtime": 1785758038.955186,
-    "ast_hash": "f465ae615c9c63f41fc71d6ce0fbcb11",
-    "semantic_hash": ""
-  },
-  "src/middlewares/authLimiter.js": {
-    "mtime": 1785757527.1265028,
-    "ast_hash": "2af0d43584af41e84df020ccd8571709",
     "semantic_hash": ""
   }
 }

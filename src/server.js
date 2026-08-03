@@ -1,11 +1,16 @@
 import app from './app.js';
 import { connectDB, disconnectDB } from './config/db.js';
 import { env } from './config/env.js';
-import { initSocket } from './utils/socket.js';
+import { initSocket, getIO } from './utils/socket.js';
 import { NotificationService } from './services/notification.service.js';
 
 const startServer = async () => {
-  await connectDB();
+  try {
+    await connectDB();
+  } catch (error) {
+    console.error('Database connection failed during startup:', error.message);
+    process.exit(1);
+  }
   
   try {
     await NotificationService.seedDefaultTemplates();
@@ -21,7 +26,26 @@ const startServer = async () => {
 
   const handleShutdown = async (signal) => {
     console.log(`Received ${signal}. Shutting down gracefully...`);
+    
+    // Force close after timeout to prevent hanging connections
+    const forceExitTimeout = setTimeout(() => {
+      console.warn('Graceful shutdown timed out. Forcing exit.');
+      process.exit(1);
+    }, 5000);
+    forceExitTimeout.unref();
+
+    // Close socket connections
+    const io = getIO();
+    if (io) {
+      try {
+        io.close();
+      } catch (err) {
+        console.error('Error closing Socket.io:', err);
+      }
+    }
+
     server.close(async () => {
+      clearTimeout(forceExitTimeout);
       await disconnectDB();
       console.log('HTTP server closed and DB disconnected.');
       process.exit(0);
@@ -33,4 +57,5 @@ const startServer = async () => {
 };
 
 startServer();
+
 

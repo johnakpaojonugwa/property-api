@@ -12,4 +12,15 @@ const createToken = asyncHandler(async (req, res) => {
   return res.status(200).json(ApiResponse.success(result, 'Token created'));
 });
 
-export default { login, createToken };
+const forgotPassword = asyncHandler(async (req, res) => {
+  const result = await authService.forgotPassword(req.body.email);
+  return res.status(200).json(ApiResponse.success(result, 'Password reset link generated'));
+});
+
+const resetPassword = asyncHandler(async (req, res) => {
+  const result = await authService.resetPassword(req.body.token, req.body.password);
+  return res.status(200).json(ApiResponse.success(result, 'Password has been reset successfully'));
+});
+
+export default { login, createToken, forgotPassword, resetPassword };
+

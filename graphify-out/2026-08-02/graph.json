@@ -208,8 +208,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "package_dependencies_bcryptjs",
-      "community": 45,
-      "community_name": "bcryptjs",
+      "community": 11,
+      "community_name": "dependencies",
       "norm_label": "bcryptjs"
     },
     {
@@ -219,8 +219,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "bcryptjs",
-      "community": 45,
-      "community_name": "bcryptjs",
+      "community": 11,
+      "community_name": "dependencies",
       "norm_label": "bcryptjs"
     },
     {
@@ -274,8 +274,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "package_dependencies_cors",
-      "community": 11,
-      "community_name": "dependencies",
+      "community": 16,
+      "community_name": "cors",
       "norm_label": "cors"
     },
     {
@@ -285,8 +285,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "cors",
-      "community": 11,
-      "community_name": "dependencies",
+      "community": 16,
+      "community_name": "cors",
       "norm_label": "cors"
     },
     {
@@ -362,7 +362,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "package_dependencies_express_validator",
-      "community": 14,
+      "community": 19,
       "community_name": "express-validator",
       "norm_label": "express-validator"
     },
@@ -373,7 +373,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "express_validator",
-      "community": 14,
+      "community": 19,
       "community_name": "express-validator",
       "norm_label": "express-validator"
     },
@@ -774,17 +774,6 @@
       "norm_label": "@scarf/scarf@1.4.0"
     },
     {
-      "label": "auth-hardening.test.js",
-      "file_type": "code",
-      "source_file": "src/__tests__/auth-hardening.test.js",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "src_tests_auth_hardening_test",
-      "community": 5,
-      "community_name": "ApiError",
-      "norm_label": "auth-hardening.test.js"
-    },
-    {
       "label": "frontend_expected_endpoints.test.js",
       "file_type": "code",
       "source_file": "src/__tests__/frontend_expected_endpoints.test.js",
@@ -802,8 +791,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_merchant_verification_test",
-      "community": 0,
-      "community_name": "app.js",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "merchant-verification.test.js"
     },
     {
@@ -813,8 +802,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_tests_merchant_verification_test_generatetoken",
-      "community": 0,
-      "community_name": "app.js",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "generatetoken()"
     },
     {
@@ -824,8 +813,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_notification_e2e_test",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "notification-e2e.test.js"
     },
     {
@@ -836,7 +825,7 @@
       "_origin": "ast",
       "id": "src_tests_notification_test",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "notification.test.js"
     },
     {
@@ -847,7 +836,7 @@
       "_origin": "ast",
       "id": "src_tests_notification_test_generatetoken",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "generatetoken()"
     },
     {
@@ -858,7 +847,7 @@
       "_origin": "ast",
       "id": "src_tests_phase10_test",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "phase10.test.js"
     },
     {
@@ -869,7 +858,7 @@
       "_origin": "ast",
       "id": "src_tests_phase11_test",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "phase11.test.js"
     },
     {
@@ -880,7 +869,7 @@
       "_origin": "ast",
       "id": "src_tests_phase12_test",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "phase12.test.js"
     },
     {
@@ -891,7 +880,7 @@
       "_origin": "ast",
       "id": "src_tests_phase13_test",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "phase13.test.js"
     },
     {
@@ -902,7 +891,7 @@
       "_origin": "ast",
       "id": "src_tests_phase14_test",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "phase14.test.js"
     },
     {
@@ -968,7 +957,7 @@
       "_origin": "ast",
       "id": "src_tests_phase2_test",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "phase2.test.js"
     },
     {
@@ -1056,7 +1045,7 @@
       "_origin": "ast",
       "id": "src_tests_phase27_test",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "phase27.test.js"
     },
     {
@@ -1066,8 +1055,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_phase28_test",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 6,
+      "community_name": "admin.service.js",
       "norm_label": "phase28.test.js"
     },
     {
@@ -1077,8 +1066,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_phase29_test",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "phase29.test.js"
     },
     {
@@ -1088,7 +1077,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_phase3_test",
-      "community": 5,
+      "community": 1,
       "community_name": "ApiError",
       "norm_label": "phase3.test.js"
     },
@@ -1099,8 +1088,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_phase30_test",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "phase30.test.js"
     },
     {
@@ -1110,8 +1099,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_phase31_test",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 14,
+      "community_name": "Review",
       "norm_label": "phase31.test.js"
     },
     {
@@ -1122,7 +1111,7 @@
       "_origin": "ast",
       "id": "src_tests_phase32_test",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "phase32.test.js"
     },
     {
@@ -1209,8 +1198,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_phase4_test",
-      "community": 16,
-      "community_name": "auth.routes.js",
+      "community": 1,
+      "community_name": "ApiError",
       "norm_label": "phase4.test.js"
     },
     {
@@ -1331,7 +1320,7 @@
       "_origin": "ast",
       "id": "src_tests_phase5_test",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "phase5.test.js"
     },
     {
@@ -1452,7 +1441,7 @@
       "_origin": "ast",
       "id": "src_tests_phase6_test",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "phase6.test.js"
     },
     {
@@ -1573,7 +1562,7 @@
       "_origin": "ast",
       "id": "src_tests_phase7_test",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "phase7.test.js"
     },
     {
@@ -1605,8 +1594,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_rbac_test",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "rbac.test.js"
     },
     {
@@ -1616,8 +1605,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_tests_rbac_test_generatetoken",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "generatetoken()"
     },
     {
@@ -1627,8 +1616,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_tests_security_test",
-      "community": 0,
-      "community_name": "app.js",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "security.test.js"
     },
     {
@@ -1638,8 +1627,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_tests_security_test_generatetesttoken",
-      "community": 0,
-      "community_name": "app.js",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "generatetesttoken()"
     },
     {
@@ -1668,7 +1657,7 @@
       "label": "app",
       "file_type": "code",
       "source_file": "src/app.js",
-      "source_location": "L18",
+      "source_location": "L16",
       "_origin": "ast",
       "id": "src_app_app",
       "community": 0,
@@ -1679,7 +1668,7 @@
       "label": "limiter",
       "file_type": "code",
       "source_file": "src/app.js",
-      "source_location": "L24",
+      "source_location": "L22",
       "_origin": "ast",
       "id": "src_app_limiter",
       "community": 0,
@@ -1690,7 +1679,7 @@
       "label": "corsOptions",
       "file_type": "code",
       "source_file": "src/app.js",
-      "source_location": "L32",
+      "source_location": "L30",
       "_origin": "ast",
       "id": "src_app_corsoptions",
       "community": 0,
@@ -1705,40 +1694,29 @@
       "_origin": "ast",
       "id": "src_config_db",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "db.js"
-    },
-    {
-      "label": "sanitizeURI()",
-      "file_type": "code",
-      "source_file": "src/config/db.js",
-      "source_location": "L7",
-      "_origin": "ast",
-      "id": "src_config_db_sanitizeuri",
-      "community": 3,
-      "community_name": "notification.test.js",
-      "norm_label": "sanitizeuri()"
     },
     {
       "label": "connectDB()",
       "file_type": "code",
       "source_file": "src/config/db.js",
-      "source_location": "L29",
+      "source_location": "L6",
       "_origin": "ast",
       "id": "src_config_db_connectdb",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "connectdb()"
     },
     {
       "label": "disconnectDB()",
       "file_type": "code",
       "source_file": "src/config/db.js",
-      "source_location": "L61",
+      "source_location": "L27",
       "_origin": "ast",
       "id": "src_config_db_disconnectdb",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "disconnectdb()"
     },
     {
@@ -1748,8 +1726,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_config_env",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "env.js"
     },
     {
@@ -1759,8 +1737,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_config_env_parseport",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "parseport()"
     },
     {
@@ -1770,8 +1748,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_config_env_requiredenv",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "requiredenv"
     },
     {
@@ -1781,8 +1759,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_config_env_validnodeenvs",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "validnodeenvs"
     },
     {
@@ -1792,8 +1770,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "src_config_env_env",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "env"
     },
     {
@@ -2353,8 +2331,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_controllers_agent_controller",
-      "community": 44,
-      "community_name": "agent.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "agent.controller.js"
     },
     {
@@ -2364,8 +2342,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_controllers_agent_controller_createagent",
-      "community": 44,
-      "community_name": "agent.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "createagent"
     },
     {
@@ -2375,8 +2353,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_controllers_agent_controller_getagents",
-      "community": 44,
-      "community_name": "agent.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "getagents"
     },
     {
@@ -2386,8 +2364,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_controllers_agent_controller_getagentwishlist",
-      "community": 44,
-      "community_name": "agent.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "getagentwishlist"
     },
     {
@@ -2397,8 +2375,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "src_controllers_agent_controller_updateagentresource",
-      "community": 44,
-      "community_name": "agent.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "updateagentresource"
     },
     {
@@ -2408,8 +2386,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_controllers_agent_controller_deleteagent",
-      "community": 44,
-      "community_name": "agent.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "deleteagent"
     },
     {
@@ -2419,8 +2397,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_controllers_appointment_controller",
-      "community": 43,
-      "community_name": "appointment.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "appointment.controller.js"
     },
     {
@@ -2430,8 +2408,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_controllers_appointment_controller_createappointment",
-      "community": 43,
-      "community_name": "appointment.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "createappointment"
     },
     {
@@ -2441,8 +2419,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_controllers_appointment_controller_getappointments",
-      "community": 43,
-      "community_name": "appointment.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "getappointments"
     },
     {
@@ -2452,8 +2430,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_controllers_appointment_controller_updateappointment",
-      "community": 43,
-      "community_name": "appointment.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "updateappointment"
     },
     {
@@ -2463,8 +2441,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "src_controllers_appointment_controller_confirmmeeting",
-      "community": 43,
-      "community_name": "appointment.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "confirmmeeting"
     },
     {
@@ -2474,8 +2452,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_controllers_appointment_controller_setagentcompletion",
-      "community": 43,
-      "community_name": "appointment.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "setagentcompletion"
     },
     {
@@ -2485,8 +2463,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_controllers_appointment_controller_setusercompletion",
-      "community": 43,
-      "community_name": "appointment.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "setusercompletion"
     },
     {
@@ -2496,8 +2474,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "src_controllers_appointment_controller_deleteappointment",
-      "community": 43,
-      "community_name": "appointment.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "deleteappointment"
     },
     {
@@ -2507,8 +2485,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_controllers_auth_controller",
-      "community": 40,
-      "community_name": "authenticate",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "auth.controller.js"
     },
     {
@@ -2518,8 +2496,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_controllers_auth_controller_login",
-      "community": 40,
-      "community_name": "authenticate",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "login"
     },
     {
@@ -2529,31 +2507,9 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_controllers_auth_controller_createtoken",
-      "community": 40,
-      "community_name": "authenticate",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "createtoken"
-    },
-    {
-      "label": "forgotPassword",
-      "file_type": "code",
-      "source_file": "src/controllers/auth.controller.js",
-      "source_location": "L15",
-      "_origin": "ast",
-      "id": "src_controllers_auth_controller_forgotpassword",
-      "community": 40,
-      "community_name": "authenticate",
-      "norm_label": "forgotpassword"
-    },
-    {
-      "label": "resetPassword",
-      "file_type": "code",
-      "source_file": "src/controllers/auth.controller.js",
-      "source_location": "L20",
-      "_origin": "ast",
-      "id": "src_controllers_auth_controller_resetpassword",
-      "community": 40,
-      "community_name": "authenticate",
-      "norm_label": "resetpassword"
     },
     {
       "label": "merchant.controller.js",
@@ -2563,7 +2519,7 @@
       "_origin": "ast",
       "id": "src_controllers_merchant_controller",
       "community": 4,
-      "community_name": "merchant.controller.js",
+      "community_name": "ApiResponse",
       "norm_label": "merchant.controller.js"
     },
     {
@@ -2574,7 +2530,7 @@
       "_origin": "ast",
       "id": "src_controllers_merchant_controller_createmerchant",
       "community": 4,
-      "community_name": "merchant.controller.js",
+      "community_name": "ApiResponse",
       "norm_label": "createmerchant"
     },
     {
@@ -2585,7 +2541,7 @@
       "_origin": "ast",
       "id": "src_controllers_merchant_controller_getmerchants",
       "community": 4,
-      "community_name": "merchant.controller.js",
+      "community_name": "ApiResponse",
       "norm_label": "getmerchants"
     },
     {
@@ -2596,7 +2552,7 @@
       "_origin": "ast",
       "id": "src_controllers_merchant_controller_getmerchantagents",
       "community": 4,
-      "community_name": "merchant.controller.js",
+      "community_name": "ApiResponse",
       "norm_label": "getmerchantagents"
     },
     {
@@ -2607,7 +2563,7 @@
       "_origin": "ast",
       "id": "src_controllers_merchant_controller_getmerchantwishlist",
       "community": 4,
-      "community_name": "merchant.controller.js",
+      "community_name": "ApiResponse",
       "norm_label": "getmerchantwishlist"
     },
     {
@@ -2618,7 +2574,7 @@
       "_origin": "ast",
       "id": "src_controllers_merchant_controller_createagentbymerchant",
       "community": 4,
-      "community_name": "merchant.controller.js",
+      "community_name": "ApiResponse",
       "norm_label": "createagentbymerchant"
     },
     {
@@ -2629,7 +2585,7 @@
       "_origin": "ast",
       "id": "src_controllers_merchant_controller_verifyagent",
       "community": 4,
-      "community_name": "merchant.controller.js",
+      "community_name": "ApiResponse",
       "norm_label": "verifyagent"
     },
     {
@@ -2639,7 +2595,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_controllers_notification_controller",
-      "community": 19,
+      "community": 3,
       "community_name": "notification.controller.js",
       "norm_label": "notification.controller.js"
     },
@@ -2650,7 +2606,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_controllers_notification_controller_getnotifications",
-      "community": 19,
+      "community": 3,
       "community_name": "notification.controller.js",
       "norm_label": "getnotifications()"
     },
@@ -2661,7 +2617,7 @@
       "source_location": "L117",
       "_origin": "ast",
       "id": "src_controllers_notification_controller_markasread",
-      "community": 19,
+      "community": 3,
       "community_name": "notification.controller.js",
       "norm_label": "markasread()"
     },
@@ -2672,7 +2628,7 @@
       "source_location": "L132",
       "_origin": "ast",
       "id": "src_controllers_notification_controller_broadcastnotification",
-      "community": 19,
+      "community": 3,
       "community_name": "notification.controller.js",
       "norm_label": "broadcastnotification()"
     },
@@ -2683,7 +2639,7 @@
       "source_location": "L203",
       "_origin": "ast",
       "id": "src_controllers_notification_controller_updatepreferences",
-      "community": 19,
+      "community": 3,
       "community_name": "notification.controller.js",
       "norm_label": "updatepreferences()"
     },
@@ -2694,8 +2650,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_controllers_property_controller",
-      "community": 41,
-      "community_name": "property.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "property.controller.js"
     },
     {
@@ -2705,8 +2661,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_controllers_property_controller_createproperty",
-      "community": 41,
-      "community_name": "property.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "createproperty"
     },
     {
@@ -2716,8 +2672,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "src_controllers_property_controller_getproperties",
-      "community": 41,
-      "community_name": "property.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "getproperties"
     },
     {
@@ -2727,8 +2683,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "src_controllers_property_controller_getpropertybyid",
-      "community": 41,
-      "community_name": "property.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "getpropertybyid"
     },
     {
@@ -2738,8 +2694,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "src_controllers_property_controller_updateproperty",
-      "community": 41,
-      "community_name": "property.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "updateproperty"
     },
     {
@@ -2749,8 +2705,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "src_controllers_property_controller_updatepropertyresource",
-      "community": 41,
-      "community_name": "property.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "updatepropertyresource"
     },
     {
@@ -2760,8 +2716,8 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "src_controllers_property_controller_setverified",
-      "community": 41,
-      "community_name": "property.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "setverified"
     },
     {
@@ -2771,8 +2727,8 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "src_controllers_property_controller_buyproperty",
-      "community": 41,
-      "community_name": "property.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "buyproperty"
     },
     {
@@ -2782,8 +2738,8 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "src_controllers_property_controller_deleteproperty",
-      "community": 41,
-      "community_name": "property.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "deleteproperty"
     },
     {
@@ -2794,7 +2750,7 @@
       "_origin": "ast",
       "id": "src_controllers_review_controller",
       "community": 4,
-      "community_name": "merchant.controller.js",
+      "community_name": "ApiResponse",
       "norm_label": "review.controller.js"
     },
     {
@@ -2805,7 +2761,7 @@
       "_origin": "ast",
       "id": "src_controllers_review_controller_createreview",
       "community": 4,
-      "community_name": "merchant.controller.js",
+      "community_name": "ApiResponse",
       "norm_label": "createreview"
     },
     {
@@ -2816,7 +2772,7 @@
       "_origin": "ast",
       "id": "src_controllers_review_controller_getreviews",
       "community": 4,
-      "community_name": "merchant.controller.js",
+      "community_name": "ApiResponse",
       "norm_label": "getreviews"
     },
     {
@@ -2827,7 +2783,7 @@
       "_origin": "ast",
       "id": "src_controllers_review_controller_updatereview",
       "community": 4,
-      "community_name": "merchant.controller.js",
+      "community_name": "ApiResponse",
       "norm_label": "updatereview"
     },
     {
@@ -2838,7 +2794,7 @@
       "_origin": "ast",
       "id": "src_controllers_review_controller_deletereview",
       "community": 4,
-      "community_name": "merchant.controller.js",
+      "community_name": "ApiResponse",
       "norm_label": "deletereview"
     },
     {
@@ -2848,8 +2804,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_controllers_user_controller",
-      "community": 42,
-      "community_name": "user.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "user.controller.js"
     },
     {
@@ -2859,8 +2815,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_controllers_user_controller_createuser",
-      "community": 42,
-      "community_name": "user.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "createuser"
     },
     {
@@ -2870,8 +2826,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_controllers_user_controller_getusers",
-      "community": 42,
-      "community_name": "user.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "getusers"
     },
     {
@@ -2881,8 +2837,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_controllers_user_controller_getuserbyid",
-      "community": 42,
-      "community_name": "user.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "getuserbyid"
     },
     {
@@ -2892,8 +2848,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "src_controllers_user_controller_getuserwishlist",
-      "community": 42,
-      "community_name": "user.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "getuserwishlist"
     },
     {
@@ -2903,8 +2859,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_controllers_user_controller_getuserproperties",
-      "community": 42,
-      "community_name": "user.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "getuserproperties"
     },
     {
@@ -2914,8 +2870,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_controllers_user_controller_updateuser",
-      "community": 42,
-      "community_name": "user.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "updateuser"
     },
     {
@@ -2925,8 +2881,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "src_controllers_user_controller_updateuserresource",
-      "community": 42,
-      "community_name": "user.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "updateuserresource"
     },
     {
@@ -2936,8 +2892,8 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "src_controllers_user_controller_deleteuser",
-      "community": 42,
-      "community_name": "user.controller.js",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "deleteuser"
     },
     {
@@ -2947,8 +2903,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_controllers_wishlist_controller",
-      "community": 40,
-      "community_name": "authenticate",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "wishlist.controller.js"
     },
     {
@@ -2958,31 +2914,9 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_controllers_wishlist_controller_createwishlist",
-      "community": 40,
-      "community_name": "authenticate",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "createwishlist"
-    },
-    {
-      "label": "authLimiter.js",
-      "file_type": "code",
-      "source_file": "src/middlewares/authLimiter.js",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "src_middlewares_authlimiter",
-      "community": 16,
-      "community_name": "auth.routes.js",
-      "norm_label": "authlimiter.js"
-    },
-    {
-      "label": "authLimiter",
-      "file_type": "code",
-      "source_file": "src/middlewares/authLimiter.js",
-      "source_location": "L4",
-      "_origin": "ast",
-      "id": "src_middlewares_authlimiter_authlimiter",
-      "community": 16,
-      "community_name": "auth.routes.js",
-      "norm_label": "authlimiter"
     },
     {
       "label": "authenticate.js",
@@ -2991,7 +2925,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_middlewares_authenticate",
-      "community": 5,
+      "community": 1,
       "community_name": "ApiError",
       "norm_label": "authenticate.js"
     },
@@ -2999,22 +2933,22 @@
       "label": "authenticate()",
       "file_type": "code",
       "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L10",
+      "source_location": "L5",
       "_origin": "ast",
       "id": "src_middlewares_authenticate_authenticate",
-      "community": 40,
-      "community_name": "authenticate",
+      "community": 1,
+      "community_name": "ApiError",
       "norm_label": "authenticate()"
     },
     {
       "label": "optionalAuthenticate()",
       "file_type": "code",
       "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L90",
+      "source_location": "L47",
       "_origin": "ast",
       "id": "src_middlewares_authenticate_optionalauthenticate",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "optionalauthenticate()"
     },
     {
@@ -3025,7 +2959,7 @@
       "_origin": "ast",
       "id": "src_middlewares_authorize",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "authorize.js"
     },
     {
@@ -3036,7 +2970,7 @@
       "_origin": "ast",
       "id": "src_middlewares_authorize_authorize",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "authorize()"
     },
     {
@@ -3046,8 +2980,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_middlewares_authorize_ensureowneroradmin",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 1,
+      "community_name": "ApiError",
       "norm_label": "ensureowneroradmin()"
     },
     {
@@ -3079,8 +3013,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_middlewares_errorhandler",
-      "community": 16,
-      "community_name": "auth.routes.js",
+      "community": 1,
+      "community_name": "ApiError",
       "norm_label": "errorhandler.js"
     },
     {
@@ -3090,8 +3024,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_middlewares_errorhandler_errorhandler",
-      "community": 16,
-      "community_name": "auth.routes.js",
+      "community": 1,
+      "community_name": "ApiError",
       "norm_label": "errorhandler()"
     },
     {
@@ -3101,8 +3035,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_middlewares_notfoundhandler",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 0,
+      "community_name": "app.js",
       "norm_label": "notfoundhandler.js"
     },
     {
@@ -3112,8 +3046,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_middlewares_notfoundhandler_notfoundhandler",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 0,
+      "community_name": "app.js",
       "norm_label": "notfoundhandler()"
     },
     {
@@ -3123,8 +3057,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_middlewares_rbac_middleware",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "rbac.middleware.js"
     },
     {
@@ -3134,7 +3068,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_middlewares_rbac_middleware_injectguestactor",
-      "community": 19,
+      "community": 3,
       "community_name": "notification.controller.js",
       "norm_label": "injectguestactor()"
     },
@@ -3167,7 +3101,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_middlewares_rejectduplicatequeryparams",
-      "community": 5,
+      "community": 1,
       "community_name": "ApiError",
       "norm_label": "rejectduplicatequeryparams.js"
     },
@@ -3222,7 +3156,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_middlewares_requesttimeout",
-      "community": 5,
+      "community": 1,
       "community_name": "ApiError",
       "norm_label": "requesttimeout.js"
     },
@@ -3233,7 +3167,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_middlewares_requesttimeout_requesttimeout",
-      "community": 5,
+      "community": 1,
       "community_name": "ApiError",
       "norm_label": "requesttimeout()"
     },
@@ -3245,7 +3179,7 @@
       "_origin": "ast",
       "id": "src_middlewares_upload_middleware",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "upload.middleware.js"
     },
     {
@@ -3256,7 +3190,7 @@
       "_origin": "ast",
       "id": "src_middlewares_upload_middleware_storage",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "storage"
     },
     {
@@ -3266,8 +3200,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_middlewares_upload_middleware_filefilter",
-      "community": 1,
-      "community_name": "index.js",
+      "community": 6,
+      "community_name": "admin.service.js",
       "norm_label": "filefilter()"
     },
     {
@@ -3278,7 +3212,7 @@
       "_origin": "ast",
       "id": "src_middlewares_upload_middleware_upload",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "upload"
     },
     {
@@ -3289,7 +3223,7 @@
       "_origin": "ast",
       "id": "src_middlewares_upload_middleware_uploadsingle",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "uploadsingle()"
     },
     {
@@ -3300,7 +3234,7 @@
       "_origin": "ast",
       "id": "src_middlewares_upload_middleware_uploadarray",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "uploadarray()"
     },
     {
@@ -3311,7 +3245,7 @@
       "_origin": "ast",
       "id": "src_middlewares_validate",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "validate.js"
     },
     {
@@ -3322,7 +3256,7 @@
       "_origin": "ast",
       "id": "src_middlewares_validate_validate",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "validate()"
     },
     {
@@ -3365,8 +3299,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_models_appointment_model",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "appointment.model.js"
     },
     {
@@ -3376,8 +3310,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_models_appointment_model_appointmentschema",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "appointmentschema"
     },
     {
@@ -3399,7 +3333,7 @@
       "_origin": "ast",
       "id": "src_models_merchant_model",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "merchant.model.js"
     },
     {
@@ -3410,7 +3344,7 @@
       "_origin": "ast",
       "id": "src_models_merchant_model_merchantschema",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "merchantschema"
     },
     {
@@ -3421,7 +3355,7 @@
       "_origin": "ast",
       "id": "src_models_merchant_model_merchant",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "merchant"
     },
     {
@@ -3432,7 +3366,7 @@
       "_origin": "ast",
       "id": "src_models_notification_model",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "notification.model.js"
     },
     {
@@ -3443,7 +3377,7 @@
       "_origin": "ast",
       "id": "src_models_notification_model_actionschema",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "actionschema"
     },
     {
@@ -3454,7 +3388,7 @@
       "_origin": "ast",
       "id": "src_models_notification_model_deliverystatusschema",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "deliverystatusschema"
     },
     {
@@ -3465,7 +3399,7 @@
       "_origin": "ast",
       "id": "src_models_notification_model_notificationschema",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "notificationschema"
     },
     {
@@ -3475,7 +3409,7 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "src_models_notification_model_notification",
-      "community": 19,
+      "community": 3,
       "community_name": "notification.controller.js",
       "norm_label": "notification"
     },
@@ -3486,7 +3420,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_models_notificationauditlog_model",
-      "community": 19,
+      "community": 3,
       "community_name": "notification.controller.js",
       "norm_label": "notificationauditlog.model.js"
     },
@@ -3497,7 +3431,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_models_notificationauditlog_model_notificationauditlogschema",
-      "community": 19,
+      "community": 3,
       "community_name": "notification.controller.js",
       "norm_label": "notificationauditlogschema"
     },
@@ -3508,7 +3442,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "src_models_notificationauditlog_model_notificationauditlog",
-      "community": 19,
+      "community": 3,
       "community_name": "notification.controller.js",
       "norm_label": "notificationauditlog"
     },
@@ -3553,7 +3487,7 @@
       "_origin": "ast",
       "id": "src_models_notificationpreference_model",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "notificationpreference.model.js"
     },
     {
@@ -3564,7 +3498,7 @@
       "_origin": "ast",
       "id": "src_models_notificationpreference_model_notificationpreferenceschema",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "notificationpreferenceschema"
     },
     {
@@ -3575,7 +3509,7 @@
       "_origin": "ast",
       "id": "src_models_notificationpreference_model_notificationpreference",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "notificationpreference"
     },
     {
@@ -3586,7 +3520,7 @@
       "_origin": "ast",
       "id": "src_models_notificationtemplate_model",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "notificationtemplate.model.js"
     },
     {
@@ -3597,7 +3531,7 @@
       "_origin": "ast",
       "id": "src_models_notificationtemplate_model_notificationtemplateschema",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "notificationtemplateschema"
     },
     {
@@ -3608,7 +3542,7 @@
       "_origin": "ast",
       "id": "src_models_notificationtemplate_model_notificationtemplate",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "notificationtemplate"
     },
     {
@@ -3618,8 +3552,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_models_property_model",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "property.model.js"
     },
     {
@@ -3629,8 +3563,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_models_property_model_propertyschema",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "propertyschema"
     },
     {
@@ -3651,8 +3585,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_models_review_model",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 14,
+      "community_name": "Review",
       "norm_label": "review.model.js"
     },
     {
@@ -3662,8 +3596,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_models_review_model_reviewschema",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 14,
+      "community_name": "Review",
       "norm_label": "reviewschema"
     },
     {
@@ -3673,8 +3607,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_models_review_model_review",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 14,
+      "community_name": "Review",
       "norm_label": "review"
     },
     {
@@ -3685,7 +3619,7 @@
       "_origin": "ast",
       "id": "src_models_token_model",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "token.model.js"
     },
     {
@@ -3696,7 +3630,7 @@
       "_origin": "ast",
       "id": "src_models_token_model_tokenschema",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "tokenschema"
     },
     {
@@ -3707,7 +3641,7 @@
       "_origin": "ast",
       "id": "src_models_token_model_token",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "token"
     },
     {
@@ -3717,8 +3651,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_models_user_model",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "user.model.js"
     },
     {
@@ -3728,8 +3662,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_models_user_model_userschema",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 3,
+      "community_name": "notification.controller.js",
       "norm_label": "userschema"
     },
     {
@@ -3739,8 +3673,8 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "src_models_user_model_user",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 6,
+      "community_name": "admin.service.js",
       "norm_label": "user"
     },
     {
@@ -3751,7 +3685,7 @@
       "_origin": "ast",
       "id": "src_models_wishlist_model",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "wishlist.model.js"
     },
     {
@@ -3762,7 +3696,7 @@
       "_origin": "ast",
       "id": "src_models_wishlist_model_wishlistschema",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "wishlistschema"
     },
     {
@@ -3773,7 +3707,7 @@
       "_origin": "ast",
       "id": "src_models_wishlist_model_wishlist",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "wishlist"
     },
     {
@@ -3784,7 +3718,7 @@
       "_origin": "ast",
       "id": "src_routes_admin_routes",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "admin.routes.js"
     },
     {
@@ -3795,7 +3729,7 @@
       "_origin": "ast",
       "id": "src_routes_admin_routes_router",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "router"
     },
     {
@@ -3806,7 +3740,7 @@
       "_origin": "ast",
       "id": "src_routes_agent_routes",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "agent.routes.js"
     },
     {
@@ -3817,7 +3751,7 @@
       "_origin": "ast",
       "id": "src_routes_agent_routes_router",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "router"
     },
     {
@@ -3828,7 +3762,7 @@
       "_origin": "ast",
       "id": "src_routes_appointment_routes",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "appointment.routes.js"
     },
     {
@@ -3839,7 +3773,7 @@
       "_origin": "ast",
       "id": "src_routes_appointment_routes_router",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "router"
     },
     {
@@ -3849,19 +3783,19 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_routes_auth_routes",
-      "community": 16,
-      "community_name": "auth.routes.js",
+      "community": 1,
+      "community_name": "ApiError",
       "norm_label": "auth.routes.js"
     },
     {
       "label": "router",
       "file_type": "code",
       "source_file": "src/routes/auth.routes.js",
-      "source_location": "L7",
+      "source_location": "L6",
       "_origin": "ast",
       "id": "src_routes_auth_routes_router",
-      "community": 16,
-      "community_name": "auth.routes.js",
+      "community": 1,
+      "community_name": "ApiError",
       "norm_label": "router"
     },
     {
@@ -3872,7 +3806,7 @@
       "_origin": "ast",
       "id": "src_routes_index",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "index.js"
     },
     {
@@ -3883,7 +3817,7 @@
       "_origin": "ast",
       "id": "src_routes_index_router",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "router"
     },
     {
@@ -3894,7 +3828,7 @@
       "_origin": "ast",
       "id": "src_routes_merchant_routes",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "merchant.routes.js"
     },
     {
@@ -3905,7 +3839,7 @@
       "_origin": "ast",
       "id": "src_routes_merchant_routes_router",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "router"
     },
     {
@@ -3915,7 +3849,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_routes_notification_routes",
-      "community": 19,
+      "community": 3,
       "community_name": "notification.controller.js",
       "norm_label": "notification.routes.js"
     },
@@ -3927,7 +3861,7 @@
       "_origin": "ast",
       "id": "src_routes_notification_routes_router",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "router"
     },
     {
@@ -3938,7 +3872,7 @@
       "_origin": "ast",
       "id": "src_routes_property_routes",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "property.routes.js"
     },
     {
@@ -3949,7 +3883,7 @@
       "_origin": "ast",
       "id": "src_routes_property_routes_router",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "router"
     },
     {
@@ -3960,7 +3894,7 @@
       "_origin": "ast",
       "id": "src_routes_review_routes",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "review.routes.js"
     },
     {
@@ -3971,7 +3905,7 @@
       "_origin": "ast",
       "id": "src_routes_review_routes_router",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "router"
     },
     {
@@ -3981,19 +3915,19 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_routes_token_routes",
-      "community": 16,
-      "community_name": "auth.routes.js",
+      "community": 1,
+      "community_name": "ApiError",
       "norm_label": "token.routes.js"
     },
     {
       "label": "router",
       "file_type": "code",
       "source_file": "src/routes/token.routes.js",
-      "source_location": "L5",
+      "source_location": "L4",
       "_origin": "ast",
       "id": "src_routes_token_routes_router",
-      "community": 16,
-      "community_name": "auth.routes.js",
+      "community": 1,
+      "community_name": "ApiError",
       "norm_label": "router"
     },
     {
@@ -4004,7 +3938,7 @@
       "_origin": "ast",
       "id": "src_routes_user_routes",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "user.routes.js"
     },
     {
@@ -4015,7 +3949,7 @@
       "_origin": "ast",
       "id": "src_routes_user_routes_router",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "router"
     },
     {
@@ -4026,7 +3960,7 @@
       "_origin": "ast",
       "id": "src_routes_wishlist_routes",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "wishlist.routes.js"
     },
     {
@@ -4037,7 +3971,7 @@
       "_origin": "ast",
       "id": "src_routes_wishlist_routes_router",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "router"
     },
     {
@@ -4048,7 +3982,7 @@
       "_origin": "ast",
       "id": "src_server",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "server.js"
     },
     {
@@ -4059,7 +3993,7 @@
       "_origin": "ast",
       "id": "src_server_startserver",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "startserver()"
     },
     {
@@ -4124,8 +4058,8 @@
       "source_location": "L108",
       "_origin": "ast",
       "id": "src_services_admin_service_getuserdetail",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 6,
+      "community_name": "admin.service.js",
       "norm_label": "getuserdetail()"
     },
     {
@@ -4168,8 +4102,8 @@
       "source_location": "L195",
       "_origin": "ast",
       "id": "src_services_admin_service_unbanuser",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 6,
+      "community_name": "admin.service.js",
       "norm_label": "unbanuser()"
     },
     {
@@ -4543,7 +4477,7 @@
       "_origin": "ast",
       "id": "src_services_admin_service_verifymerchant",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "verifymerchant()"
     },
     {
@@ -4609,7 +4543,7 @@
       "_origin": "ast",
       "id": "src_services_agent_service_getagentwishlist",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "getagentwishlist()"
     },
     {
@@ -4730,85 +4664,63 @@
       "_origin": "ast",
       "id": "src_services_auth_service",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "auth.service.js"
     },
     {
       "label": "createJwt()",
       "file_type": "code",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L12",
+      "source_location": "L11",
       "_origin": "ast",
       "id": "src_services_auth_service_createjwt",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "createjwt()"
     },
     {
       "label": "login()",
       "file_type": "code",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L14",
+      "source_location": "L13",
       "_origin": "ast",
       "id": "src_services_auth_service_login",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "login()"
     },
     {
       "label": "verifyToken()",
       "file_type": "code",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L96",
+      "source_location": "L90",
       "_origin": "ast",
       "id": "src_services_auth_service_verifytoken",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "verifytoken()"
     },
     {
       "label": "storeToken()",
       "file_type": "code",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L104",
+      "source_location": "L98",
       "_origin": "ast",
       "id": "src_services_auth_service_storetoken",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "storetoken()"
     },
     {
       "label": "createGuestToken()",
       "file_type": "code",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L110",
+      "source_location": "L104",
       "_origin": "ast",
       "id": "src_services_auth_service_createguesttoken",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "createguesttoken()"
-    },
-    {
-      "label": "forgotPassword()",
-      "file_type": "code",
-      "source_file": "src/services/auth.service.js",
-      "source_location": "L115",
-      "_origin": "ast",
-      "id": "src_services_auth_service_forgotpassword",
-      "community": 5,
-      "community_name": "ApiError",
-      "norm_label": "forgotpassword()"
-    },
-    {
-      "label": "resetPassword()",
-      "file_type": "code",
-      "source_file": "src/services/auth.service.js",
-      "source_location": "L144",
-      "_origin": "ast",
-      "id": "src_services_auth_service_resetpassword",
-      "community": 5,
-      "community_name": "ApiError",
-      "norm_label": "resetpassword()"
     },
     {
       "label": "merchant.service.js",
@@ -4818,7 +4730,7 @@
       "_origin": "ast",
       "id": "src_services_merchant_service",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "merchant.service.js"
     },
     {
@@ -4829,7 +4741,7 @@
       "_origin": "ast",
       "id": "src_services_merchant_service_createmerchant",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "createmerchant()"
     },
     {
@@ -4840,7 +4752,7 @@
       "_origin": "ast",
       "id": "src_services_merchant_service_getmerchants",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "getmerchants()"
     },
     {
@@ -4851,7 +4763,7 @@
       "_origin": "ast",
       "id": "src_services_merchant_service_getmerchantbyid",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "getmerchantbyid()"
     },
     {
@@ -4862,7 +4774,7 @@
       "_origin": "ast",
       "id": "src_services_merchant_service_getmerchantagents",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "getmerchantagents()"
     },
     {
@@ -4884,7 +4796,7 @@
       "_origin": "ast",
       "id": "src_services_merchant_service_getmerchantwishlist",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "getmerchantwishlist()"
     },
     {
@@ -4895,7 +4807,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "notification.service.js"
     },
     {
@@ -4906,7 +4818,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service_interpolate",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "interpolate()"
     },
     {
@@ -4917,7 +4829,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service_inquiethours",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "inquiethours()"
     },
     {
@@ -4928,7 +4840,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service_notificationservice",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "notificationservice"
     },
     {
@@ -4939,7 +4851,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service_notificationservice_getpreferences",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": ".getpreferences()"
     },
     {
@@ -4950,7 +4862,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service_notificationservice_resolvetemplate",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": ".resolvetemplate()"
     },
     {
@@ -4961,7 +4873,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service_notificationservice_send",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": ".send()"
     },
     {
@@ -4972,7 +4884,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service_notificationservice_deliver",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": ".deliver()"
     },
     {
@@ -4983,7 +4895,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service_notificationservice_dispatchinapp",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": ".dispatchinapp()"
     },
     {
@@ -4994,7 +4906,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service_notificationservice_emitlocal",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": ".emitlocal()"
     },
     {
@@ -5005,7 +4917,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service_notificationservice_sendmockemail",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": ".sendmockemail()"
     },
     {
@@ -5016,7 +4928,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service_notificationservice_sendmockpush",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": ".sendmockpush()"
     },
     {
@@ -5027,7 +4939,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service_notificationservice_sendmocksms",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": ".sendmocksms()"
     },
     {
@@ -5038,7 +4950,7 @@
       "_origin": "ast",
       "id": "src_services_notification_service_notificationservice_seeddefaulttemplates",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": ".seeddefaulttemplates()"
     },
     {
@@ -5367,8 +5279,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_services_review_service",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 14,
+      "community_name": "Review",
       "norm_label": "review.service.js"
     },
     {
@@ -5378,8 +5290,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_services_review_service_createreview",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 14,
+      "community_name": "Review",
       "norm_label": "createreview()"
     },
     {
@@ -5389,8 +5301,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "src_services_review_service_getreviews",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 14,
+      "community_name": "Review",
       "norm_label": "getreviews()"
     },
     {
@@ -5400,8 +5312,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "src_services_review_service_getreviewbyid",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 14,
+      "community_name": "Review",
       "norm_label": "getreviewbyid()"
     },
     {
@@ -5444,8 +5356,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_services_user_service_createuser",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 5,
+      "community_name": "auth.service.js",
       "norm_label": "createuser()"
     },
     {
@@ -5455,8 +5367,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "src_services_user_service_getusers",
-      "community": 2,
-      "community_name": ".notFound",
+      "community": 6,
+      "community_name": "admin.service.js",
       "norm_label": "getusers()"
     },
     {
@@ -5478,7 +5390,7 @@
       "_origin": "ast",
       "id": "src_services_user_service_getuserwishlist",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "getuserwishlist()"
     },
     {
@@ -5533,7 +5445,7 @@
       "_origin": "ast",
       "id": "src_services_wishlist_service",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "wishlist.service.js"
     },
     {
@@ -5544,7 +5456,7 @@
       "_origin": "ast",
       "id": "src_services_wishlist_service_createwishlist",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "createwishlist()"
     },
     {
@@ -5555,7 +5467,7 @@
       "_origin": "ast",
       "id": "src_services_wishlist_service_getwishlistbyid",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": "getwishlistbyid()"
     },
     {
@@ -5565,7 +5477,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_utils_apierror",
-      "community": 5,
+      "community": 1,
       "community_name": "ApiError",
       "norm_label": "apierror.js"
     },
@@ -5576,7 +5488,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_utils_apierror_apierror",
-      "community": 5,
+      "community": 1,
       "community_name": "ApiError",
       "norm_label": "apierror"
     },
@@ -5587,7 +5499,7 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "src_utils_apierror_apierror_constructor",
-      "community": 5,
+      "community": 1,
       "community_name": "ApiError",
       "norm_label": ".constructor()"
     },
@@ -5643,7 +5555,7 @@
       "_origin": "ast",
       "id": "src_utils_apierror_apierror_conflict",
       "community": 5,
-      "community_name": "ApiError",
+      "community_name": "auth.service.js",
       "norm_label": ".conflict()"
     },
     {
@@ -5653,7 +5565,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "src_utils_apierror_apierror_internal",
-      "community": 5,
+      "community": 1,
       "community_name": "ApiError",
       "norm_label": ".internal()"
     },
@@ -5664,8 +5576,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_utils_apiresponse",
-      "community": 40,
-      "community_name": "authenticate",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "apiresponse.js"
     },
     {
@@ -5675,8 +5587,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_utils_apiresponse_apiresponse",
-      "community": 40,
-      "community_name": "authenticate",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "apiresponse"
     },
     {
@@ -5686,7 +5598,7 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "src_utils_apiresponse_apiresponse_success",
-      "community": 19,
+      "community": 3,
       "community_name": "notification.controller.js",
       "norm_label": ".success()"
     },
@@ -5697,8 +5609,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_utils_apiresponse_apiresponse_error",
-      "community": 40,
-      "community_name": "authenticate",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": ".error()"
     },
     {
@@ -5708,8 +5620,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_utils_tests_phase1_test",
-      "community": 5,
-      "community_name": "ApiError",
+      "community": 4,
+      "community_name": "ApiResponse",
       "norm_label": "phase1.test.js"
     },
     {
@@ -5720,7 +5632,7 @@
       "_origin": "ast",
       "id": "src_utils_asynchandler",
       "community": 4,
-      "community_name": "merchant.controller.js",
+      "community_name": "ApiResponse",
       "norm_label": "asynchandler.js"
     },
     {
@@ -5731,7 +5643,7 @@
       "_origin": "ast",
       "id": "src_utils_asynchandler_asynchandler",
       "community": 4,
-      "community_name": "merchant.controller.js",
+      "community_name": "ApiResponse",
       "norm_label": "asynchandler()"
     },
     {
@@ -5819,7 +5731,7 @@
       "_origin": "ast",
       "id": "src_utils_socket",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "socket.js"
     },
     {
@@ -5830,7 +5742,7 @@
       "_origin": "ast",
       "id": "src_utils_socket_initsocket",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "initsocket()"
     },
     {
@@ -5841,7 +5753,7 @@
       "_origin": "ast",
       "id": "src_utils_socket_getio",
       "community": 3,
-      "community_name": "notification.test.js",
+      "community_name": "notification.controller.js",
       "norm_label": "getio()"
     },
     {
@@ -5852,7 +5764,7 @@
       "_origin": "ast",
       "id": "src_validators_agent_validator",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "agent.validator.js"
     },
     {
@@ -5863,7 +5775,7 @@
       "_origin": "ast",
       "id": "src_validators_agent_validator_createagentschema",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "createagentschema"
     },
     {
@@ -5874,7 +5786,7 @@
       "_origin": "ast",
       "id": "src_validators_appointment_validator",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "appointment.validator.js"
     },
     {
@@ -5885,7 +5797,7 @@
       "_origin": "ast",
       "id": "src_validators_appointment_validator_createappointmentschema",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "createappointmentschema"
     },
     {
@@ -5895,8 +5807,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_validators_auth_validator",
-      "community": 16,
-      "community_name": "auth.routes.js",
+      "community": 1,
+      "community_name": "ApiError",
       "norm_label": "auth.validator.js"
     },
     {
@@ -5906,31 +5818,9 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_validators_auth_validator_loginschema",
-      "community": 16,
-      "community_name": "auth.routes.js",
+      "community": 1,
+      "community_name": "ApiError",
       "norm_label": "loginschema"
-    },
-    {
-      "label": "forgotPasswordSchema",
-      "file_type": "code",
-      "source_file": "src/validators/auth.validator.js",
-      "source_location": "L9",
-      "_origin": "ast",
-      "id": "src_validators_auth_validator_forgotpasswordschema",
-      "community": 16,
-      "community_name": "auth.routes.js",
-      "norm_label": "forgotpasswordschema"
-    },
-    {
-      "label": "resetPasswordSchema",
-      "file_type": "code",
-      "source_file": "src/validators/auth.validator.js",
-      "source_location": "L13",
-      "_origin": "ast",
-      "id": "src_validators_auth_validator_resetpasswordschema",
-      "community": 16,
-      "community_name": "auth.routes.js",
-      "norm_label": "resetpasswordschema"
     },
     {
       "label": "merchant.validator.js",
@@ -5940,7 +5830,7 @@
       "_origin": "ast",
       "id": "src_validators_merchant_validator",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "merchant.validator.js"
     },
     {
@@ -5951,7 +5841,7 @@
       "_origin": "ast",
       "id": "src_validators_merchant_validator_createmerchantschema",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "createmerchantschema"
     },
     {
@@ -5962,7 +5852,7 @@
       "_origin": "ast",
       "id": "src_validators_merchant_validator_verifymerchantschema",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "verifymerchantschema"
     },
     {
@@ -5973,7 +5863,7 @@
       "_origin": "ast",
       "id": "src_validators_property_validator",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "property.validator.js"
     },
     {
@@ -5984,7 +5874,7 @@
       "_origin": "ast",
       "id": "src_validators_property_validator_createpropertyschema",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "createpropertyschema"
     },
     {
@@ -5995,7 +5885,7 @@
       "_origin": "ast",
       "id": "src_validators_review_validator",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "review.validator.js"
     },
     {
@@ -6006,7 +5896,7 @@
       "_origin": "ast",
       "id": "src_validators_review_validator_createreviewschema",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "createreviewschema"
     },
     {
@@ -6017,7 +5907,7 @@
       "_origin": "ast",
       "id": "src_validators_user_validator",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "user.validator.js"
     },
     {
@@ -6028,7 +5918,7 @@
       "_origin": "ast",
       "id": "src_validators_user_validator_createuserschema",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "createuserschema"
     },
     {
@@ -6039,7 +5929,7 @@
       "_origin": "ast",
       "id": "src_validators_user_validator_updateuserschema",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "updateuserschema"
     },
     {
@@ -6050,7 +5940,7 @@
       "_origin": "ast",
       "id": "src_validators_wishlist_validator",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "wishlist.validator.js"
     },
     {
@@ -6061,7 +5951,7 @@
       "_origin": "ast",
       "id": "src_validators_wishlist_validator_createwishlistschema",
       "community": 1,
-      "community_name": "index.js",
+      "community_name": "ApiError",
       "norm_label": "createwishlistschema"
     },
     {
@@ -7216,102 +7106,6 @@
       "_origin": "ast",
       "source": "package_allowscripts",
       "target": "package_allowscripts_scarf_scarf_1_4_0",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/__tests__/auth-hardening.test.js",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_tests_auth_hardening_test",
-      "target": "src_app",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/__tests__/auth-hardening.test.js",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_tests_auth_hardening_test",
-      "target": "src_app_app",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/__tests__/auth-hardening.test.js",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_tests_auth_hardening_test",
-      "target": "src_config_env",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/__tests__/auth-hardening.test.js",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_tests_auth_hardening_test",
-      "target": "src_config_env_env",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/__tests__/auth-hardening.test.js",
-      "source_location": "L9",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_tests_auth_hardening_test",
-      "target": "src_models_token_model",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/__tests__/auth-hardening.test.js",
-      "source_location": "L9",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_tests_auth_hardening_test",
-      "target": "src_models_token_model_token",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/__tests__/auth-hardening.test.js",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_tests_auth_hardening_test",
-      "target": "src_models_user_model",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/__tests__/auth-hardening.test.js",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_tests_auth_hardening_test",
-      "target": "src_models_user_model_user",
       "confidence_score": 1.0
     },
     {
@@ -10242,7 +10036,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app.js",
-      "source_location": "L18",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app",
@@ -10253,7 +10047,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app.js",
-      "source_location": "L32",
+      "source_location": "L30",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app",
@@ -10264,7 +10058,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app.js",
-      "source_location": "L24",
+      "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app",
@@ -10276,31 +10070,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/app.js",
-      "source_location": "L16",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_app",
-      "target": "src_config_env",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app.js",
-      "source_location": "L16",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_app",
-      "target": "src_config_env_env",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app.js",
-      "source_location": "L15",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app",
@@ -10312,7 +10082,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/app.js",
-      "source_location": "L15",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app",
@@ -10324,11 +10094,107 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/app.js",
-      "source_location": "L12",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app",
       "target": "src_middlewares_cookiesecurity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "source_file": "src/app.js",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 0.8,
+      "source": "src_app",
+      "target": "src_middlewares_cookiesecurity_cookiesecurity"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app.js",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app",
+      "target": "src_middlewares_errorhandler",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "source_file": "src/app.js",
+      "source_location": "L53",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 0.8,
+      "source": "src_app",
+      "target": "src_middlewares_errorhandler_errorhandler"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app",
+      "target": "src_middlewares_notfoundhandler",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "source_file": "src/app.js",
+      "source_location": "L52",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 0.8,
+      "source": "src_app",
+      "target": "src_middlewares_notfoundhandler_notfoundhandler"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app.js",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app",
+      "target": "src_middlewares_rejectduplicatequeryparams",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "source_file": "src/app.js",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 0.8,
+      "source": "src_app",
+      "target": "src_middlewares_rejectduplicatequeryparams_rejectduplicatequeryparams"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app",
+      "target": "src_middlewares_requestlogger",
       "confidence_score": 1.0
     },
     {
@@ -10341,102 +10207,6 @@
       "_origin": "ast",
       "confidence_score": 0.8,
       "source": "src_app",
-      "target": "src_middlewares_cookiesecurity_cookiesecurity"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app.js",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_app",
-      "target": "src_middlewares_errorhandler",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "indirect_call",
-      "context": "argument",
-      "confidence": "INFERRED",
-      "source_file": "src/app.js",
-      "source_location": "L74",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 0.8,
-      "source": "src_app",
-      "target": "src_middlewares_errorhandler_errorhandler"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app.js",
-      "source_location": "L10",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_app",
-      "target": "src_middlewares_notfoundhandler",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "indirect_call",
-      "context": "argument",
-      "confidence": "INFERRED",
-      "source_file": "src/app.js",
-      "source_location": "L73",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 0.8,
-      "source": "src_app",
-      "target": "src_middlewares_notfoundhandler_notfoundhandler"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app.js",
-      "source_location": "L11",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_app",
-      "target": "src_middlewares_rejectduplicatequeryparams",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "indirect_call",
-      "context": "argument",
-      "confidence": "INFERRED",
-      "source_file": "src/app.js",
-      "source_location": "L41",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 0.8,
-      "source": "src_app",
-      "target": "src_middlewares_rejectduplicatequeryparams_rejectduplicatequeryparams"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app.js",
-      "source_location": "L9",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_app",
-      "target": "src_middlewares_requestlogger",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "indirect_call",
-      "context": "argument",
-      "confidence": "INFERRED",
-      "source_file": "src/app.js",
-      "source_location": "L44",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 0.8,
-      "source": "src_app",
       "target": "src_middlewares_requestlogger_requestlogger"
     },
     {
@@ -10444,7 +10214,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/app.js",
-      "source_location": "L13",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app",
@@ -10456,7 +10226,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/app.js",
-      "source_location": "L13",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app",
@@ -10468,7 +10238,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/app.js",
-      "source_location": "L7",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app",
@@ -10480,7 +10250,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/app.js",
-      "source_location": "L7",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app",
@@ -10492,7 +10262,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/app.js",
-      "source_location": "L14",
+      "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app",
@@ -10504,7 +10274,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/app.js",
-      "source_location": "L14",
+      "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app",
@@ -10539,7 +10309,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/config/db.js",
-      "source_location": "L29",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_config_db",
@@ -10550,22 +10320,11 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/config/db.js",
-      "source_location": "L61",
+      "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_config_db",
       "target": "src_config_db_disconnectdb",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/config/db.js",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_config_db",
-      "target": "src_config_db_sanitizeuri",
       "confidence_score": 1.0
     },
     {
@@ -10605,18 +10364,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/config/db.js",
-      "source_location": "L46",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_config_db_connectdb",
-      "target": "src_config_db_sanitizeuri",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -10633,7 +10380,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/server.js",
-      "source_location": "L9",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_server_startserver",
@@ -10657,7 +10404,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/server.js",
-      "source_location": "L49",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_server_startserver",
@@ -10713,7 +10460,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L5",
+      "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_middlewares_authenticate",
@@ -10737,7 +10484,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L9",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service",
@@ -10773,7 +10520,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L5",
+      "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_middlewares_authenticate",
@@ -10797,7 +10544,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L9",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service",
@@ -11719,33 +11466,11 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/controllers/auth.controller.js",
-      "source_location": "L15",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_auth_controller",
-      "target": "src_controllers_auth_controller_forgotpassword",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/controllers/auth.controller.js",
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_auth_controller",
       "target": "src_controllers_auth_controller_login",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/controllers/auth.controller.js",
-      "source_location": "L20",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_auth_controller",
-      "target": "src_controllers_auth_controller_resetpassword",
       "confidence_score": 1.0
     },
     {
@@ -12992,91 +12717,8 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/middlewares/authLimiter.js",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_middlewares_authlimiter",
-      "target": "src_middlewares_authlimiter_authlimiter",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/middlewares/authLimiter.js",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_middlewares_authlimiter",
-      "target": "src_utils_apiresponse",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/middlewares/authLimiter.js",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_middlewares_authlimiter",
-      "target": "src_utils_apiresponse_apiresponse",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/routes/auth.routes.js",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_routes_auth_routes",
-      "target": "src_middlewares_authlimiter",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/routes/token.routes.js",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_routes_token_routes",
-      "target": "src_middlewares_authlimiter",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/routes/auth.routes.js",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_routes_auth_routes",
-      "target": "src_middlewares_authlimiter_authlimiter",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/routes/token.routes.js",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_routes_token_routes",
-      "target": "src_middlewares_authlimiter_authlimiter",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L10",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_middlewares_authenticate",
@@ -13087,7 +12729,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L90",
+      "source_location": "L47",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_middlewares_authenticate",
@@ -13099,79 +12741,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_middlewares_authenticate",
-      "target": "src_models_agent_model",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_middlewares_authenticate",
-      "target": "src_models_agent_model_agent",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_middlewares_authenticate",
-      "target": "src_models_merchant_model",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_middlewares_authenticate",
-      "target": "src_models_merchant_model_merchant",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_middlewares_authenticate",
-      "target": "src_models_user_model",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_middlewares_authenticate",
-      "target": "src_models_user_model_user",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L3",
+      "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_middlewares_authenticate",
@@ -13183,35 +12753,11 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L3",
+      "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_middlewares_authenticate",
       "target": "src_utils_apierror_apierror",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_middlewares_authenticate",
-      "target": "src_utils_apiresponse",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_middlewares_authenticate",
-      "target": "src_utils_apiresponse_apiresponse",
       "confidence_score": 1.0
     },
     {
@@ -13323,76 +12869,16 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "references",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L50",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_middlewares_authenticate_authenticate",
-      "target": "src_models_agent_model_agent"
-    },
-    {
-      "relation": "references",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L52",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_middlewares_authenticate_authenticate",
-      "target": "src_models_merchant_model_merchant"
-    },
-    {
-      "relation": "references",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L48",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_middlewares_authenticate_authenticate",
-      "target": "src_models_user_model_user"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L57",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_middlewares_authenticate_authenticate",
-      "target": "src_utils_apierror_apierror_forbidden"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L24",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_middlewares_authenticate_authenticate",
       "target": "src_utils_apierror_apierror_unauthorized"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L76",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_middlewares_authenticate_authenticate",
-      "target": "src_utils_apiresponse_apiresponse_error"
     },
     {
       "relation": "indirect_call",
@@ -13501,42 +12987,6 @@
       "confidence_score": 0.8,
       "source": "src_routes_wishlist_routes",
       "target": "src_middlewares_authenticate_authenticate"
-    },
-    {
-      "relation": "references",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L122",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_middlewares_authenticate_optionalauthenticate",
-      "target": "src_models_agent_model_agent"
-    },
-    {
-      "relation": "references",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L124",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_middlewares_authenticate_optionalauthenticate",
-      "target": "src_models_merchant_model_merchant"
-    },
-    {
-      "relation": "references",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/middlewares/authenticate.js",
-      "source_location": "L120",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_middlewares_authenticate_optionalauthenticate",
-      "target": "src_models_user_model_user"
     },
     {
       "relation": "indirect_call",
@@ -14810,7 +14260,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L6",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service",
@@ -14954,7 +14404,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L6",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service",
@@ -14967,7 +14417,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/auth.service.js",
-      "source_location": "L32",
+      "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service_login",
@@ -15214,7 +14664,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L7",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service",
@@ -15262,7 +14712,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L7",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service",
@@ -15275,7 +14725,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/auth.service.js",
-      "source_location": "L35",
+      "source_location": "L34",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service_login",
@@ -16024,7 +15474,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service",
@@ -16036,7 +15486,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service",
@@ -16049,31 +15499,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/auth.service.js",
-      "source_location": "L134",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_auth_service_forgotpassword",
-      "target": "src_models_token_model_token"
-    },
-    {
-      "relation": "references",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/auth.service.js",
-      "source_location": "L152",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_auth_service_resetpassword",
-      "target": "src_models_token_model_token"
-    },
-    {
-      "relation": "references",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/auth.service.js",
-      "source_location": "L106",
+      "source_location": "L100",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service_storetoken",
@@ -16118,7 +15544,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L5",
+      "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service",
@@ -16274,7 +15700,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L5",
+      "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service",
@@ -16287,34 +15713,10 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/auth.service.js",
-      "source_location": "L125",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_auth_service_forgotpassword",
-      "target": "src_models_user_model_user"
-    },
-    {
-      "relation": "references",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/auth.service.js",
-      "source_location": "L24",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service_login",
-      "target": "src_models_user_model_user"
-    },
-    {
-      "relation": "references",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/auth.service.js",
-      "source_location": "L162",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_auth_service_resetpassword",
       "target": "src_models_user_model_user"
     },
     {
@@ -16784,7 +16186,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/routes/auth.routes.js",
-      "source_location": "L7",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_auth_routes",
@@ -16812,31 +16214,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_auth_routes",
-      "target": "src_validators_auth_validator_forgotpasswordschema",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/routes/auth.routes.js",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_routes_auth_routes",
       "target": "src_validators_auth_validator_loginschema",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/routes/auth.routes.js",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_routes_auth_routes",
-      "target": "src_validators_auth_validator_resetpasswordschema",
       "confidence_score": 1.0
     },
     {
@@ -17162,7 +16540,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/routes/token.routes.js",
-      "source_location": "L5",
+      "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_token_routes",
@@ -17307,18 +16685,6 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_server",
-      "target": "src_utils_socket_getio",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/server.js",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_server",
       "target": "src_utils_socket_initsocket",
       "confidence_score": 1.0
     },
@@ -17328,7 +16694,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/server.js",
-      "source_location": "L16",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_server_startserver",
@@ -17339,19 +16705,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/server.js",
-      "source_location": "L38",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_server_startserver",
-      "target": "src_utils_socket_getio",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/server.js",
-      "source_location": "L25",
+      "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_server_startserver",
@@ -18802,7 +18156,7 @@
       "relation": "indirect_call",
       "confidence": "INFERRED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L182",
+      "source_location": "L113",
       "weight": 1.0,
       "_origin": "ast",
       "context": "collection",
@@ -18814,7 +18168,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L12",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service",
@@ -18825,19 +18179,7 @@
       "relation": "indirect_call",
       "confidence": "INFERRED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L183",
-      "weight": 1.0,
-      "_origin": "ast",
-      "context": "collection",
-      "source": "src_services_auth_service",
-      "target": "src_services_auth_service_forgotpassword",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "indirect_call",
-      "confidence": "INFERRED",
-      "source_file": "src/services/auth.service.js",
-      "source_location": "L179",
+      "source_location": "L110",
       "weight": 1.0,
       "_origin": "ast",
       "context": "collection",
@@ -18849,19 +18191,7 @@
       "relation": "indirect_call",
       "confidence": "INFERRED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L184",
-      "weight": 1.0,
-      "_origin": "ast",
-      "context": "collection",
-      "source": "src_services_auth_service",
-      "target": "src_services_auth_service_resetpassword",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "indirect_call",
-      "confidence": "INFERRED",
-      "source_file": "src/services/auth.service.js",
-      "source_location": "L181",
+      "source_location": "L112",
       "weight": 1.0,
       "_origin": "ast",
       "context": "collection",
@@ -18873,7 +18203,7 @@
       "relation": "indirect_call",
       "confidence": "INFERRED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L180",
+      "source_location": "L111",
       "weight": 1.0,
       "_origin": "ast",
       "context": "collection",
@@ -18886,7 +18216,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L10",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service",
@@ -18898,7 +18228,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L10",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service",
@@ -18910,7 +18240,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L111",
+      "source_location": "L105",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service_createguesttoken",
@@ -18922,7 +18252,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/services/auth.service.js",
-      "source_location": "L84",
+      "source_location": "L78",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service_login",
@@ -18935,19 +18265,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/auth.service.js",
-      "source_location": "L55",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_auth_service_login",
-      "target": "src_utils_apierror_apierror_forbidden"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/auth.service.js",
-      "source_location": "L16",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service_login",
@@ -18959,71 +18277,11 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/auth.service.js",
-      "source_location": "L100",
+      "source_location": "L94",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_auth_service_verifytoken",
       "target": "src_utils_apierror_apierror_unauthorized"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/auth.service.js",
-      "source_location": "L122",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_auth_service_forgotpassword",
-      "target": "src_utils_apierror_apierror_internal"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/auth.service.js",
-      "source_location": "L127",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_auth_service_forgotpassword",
-      "target": "src_utils_apierror_apierror_notfound"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/auth.service.js",
-      "source_location": "L154",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_auth_service_resetpassword",
-      "target": "src_utils_apierror_apierror_badrequest"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/auth.service.js",
-      "source_location": "L149",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_auth_service_resetpassword",
-      "target": "src_utils_apierror_apierror_internal"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/auth.service.js",
-      "source_location": "L164",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_auth_service_resetpassword",
-      "target": "src_utils_apierror_apierror_notfound"
     },
     {
       "relation": "indirect_call",
@@ -21115,33 +20373,11 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/validators/auth.validator.js",
-      "source_location": "L9",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_validators_auth_validator",
-      "target": "src_validators_auth_validator_forgotpasswordschema",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/validators/auth.validator.js",
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_validators_auth_validator",
       "target": "src_validators_auth_validator_loginschema",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/validators/auth.validator.js",
-      "source_location": "L13",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_validators_auth_validator",
-      "target": "src_validators_auth_validator_resetpasswordschema",
       "confidence_score": 1.0
     },
     {
@@ -21540,5 +20776,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "5ccbd1f7e7d84d1beccf788b7dc79592ee6cc8d8"
+  "built_at_commit": "6074f2293c10d9f0b9fae7bdb5475738f3591f34"
 }
