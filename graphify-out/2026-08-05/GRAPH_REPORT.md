@@ -1,16 +1,16 @@
-# Graph Report - property-api  (2026-08-05)
+# Graph Report - property-api  (2026-08-03)
 
 ## Corpus Check
-- 164 files · ~67,480 words
+- 163 files · ~66,082 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 593 nodes · 1345 edges · 48 communities (19 shown, 29 thin omitted)
-- Extraction: 91% EXTRACTED · 9% INFERRED · 0% AMBIGUOUS · INFERRED: 123 edges (avg confidence: 0.56)
+- 590 nodes · 1313 edges · 49 communities (20 shown, 29 thin omitted)
+- Extraction: 91% EXTRACTED · 9% INFERRED · 0% AMBIGUOUS · INFERRED: 122 edges (avg confidence: 0.56)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `b9e3bced`
+- Built from commit: `07f13229`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -19,8 +19,8 @@
 - authenticate.js
 - .notFound
 - notification.controller.js
-- ApiResponse
-- auth.service.js
+- asyncHandler.js
+- ApiError
 - admin.service.js
 - admin.controller.js
 - RedisService
@@ -55,26 +55,27 @@
 - zod
 - swagger.js
 - Codebase Documentation: Property API
-- cloudinary
+- ApiResponse
 - property.controller.js
 - user.controller.js
 - appointment.controller.js
 - agent.controller.js
+- bcryptjs
 - requestLogger.js
 - cors
 - cookieSecurity.js
 
 ## God Nodes (most connected - your core abstractions)
-1. `app` - 60 edges
-2. `User` - 39 edges
+1. `app` - 59 edges
+2. `User` - 36 edges
 3. `Property` - 31 edges
 4. `ApiError` - 29 edges
-5. `Agent` - 28 edges
-6. `Appointment` - 23 edges
+5. `Agent` - 25 edges
+6. `Appointment` - 19 edges
 7. `authenticate()` - 17 edges
-8. `Merchant` - 17 edges
-9. `RedisService` - 17 edges
-10. `ApiResponse` - 17 edges
+8. `RedisService` - 17 edges
+9. `ApiResponse` - 17 edges
+10. `Merchant` - 16 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Docker Integration` --conceptually_related_to--> `Multi-container Stack`  [INFERRED]
@@ -91,35 +92,35 @@
 ## Import Cycles
 - None detected.
 
-## Communities (48 total, 29 thin omitted)
+## Communities (49 total, 29 thin omitted)
 
 ### Community 0 - "app.js"
 Cohesion: 0.07
 Nodes (3): app, corsOptions, limiter
 
 ### Community 1 - "authenticate.js"
-Cohesion: 0.07
-Nodes (40): authenticate(), optionalAuthenticate(), authLimiter, authorize(), ensureOwnerOrAdmin(), errorHandler(), fileFilter(), storage (+32 more)
+Cohesion: 0.06
+Nodes (42): authenticate(), optionalAuthenticate(), authorize(), errorHandler(), fileFilter(), storage, upload, uploadArray() (+34 more)
 
 ### Community 2 - ".notFound"
-Cohesion: 0.06
-Nodes (71): notFoundHandler(), Agent, agentSchema, Appointment, appointmentSchema, Merchant, merchantSchema, Property (+63 more)
+Cohesion: 0.09
+Nodes (47): ensureOwnerOrAdmin(), rbacGuard(), verifyRelation(), Appointment, Property, Review, reviewSchema, User (+39 more)
 
 ### Community 3 - "notification.controller.js"
-Cohesion: 0.10
-Nodes (23): broadcastNotification(), getNotifications(), markAsRead(), updatePreferences(), injectGuestActor(), rbacGuard(), verifyRelation(), actionSchema (+15 more)
+Cohesion: 0.08
+Nodes (29): connectDB(), disconnectDB(), sanitizeURI(), broadcastNotification(), getNotifications(), markAsRead(), updatePreferences(), injectGuestActor() (+21 more)
 
-### Community 4 - "ApiResponse"
-Cohesion: 0.17
-Nodes (11): createToken, forgotPassword, login, resetPassword, createReview, deleteReview, getReviews, updateReview (+3 more)
+### Community 4 - "asyncHandler.js"
+Cohesion: 0.28
+Nodes (6): createReview, deleteReview, getReviews, updateReview, createWishlist, asyncHandler()
 
-### Community 5 - "auth.service.js"
-Cohesion: 0.26
-Nodes (9): requestTimeout(), Token, tokenSchema, createGuestToken(), createJwt(), forgotPassword(), resetPassword(), storeToken() (+1 more)
+### Community 5 - "ApiError"
+Cohesion: 0.09
+Nodes (25): notFoundHandler(), requestTimeout(), Agent, agentSchema, merchantSchema, Token, tokenSchema, Wishlist (+17 more)
 
 ### Community 6 - "admin.service.js"
-Cohesion: 0.06
-Nodes (11): rejectDuplicateQueryParams(), approveProperty(), banIp(), flagProperty(), getDashboard(), getProperties(), listUsers(), rejectProperty() (+3 more)
+Cohesion: 0.05
+Nodes (14): rejectDuplicateQueryParams(), banIp(), banUser(), deleteUser(), getDashboard(), getProperties(), getUserDetail(), listUsers() (+6 more)
 
 ### Community 7 - "admin.controller.js"
 Cohesion: 0.05
@@ -135,11 +136,11 @@ Nodes (12): API Service Container, MongoDB Service Container, Multi-container St
 
 ### Community 11 - "dependencies"
 Cohesion: 0.29
-Nodes (7): bcryptjs, dotenv, mongoose, dependencies, bcryptjs, dotenv, mongoose
+Nodes (7): cloudinary, dotenv, mongoose, dependencies, cloudinary, dotenv, mongoose
 
 ### Community 16 - "env.js"
-Cohesion: 0.18
-Nodes (9): connectDB(), disconnectDB(), sanitizeURI(), env, requiredEnv, validNodeEnvs, startServer(), getIO() (+1 more)
+Cohesion: 0.23
+Nodes (3): env, requiredEnv, validNodeEnvs
 
 ### Community 19 - "merchant.controller.js"
 Cohesion: 0.29
@@ -152,6 +153,10 @@ Nodes (5): __dirname, __filename, setupSwagger(), swaggerPath, swaggerSpec
 ### Community 39 - "Codebase Documentation: Property API"
 Cohesion: 0.11
 Nodes (17): 1. Executive Summary & Problem Space, 2. System Architecture & Component Design, 3. Detailed Data Models & Relationships, 4.1 Notification Pipeline & Quiet-Hours Engine, 4.2 Local Image Compression & Cloudinary Storage, 4. Key Subsystem Workflows, 5. Complete API Routes Table, 6.1 Fallback-Mode Caching & Resilience (+9 more)
+
+### Community 40 - "ApiResponse"
+Cohesion: 0.22
+Nodes (7): createToken, forgotPassword, login, resetPassword, authLimiter, router, ApiResponse
 
 ### Community 41 - "property.controller.js"
 Cohesion: 0.22
@@ -177,17 +182,17 @@ Nodes (5): createAgent, deleteAgent, getAgents, getAgentWishlist, updateAgentRes
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `ApiResponse` connect `ApiResponse` to `app.js`, `authenticate.js`, `notification.controller.js`, `admin.controller.js`, `property.controller.js`, `user.controller.js`, `appointment.controller.js`, `agent.controller.js`, `merchant.controller.js`?**
-  _High betweenness centrality (0.055) - this node is a cross-community bridge._
-- **Why does `User` connect `.notFound` to `authenticate.js`, `notification.controller.js`, `auth.service.js`, `admin.service.js`, `env.js`?**
-  _High betweenness centrality (0.047) - this node is a cross-community bridge._
-- **Why does `ApiError` connect `.notFound` to `authenticate.js`, `notification.controller.js`, `ApiResponse`, `auth.service.js`, `admin.service.js`?**
-  _High betweenness centrality (0.042) - this node is a cross-community bridge._
+- **Why does `ApiResponse` connect `ApiResponse` to `app.js`, `authenticate.js`, `notification.controller.js`, `asyncHandler.js`, `admin.controller.js`, `property.controller.js`, `user.controller.js`, `appointment.controller.js`, `agent.controller.js`, `merchant.controller.js`?**
+  _High betweenness centrality (0.056) - this node is a cross-community bridge._
+- **Why does `User` connect `.notFound` to `authenticate.js`, `notification.controller.js`, `ApiError`, `admin.service.js`, `env.js`?**
+  _High betweenness centrality (0.046) - this node is a cross-community bridge._
+- **Why does `ApiError` connect `ApiError` to `authenticate.js`, `.notFound`, `notification.controller.js`, `admin.service.js`, `ApiResponse`?**
+  _High betweenness centrality (0.043) - this node is a cross-community bridge._
 - **What connects `name`, `version`, `description` to the rest of the system?**
   _168 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `app.js` be split into smaller, more focused modules?**
   _Cohesion score 0.07329462989840348 - nodes in this community are weakly interconnected._
 - **Should `authenticate.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.06627175120325805 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06378378378378378 - nodes in this community are weakly interconnected._
 - **Should `.notFound` be split into smaller, more focused modules?**
-  _Cohesion score 0.0583976833976834 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09176587301587301 - nodes in this community are weakly interconnected._

@@ -3,12 +3,12 @@ import asyncHandler from '../utils/asyncHandler.js';
 import userService from '../services/user.service.js';
 
 const createUser = asyncHandler(async (req, res) => {
-  const user = await userService.createUser(req.body);
+  const user = await userService.createUser(req.body, req.actor);
   return res.status(201).json(ApiResponse.success(user, 'User created'));
 });
 
 const getUsers = asyncHandler(async (req, res) => {
-  const users = await userService.getUsers(req.query);
+  const users = await userService.getUsers(req.query, req.actor);
   return res.status(200).json(ApiResponse.success(users, 'Users retrieved'));
 });
 

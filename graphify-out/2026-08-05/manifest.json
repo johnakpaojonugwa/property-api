@@ -440,9 +440,9 @@
     "semantic_hash": "f6d62ded9bf65fa29a44b9b4d2790309"
   },
   "src/controllers/user.controller.js": {
-    "mtime": 1785966191.2505343,
-    "ast_hash": "c5dc67cf084960f7722c66711cc4a78e",
-    "semantic_hash": ""
+    "mtime": 1785440086.9642117,
+    "ast_hash": "f6731e4011668890a7fa2560620d4d6e",
+    "semantic_hash": "f6731e4011668890a7fa2560620d4d6e"
   },
   "src/controllers/wishlist.controller.js": {
     "mtime": 1785420392.0132034,
@@ -455,8 +455,8 @@
     "semantic_hash": ""
   },
   "src/middlewares/authorize.js": {
-    "mtime": 1785966177.4336965,
-    "ast_hash": "1fae446d9c9773a62e8028b504a63c2b",
+    "mtime": 1785787885.8956268,
+    "ast_hash": "0477047d3e6eb0d394b8c5a7f6cbe576",
     "semantic_hash": ""
   },
   "src/middlewares/cookieSecurity.js": {
@@ -560,9 +560,9 @@
     "semantic_hash": "77364984aac5bb558563c646828bdf11"
   },
   "src/models/user.model.js": {
-    "mtime": 1785966152.2416136,
-    "ast_hash": "b3ce266f9599fe06cb7c68e821f390f0",
-    "semantic_hash": ""
+    "mtime": 1785422267.4891496,
+    "ast_hash": "e458f78b55d93a74497302834bb93822",
+    "semantic_hash": "e458f78b55d93a74497302834bb93822"
   },
   "src/models/wishlist.model.js": {
     "mtime": 1783645248.2356617,
@@ -620,8 +620,8 @@
     "semantic_hash": ""
   },
   "src/routes/user.routes.js": {
-    "mtime": 1785966170.3375435,
-    "ast_hash": "c94ed8b4da8c0c4685c08b22c4f2cfac",
+    "mtime": 1785787904.7856581,
+    "ast_hash": "0c800accbece43a25e2db4b893448dcb",
     "semantic_hash": ""
   },
   "src/routes/wishlist.routes.js": {
@@ -680,8 +680,8 @@
     "semantic_hash": ""
   },
   "src/services/user.service.js": {
-    "mtime": 1785966240.4180331,
-    "ast_hash": "b5a69e98405327e275ce4d2c124a2111",
+    "mtime": 1785787924.566027,
+    "ast_hash": "58c3b86976f227b339122a24a25cd639",
     "semantic_hash": ""
   },
   "src/services/wishlist.service.js": {
@@ -817,11 +817,6 @@
   "src/validators/notification.validator.js": {
     "mtime": 1785759590.636626,
     "ast_hash": "111d6e6fcc844b88bc49bbbce23629c0",
-    "semantic_hash": ""
-  },
-  "src/__tests__/agent-clients.test.js": {
-    "mtime": 1785966380.7040608,
-    "ast_hash": "96d5278bb7f7c68c11db10bd02f77d7e",
     "semantic_hash": ""
   }
 }

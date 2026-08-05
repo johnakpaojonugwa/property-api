@@ -8,11 +8,11 @@ import { uploadSingle } from '../middlewares/upload.middleware.js';
 
 const router = express.Router();
 
-router.get('/users', authenticate, authorize(['ADMIN', 'MERCHANT']), userController.getUsers);
+router.get('/users', authenticate, authorize(['ADMIN', 'MERCHANT', 'AGENT']), userController.getUsers);
 router.get('/users/:user_id', authenticate, ensureOwnerOrAdmin('user_id'), userController.getUserById);
 router.get('/users/:user_id/wishlist', authenticate, ensureOwnerOrAdmin('user_id'), userController.getUserWishlist);
 router.get('/users/:user_id/properties', authenticate, ensureOwnerOrAdmin('user_id'), userController.getUserProperties);
-router.post('/users', validate(createUserSchema), userController.createUser);
+router.post('/users', optionalAuthenticate, validate(createUserSchema), userController.createUser);
 router.put('/users/:user_id/resource', authenticate, ensureOwnerOrAdmin('user_id'), uploadSingle('resource'), userController.updateUserResource);
 router.put('/users/:user_id', authenticate, ensureOwnerOrAdmin('user_id'), validate(updateUserSchema), userController.updateUser);
 router.delete('/users/:user_id', authenticate, ensureOwnerOrAdmin('user_id'), userController.deleteUser);

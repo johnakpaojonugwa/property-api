@@ -68,6 +68,8 @@ const userSchema = new mongoose.Schema(
     isActive: { type: Boolean, default: true },
     guestSessionId: { type: String, index: true },
     preferences: { type: mongoose.Schema.Types.ObjectId, ref: 'NotificationPreference' },
+    agent: { type: mongoose.Schema.Types.ObjectId, ref: 'Agent', index: true },
+    merchant: { type: mongoose.Schema.Types.ObjectId, ref: 'Merchant', index: true },
   },
   { timestamps: true },
 );
