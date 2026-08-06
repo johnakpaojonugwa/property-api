@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import compression from 'compression';
 import helmet from 'helmet';
-import rateLimit from 'express-rate-limit';
+import createTokenBucketLimiter from './middlewares/rateLimiter.js';
 import mongoose from 'mongoose';
 import routes from './routes/index.js';
 import errorHandler from './middlewares/errorHandler.js';
@@ -21,11 +21,9 @@ app.set('trust proxy', 1);
 app.set('etag', 'strong');
 app.disable('x-powered-by');
 
-const limiter = rateLimit({
+const limiter = createTokenBucketLimiter({
   windowMs: 60 * 1000,
   max: 100,
-  standardHeaders: true,
-  legacyHeaders: false,
   message: 'Too many requests, please try again later.',
 });
 
