@@ -128,20 +128,21 @@ const forgotPassword = async (email) => {
   }
 
   // Generate secure 32-byte hex token
-  const token = crypto.randomBytes(32).toString('hex');
+  const rawToken = crypto.randomBytes(32).toString('hex');
+  const hashedToken = crypto.createHash('sha256').update(rawToken).digest('hex');
   const expires_at = new Date(Date.now() + 15 * 60 * 1000); // 15 minutes
 
-  const createdToken = await Token.create({
+  await Token.create({
     email: normalizedEmail,
-    token,
+    token: hashedToken,
     expires_at,
   });
 
-  const isTest = (process.env.NODE_ENV === 'test' || process.env.VITEST) && process.env.NODE_ENV !== 'production';
+  const isTest = process.env.NODE_ENV === 'test';
 
   // Return the token only in test mode. Otherwise, redact it.
   return {
-    token: isTest ? token : '[REDACTED]',
+    token: isTest ? rawToken : '[REDACTED]',
     email: normalizedEmail,
   };
 };
@@ -154,7 +155,8 @@ const resetPassword = async (token, newPassword) => {
     throw ApiError.internal('Database connection unavailable');
   }
 
-  const tokenRecord = await Token.findOne({ token });
+  const hashedToken = crypto.createHash('sha256').update(token).digest('hex');
+  const tokenRecord = await Token.findOne({ token: hashedToken });
   if (!tokenRecord) {
     throw ApiError.badRequest('Invalid or expired password reset token');
   }

@@ -1,5 +1,6 @@
 import ApiResponse from '../utils/ApiResponse.js';
 import asyncHandler from '../utils/asyncHandler.js';
+import ApiError from '../utils/ApiError.js';
 import merchantService from '../services/merchant.service.js';
 import agentService from '../services/agent.service.js';
 
@@ -21,6 +22,9 @@ const getMerchantAgents = asyncHandler(async (req, res) => {
 
 const getMerchantWishlist = asyncHandler(async (req, res) => {
   const merchant_id = req.params.merchant_id;
+  if (req.actor.id !== merchant_id && req.actor.role !== 'ADMIN') {
+    throw ApiError.forbidden('You do not have permission to view this merchant wishlist');
+  }
   const wishlist = await merchantService.getMerchantWishlist(merchant_id);
   return res.status(200).json(ApiResponse.success(wishlist, 'Merchant wishlist retrieved'));
 });

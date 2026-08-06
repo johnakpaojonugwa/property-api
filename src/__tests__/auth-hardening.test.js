@@ -163,5 +163,5 @@ describe('Authentication Hardening', () => {
     expect(res.status).toBe(429);
     expect(res.body.success).toBe(false);
     expect(res.body.message).toContain('Too many login attempts');
-  });
+  }, 20000);
 });

@@ -27,21 +27,19 @@ export const getNotifications = async (req, res, next) => {
       }
     } else if (actor.role === 'AGENT') {
       if (recipientId && recipientId !== actor.id) {
-        // Cross-Actor Agent check: Can only view client notifications
-        const hasAppointment = await Appointment.findOne({
-          user_id: recipientId,
-          agent_id: actor.id,
-        });
-        if (!hasAppointment) {
-          // Check if related to property agent listings
-          const properties = await Property.find({ agent: actor.id }).select('_id');
-          const propertyIds = properties.map((p) => p._id);
-          query.$or = [
-            { recipientId: recipientId, sourceType: 'property', sourceId: { $in: propertyIds } },
-          ];
-        } else {
-          query.recipientId = recipientId;
-        }
+        // Cross-Actor Agent check: Can only view client notifications related to their properties or appointments
+        const properties = await Property.find({ agent: actor.id }).select('_id');
+        const propertyIds = properties.map((p) => p._id);
+        const appointments = await Appointment.find({ user_id: recipientId, agent_id: actor.id }).select('_id');
+        const appointmentIds = appointments.map((a) => a._id);
+
+        query.recipientId = recipientId;
+        query.$or = [
+          { sourceType: 'property', sourceId: { $in: propertyIds } },
+          { 'data.propertyId': { $in: propertyIds } },
+          { sourceType: 'showing', sourceId: { $in: appointmentIds } },
+          { 'data.appointmentId': { $in: appointmentIds } },
+        ];
       } else {
         query.recipientId = actor.id;
       }

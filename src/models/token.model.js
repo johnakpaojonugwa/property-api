@@ -9,6 +9,9 @@ const tokenSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
+// TTL index to automatically purge expired tokens from MongoDB
+tokenSchema.index({ expires_at: 1 }, { expireAfterSeconds: 0 });
+
 const Token = mongoose.model('Token', tokenSchema);
 
 export default Token;

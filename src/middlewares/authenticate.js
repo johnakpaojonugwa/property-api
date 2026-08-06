@@ -11,8 +11,8 @@ export const authenticate = async (req, res, next) => {
   const header = req.headers?.authorization;
 
   const parts = header ? header.split(' ') : [];
-  if (!header || parts.length !== 2 || (!/^b[re]{2}rer$/i.test(parts[0]) && parts[0].toLowerCase() !== 'bearer')) {
-    if ((process.env.NODE_ENV === 'test' || process.env.VITEST) && req.url && req.headers['x-test-no-fallback'] !== 'true') {
+  if (!header || parts.length !== 2 || parts[0].toLowerCase() !== 'bearer') {
+    if ((process.env.NODE_ENV === 'test' || process.env.VITEST) && process.env.NODE_ENV !== 'production' && req.url && req.headers['x-test-no-fallback'] !== 'true') {
       req.actor = {
         id: '64b6f5c6f9d0c2a1b2c3d4e5',
         role: 'ADMIN',
@@ -28,10 +28,11 @@ export const authenticate = async (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, env.JWT_SECRET);
+    const resolvedRole = (decoded.role || decoded.actor_type || 'USER').toUpperCase();
     req.actor = {
       id: decoded.id,
-      role: decoded.role || decoded.actor_type || 'USER',
-      type: decoded.actor_type || decoded.role || 'USER',
+      role: resolvedRole,
+      type: resolvedRole,
       merchant_id: decoded.merchant_id || null,
     };
 
@@ -64,7 +65,7 @@ export const authenticate = async (req, res, next) => {
 
     return next();
   } catch (error) {
-    if ((process.env.NODE_ENV === 'test' || process.env.VITEST) && req.headers['x-test-no-fallback'] !== 'true') {
+    if ((process.env.NODE_ENV === 'test' || process.env.VITEST) && process.env.NODE_ENV !== 'production' && req.headers['x-test-no-fallback'] !== 'true') {
       req.actor = {
         id: token,
         role: 'ADMIN',
@@ -98,16 +99,17 @@ export const optionalAuthenticate = async (req, res, next) => {
   }
 
   const parts = header.split(' ');
-  if (parts.length !== 2 || (!/^b[re]{2}rer$/i.test(parts[0]) && parts[0].toLowerCase() !== 'bearer')) {
+  if (parts.length !== 2 || parts[0].toLowerCase() !== 'bearer') {
     return next();
   }
 
   try {
     const decoded = jwt.verify(parts[1], env.JWT_SECRET);
+    const resolvedRole = (decoded.role || decoded.actor_type || 'USER').toUpperCase();
     req.actor = {
       id: decoded.id,
-      role: decoded.role || decoded.actor_type || 'USER',
-      type: decoded.actor_type || decoded.role || 'USER',
+      role: resolvedRole,
+      type: resolvedRole,
       merchant_id: decoded.merchant_id || null,
     };
 

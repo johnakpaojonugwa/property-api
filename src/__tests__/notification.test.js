@@ -115,8 +115,13 @@ describe('Notification System Tests', () => {
 
     it('allows Agent to view client notifications via cross-actor rules', async () => {
       const clientUserId = 'user-789';
-      // Spy on Appointment.findOne to simulate client relationship
-      vi.spyOn(Appointment, 'findOne').mockResolvedValue({ _id: 'appt-123' });
+      // Spy on Appointment.find and Property.find to simulate client relationship
+      vi.spyOn(Property, 'find').mockReturnValue({
+        select: vi.fn().mockResolvedValue([]),
+      });
+      vi.spyOn(Appointment, 'find').mockReturnValue({
+        select: vi.fn().mockResolvedValue([{ _id: 'appt-123' }]),
+      });
       vi.spyOn(Notification, 'find').mockReturnValue({
         sort: () => ({
           skip: () => ({
@@ -138,8 +143,10 @@ describe('Notification System Tests', () => {
 
     it('blocks Agent from viewing non-client notifications', async () => {
       const unrelatedUserId = 'user-999';
-      vi.spyOn(Appointment, 'findOne').mockResolvedValue(null);
       vi.spyOn(Property, 'find').mockReturnValue({
+        select: vi.fn().mockResolvedValue([]),
+      });
+      vi.spyOn(Appointment, 'find').mockReturnValue({
         select: vi.fn().mockResolvedValue([]),
       });
       vi.spyOn(Notification, 'find').mockReturnValue({

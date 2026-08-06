@@ -147,8 +147,7 @@ const updateProperty = async (id, data, actor) => {
   }
 
   const isAgentOwner = property.agent.toString() === actor.id;
-  const isMerchantOwner = property.merchant?.toString() === actor.id ||
-                          (actor.merchant_id && property.merchant?.toString() === actor.merchant_id);
+  const isMerchantOwner = actor.role === 'MERCHANT' && property.merchant?.toString() === actor.id;
   const isAdmin = actor.role === 'ADMIN';
 
   if (!isAgentOwner && !isMerchantOwner && !isAdmin) {
@@ -199,8 +198,7 @@ const updatePropertyResources = async (id, imagesData = {}, files = null, actor)
   }
 
   const isAgentOwner = property.agent.toString() === actor.id;
-  const isMerchantOwner = property.merchant?.toString() === actor.id ||
-                          (actor.merchant_id && property.merchant?.toString() === actor.merchant_id);
+  const isMerchantOwner = actor.role === 'MERCHANT' && property.merchant?.toString() === actor.id;
   const isAdmin = actor.role === 'ADMIN';
 
   if (!isAgentOwner && !isMerchantOwner && !isAdmin) {
@@ -260,8 +258,7 @@ const deleteProperty = async (id, actor) => {
   }
 
   const isAgentOwner = property.agent.toString() === actor.id;
-  const isMerchantOwner = property.merchant?.toString() === actor.id ||
-                          (actor.merchant_id && property.merchant?.toString() === actor.merchant_id);
+  const isMerchantOwner = actor.role === 'MERCHANT' && property.merchant?.toString() === actor.id;
   const isAdmin = actor.role === 'ADMIN';
 
   
