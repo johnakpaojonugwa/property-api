@@ -4,6 +4,8 @@ import Agent from '../models/agent.model.js';
 import ApiError from '../utils/ApiError.js';
 import compressImage from '../utils/imageCompressor.js';
 import uploadToCloudinary from '../utils/cloudinary.js';
+import redisService from './redis.service.js';
+import { getOrSetCache } from '../utils/cacheHelper.js';
 
 const buildFilters = (query = {}) => {
   const filters = {};
@@ -68,6 +70,12 @@ const createProperty = async (data, actor) => {
   }
 
   const property = await Property.create(data);
+
+  // Invalidate property list cache on new listings
+  redisService.invalidateTag('properties:list').catch((err) =>
+    console.error('Failed to invalidate properties list cache on creation:', err)
+  );
+
   return property.toObject({ versionKey: false });
 };
 
@@ -88,21 +96,29 @@ const getProperties = async (query = {}) => {
     };
   }
 
-  try {
-    const [properties, total] = await Promise.all([
-      Property.find(filters).sort({ createdAt: -1 }).skip(skip).limit(limit).lean(),
-      Property.countDocuments(filters),
-    ]);
+  const cacheKey = `properties:list:${JSON.stringify(filters)}:${page}:${limit}`;
 
-    return {
-      data: properties,
-      meta: {
-        total,
-        page,
-        limit,
-        totalPages: Math.ceil(total / limit),
+  try {
+    return await getOrSetCache(
+      cacheKey,
+      async () => {
+        const [properties, total] = await Promise.all([
+          Property.find(filters).sort({ createdAt: -1 }).skip(skip).limit(limit).lean(),
+          Property.countDocuments(filters),
+        ]);
+
+        return {
+          data: properties,
+          meta: {
+            total,
+            page,
+            limit,
+            totalPages: Math.ceil(total / limit),
+          },
+        };
       },
-    };
+      { ttl: 3600, tags: ['properties:list'] }
+    );
   } catch (error) {
     return {
       data: [],
@@ -121,11 +137,20 @@ const getPropertyById = async (id) => {
     throw ApiError.notFound('Property not found');
   }
 
+  const cacheKey = `property:id:${id}`;
+
   try {
-    const property = await Property.findById(id).lean();
-    if (!property) {
-      throw ApiError.notFound('Property not found');
-    }
+    const property = await getOrSetCache(
+      cacheKey,
+      async () => {
+        const doc = await Property.findById(id).lean();
+        if (!doc) {
+          throw ApiError.notFound('Property not found');
+        }
+        return doc;
+      },
+      { ttl: 3600 }
+    );
     return property;
   } catch (error) {
     throw ApiError.notFound('Property not found');
@@ -159,6 +184,12 @@ const updateProperty = async (id, data, actor) => {
   }
 
   const updated = await Property.findByIdAndUpdate(id, data, { returnDocument: 'after' }).lean();
+  if (updated) {
+    Promise.all([
+      redisService.del(`property:id:${id}`),
+      redisService.invalidateTag('properties:list'),
+    ]).catch((err) => console.error('Failed to invalidate cache after property update:', err));
+  }
   return updated;
 };
 
@@ -206,6 +237,12 @@ const updatePropertyResources = async (id, imagesData = {}, files = null, actor)
   }
 
   const updated = await Property.findByIdAndUpdate(id, { images: maxImages }, { returnDocument: 'after' }).lean();
+  if (updated) {
+    Promise.all([
+      redisService.del(`property:id:${id}`),
+      redisService.invalidateTag('properties:list'),
+    ]).catch((err) => console.error('Failed to invalidate cache after property resource update:', err));
+  }
   return updated;
 };
 
@@ -220,6 +257,10 @@ const setVerified = async (id, is_verified, actor) => {
   if (!updated) {
     throw ApiError.notFound('Property not found');
   }
+  Promise.all([
+    redisService.del(`property:id:${id}`),
+    redisService.invalidateTag('properties:list'),
+  ]).catch((err) => console.error('Failed to invalidate cache after property verification:', err));
   return updated;
 };
 
@@ -240,6 +281,10 @@ const buyProperty = async (property_id, user_id, actor) => {
   if (!property) {
     throw ApiError.notFound('Property not found');
   }
+  Promise.all([
+    redisService.del(`property:id:${property_id}`),
+    redisService.invalidateTag('properties:list'),
+  ]).catch((err) => console.error('Failed to invalidate cache after property purchase:', err));
   return { property_id, user_id, status: 'BOUGHT', property };
 };
 
@@ -267,6 +312,12 @@ const deleteProperty = async (id, actor) => {
   }
 
   const deleted = await Property.findByIdAndDelete(id).lean();
+  if (deleted) {
+    Promise.all([
+      redisService.del(`property:id:${id}`),
+      redisService.invalidateTag('properties:list'),
+    ]).catch((err) => console.error('Failed to invalidate cache after property deletion:', err));
+  }
   return deleted;
 };
 
