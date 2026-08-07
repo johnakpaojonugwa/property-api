@@ -56,7 +56,7 @@ const propertySchema = new mongoose.Schema(
   { timestamps: true },
 );
 
-propertySchema.index({ city: 1, is_verified: 1 });
+propertySchema.index({ city: 1, is_verified: 1, createdAt: -1 });
 propertySchema.index({ agent: 1 });
 propertySchema.index({ lat: 1, lng: 1 });
 

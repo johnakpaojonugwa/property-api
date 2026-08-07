@@ -28,9 +28,9 @@ export const getNotifications = async (req, res, next) => {
     } else if (actor.role === 'AGENT') {
       if (recipientId && recipientId !== actor.id) {
         // Cross-Actor Agent check: Can only view client notifications related to their properties or appointments
-        const properties = await Property.find({ agent: actor.id }).select('_id');
+        const properties = await Property.find({ agent: actor.id }).select('_id').lean();
         const propertyIds = properties.map((p) => p._id);
-        const appointments = await Appointment.find({ user_id: recipientId, agent_id: actor.id }).select('_id');
+        const appointments = await Appointment.find({ user_id: recipientId, agent_id: actor.id }).select('_id').lean();
         const appointmentIds = appointments.map((a) => a._id);
 
         query.recipientId = recipientId;
@@ -46,7 +46,7 @@ export const getNotifications = async (req, res, next) => {
     } else if (actor.role === 'MERCHANT') {
       if (recipientId && recipientId !== actor.id) {
         // Cross-Actor Merchant check: Can only view lead/properties they own
-        const properties = await Property.find({ merchant: actor.id }).select('_id');
+        const properties = await Property.find({ merchant: actor.id }).select('_id').lean();
         const propertyIds = properties.map((p) => p._id);
         query.recipientId = recipientId;
         query.$or = [
@@ -144,7 +144,7 @@ export const broadcastNotification = async (req, res, next) => {
     const targetRoles = recipientRoles.map((r) => r.toUpperCase());
 
     // Fetch all users with targeted roles
-    const users = await User.find({ role: { $in: targetRoles }, isActive: true }).select('_id role');
+    const users = await User.find({ role: { $in: targetRoles }, isActive: true }).select('_id role').lean();
 
     if (users.length === 0) {
       return res.status(200).json(
@@ -171,10 +171,15 @@ export const broadcastNotification = async (req, res, next) => {
 
     const createdNotifications = await Notification.insertMany(notificationOps);
 
-    // Trigger deliveries asynchronously
-    Promise.all(
+    // Trigger deliveries asynchronously using Promise.allSettled to avoid short-circuiting
+    Promise.allSettled(
       createdNotifications.map((notification) => NotificationService.deliver(notification))
-    ).catch((err) => console.error('Error during broadcast delivery:', err));
+    ).then((results) => {
+      const failures = results.filter((r) => r.status === 'rejected');
+      if (failures.length > 0) {
+        console.error(`${failures.length} broadcast deliveries failed:`, failures.map((f) => f.reason));
+      }
+    });
 
     // Audit Log
     await NotificationAuditLog.create({

@@ -117,10 +117,14 @@ describe('Notification System Tests', () => {
       const clientUserId = 'user-789';
       // Spy on Appointment.find and Property.find to simulate client relationship
       vi.spyOn(Property, 'find').mockReturnValue({
-        select: vi.fn().mockResolvedValue([]),
+        select: vi.fn().mockReturnValue({
+          lean: vi.fn().mockResolvedValue([]),
+        }),
       });
       vi.spyOn(Appointment, 'find').mockReturnValue({
-        select: vi.fn().mockResolvedValue([{ _id: 'appt-123' }]),
+        select: vi.fn().mockReturnValue({
+          lean: vi.fn().mockResolvedValue([{ _id: 'appt-123' }]),
+        }),
       });
       vi.spyOn(Notification, 'find').mockReturnValue({
         sort: () => ({
@@ -144,10 +148,14 @@ describe('Notification System Tests', () => {
     it('blocks Agent from viewing non-client notifications', async () => {
       const unrelatedUserId = 'user-999';
       vi.spyOn(Property, 'find').mockReturnValue({
-        select: vi.fn().mockResolvedValue([]),
+        select: vi.fn().mockReturnValue({
+          lean: vi.fn().mockResolvedValue([]),
+        }),
       });
       vi.spyOn(Appointment, 'find').mockReturnValue({
-        select: vi.fn().mockResolvedValue([]),
+        select: vi.fn().mockReturnValue({
+          lean: vi.fn().mockResolvedValue([]),
+        }),
       });
       vi.spyOn(Notification, 'find').mockReturnValue({
         sort: () => ({
@@ -220,7 +228,9 @@ describe('Notification System Tests', () => {
         { _id: 'user-2', role: 'USER' },
       ];
       vi.spyOn(User, 'find').mockReturnValue({
-        select: () => Promise.resolve(mockUsers),
+        select: vi.fn().mockReturnValue({
+          lean: vi.fn().mockResolvedValue(mockUsers),
+        }),
       });
 
       const mockCreated = [

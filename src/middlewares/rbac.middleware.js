@@ -42,7 +42,7 @@ export async function verifyRelation(actor, notification) {
   if (actor.role === 'AGENT') {
     // Can view if related to a property they manage
     if (notification.sourceType === 'property' && notification.sourceId) {
-      const property = await Property.findById(notification.sourceId);
+      const property = await Property.findById(notification.sourceId).select('agent').lean();
       if (property && property.agent.toString() === actor.id) return true;
     }
     // Or if related to a client they have an appointment with
@@ -50,7 +50,7 @@ export async function verifyRelation(actor, notification) {
       const hasAppointment = await Appointment.findOne({
         user_id: notification.recipientId,
         agent_id: actor.id,
-      });
+      }).select('_id').lean();
       if (hasAppointment) return true;
     }
   }
@@ -59,11 +59,11 @@ export async function verifyRelation(actor, notification) {
   if (actor.role === 'MERCHANT') {
     // Can view if related to a property they own
     if (notification.sourceType === 'property' && notification.sourceId) {
-      const property = await Property.findById(notification.sourceId);
+      const property = await Property.findById(notification.sourceId).select('merchant').lean();
       if (property && property.merchant && property.merchant.toString() === actor.id) return true;
     }
     if (notification.data?.propertyId) {
-      const property = await Property.findById(notification.data.propertyId);
+      const property = await Property.findById(notification.data.propertyId).select('merchant').lean();
       if (property && property.merchant && property.merchant.toString() === actor.id) return true;
     }
   }

@@ -14,6 +14,9 @@ const reviewSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
+reviewSchema.index({ property_id: 1, createdAt: -1 });
+reviewSchema.index({ user_id: 1 });
+
 const Review = mongoose.model('Review', reviewSchema);
 
 export default Review;

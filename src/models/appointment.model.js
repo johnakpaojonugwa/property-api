@@ -33,6 +33,10 @@ const appointmentSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
+appointmentSchema.index({ agent_id: 1, date: -1 });
+appointmentSchema.index({ user_id: 1, date: -1 });
+appointmentSchema.index({ property_id: 1 });
+
 const Appointment = mongoose.model('Appointment', appointmentSchema);
 
 export default Appointment;

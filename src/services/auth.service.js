@@ -20,30 +20,31 @@ const login = async ({ email, password, actor_type }) => {
   let principal = null;
   let resolvedActorType = actor_type;
 
-  if (!actor_type || actor_type === 'USER') {
-    principal = await User.findOne({ email: normalizedEmail }).select('+password_hash');
-    if (principal && !actor_type) {
-      resolvedActorType = 'USER';
-    }
-  }
-
-  if (!principal && actor_type !== 'USER') {
-    if (actor_type === 'AGENT') {
+  if (actor_type) {
+    if (actor_type === 'USER') {
+      principal = await User.findOne({ email: normalizedEmail }).select('+password_hash');
+    } else if (actor_type === 'AGENT') {
       principal = await Agent.findOne({ email: normalizedEmail }).select('+password_hash');
-      resolvedActorType = 'AGENT';
     } else if (actor_type === 'MERCHANT') {
       principal = await Merchant.findOne({ email: normalizedEmail }).select('+password_hash');
+    }
+  } else {
+    // Parallel queries to reduce database latency when actor_type is unspecified
+    const [user, agent, merchant] = await Promise.all([
+      User.findOne({ email: normalizedEmail }).select('+password_hash'),
+      Agent.findOne({ email: normalizedEmail }).select('+password_hash'),
+      Merchant.findOne({ email: normalizedEmail }).select('+password_hash'),
+    ]);
+
+    if (user) {
+      principal = user;
+      resolvedActorType = 'USER';
+    } else if (agent) {
+      principal = agent;
+      resolvedActorType = 'AGENT';
+    } else if (merchant) {
+      principal = merchant;
       resolvedActorType = 'MERCHANT';
-    } else if (!actor_type) {
-      principal = await Agent.findOne({ email: normalizedEmail }).select('+password_hash');
-      if (principal) {
-        resolvedActorType = 'AGENT';
-      } else {
-        principal = await Merchant.findOne({ email: normalizedEmail }).select('+password_hash');
-        if (principal) {
-          resolvedActorType = 'MERCHANT';
-        }
-      }
     }
   }
 
