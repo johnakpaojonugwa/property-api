@@ -81,6 +81,7 @@ graph TD
      - `cookieSecurity.js`: Enforces `httpOnly`, `secure`, and `sameSite` cookie rules.
      - `requestTimeout.js`: Rejects requests that hang longer than 5000ms.
      - `rejectDuplicateQueryParams.js`: Prevents HTTP Parameter Pollution (HPP) by rejecting requests with duplicate query parameters.
+     - `rateLimiter.js`: Enforces distributed rate limiting using the **Token Bucket** algorithm via Redis (with an in-memory Map fallback). Sets standard RFC rate limit headers (`RateLimit-Limit`, `RateLimit-Remaining`, `RateLimit-Reset`).
 3. **Controller Layer (`src/controllers/`)**: Extracts request bodies, parameters, and query fields, delegates the business execution to services, and wraps responses in a standard JSON envelope using `ApiResponse`.
 4. **Service Layer (`src/services/`)**: The core business logic layer. Services perform database operations, manage cache keys, perform image compression via `sharp`, and upload static assets.
 5. **Database Models (`src/models/`)**: Structured schemas using Mongoose. Includes indexes on geospatial coordinates (`lat`, `lng`), compound keys for notification delivery statuses, and TTL indexes for auto-expiring notifications.
@@ -104,6 +105,8 @@ erDiagram
     USER ||--o{ WISHLIST : "saves"
     PROPERTY ||--o{ WISHLIST : "wishlisted_by"
     USER ||--o| NOTIFICATION-PREFERENCE : "configures"
+    USER ||--o| AGENT : "managed_by"
+    USER ||--o| MERCHANT : "belongs_to"
 
     USER {
         ObjectId id
@@ -115,6 +118,8 @@ erDiagram
         String role
         Boolean isActive
         ObjectId preferences
+        ObjectId agent
+        ObjectId merchant
     }
     AGENT {
         ObjectId id
@@ -156,8 +161,12 @@ erDiagram
 ```
 
 ### Core Schema Configurations
-* **User & Roles**: Roles include `USER`, `AGENT`, `MERCHANT`, `ADMIN`, and `GUEST`. Guests can access specific notification capabilities using a `guestSessionId`.
-* **Property Indexes**: Indexed on `{ city: 1, is_verified: 1 }` and `{ lat: 1, lng: 1 }` for low-latency searches.
+* **User & Roles**: Roles include `USER`, `AGENT`, `MERCHANT`, `ADMIN`, and `GUEST`. Guests can access specific notification capabilities using a `guestSessionId`. User profiles can be isolated under an `AGENT` or `MERCHANT` by establishing `agent` or `merchant` reference links.
+* **Database Index Optimizations**:
+  - **Property Indexes**: Indexed on `{ city: 1, is_verified: 1, createdAt: -1 }` (compound index supporting sorted list queries) and `{ lat: 1, lng: 1 }` (geospatial searches).
+  - **Appointment Indexes**: Compound indexes `{ agent_id: 1, date: -1 }` and `{ user_id: 1, date: -1 }` to support high-performance client showing calendar retrievals, and `{ property_id: 1 }`.
+  - **Review Indexes**: Compound index `{ property_id: 1, createdAt: -1 }` for low-latency sorted feedback streams, and `{ user_id: 1 }`.
+  - **Token Purge TTL**: Auto-purges expired password reset tokens using a TTL index on `{ expires_at: 1 }` with `expireAfterSeconds: 0`. The token verification looks up a unique index on `{ token: 1 }`.
 * **Notification System**:
   - `Notification`: Auto-deletes after the expiration date via a TTL index: `notificationSchema.index({ expiresAt: 1 }, { expireAfterSeconds: 0 })`.
   - `NotificationPreference`: Configures notification channels (`inApp`, `email`, `push`, `sms`) and quiet hours (e.g., `start: "22:00"`, `end: "07:00"`, `timezone: "UTC"`).
@@ -215,6 +224,24 @@ When an agent or user uploads assets (like property images or avatars), the API 
 2. **Uploading**: Streams the compressed buffer directly to Cloudinary via a promise wrapper (`cloudinary.js`).
 3. **Fallback**: If Cloudinary parameters are missing, it defaults to retaining the buffer locally.
 
+### 4.3 Query Caching & Cache Stampede Protection
+The Property API implements a cache-aside query caching mechanism for properties (lists and detail views) via `cacheHelper.js`'s `getOrSetCache` function.
+* **Distributed Locking (NX/PX)**: To prevent **Cache Stampede** (where multiple parallel requests on a cache miss simultaneously query the database and exhaust resources), the helper attempts to acquire an atomic lock key using `SET lock:key 1 NX PX 5000`. Only the thread acquiring the lock fetches from the database and updates the cache; other threads wait and retry (up to 20 attempts).
+* **Random Jitter**: Staggers key expiration to avoid concurrent expirations by adding/subtracting a random jitter (+/- 5% of the TTL).
+* **Tag-based Cache Invalidation**: Key queries (e.g. property lists) are tagged (e.g., `properties:list`). When mutating actions occur (creation, update, verification, delete, buy), all keys associated with the tag are invalidated, ensuring real-time data consistency.
+
+### 4.4 Distributed Token Bucket Rate Limiter
+Global API and authentication routes are protected by a custom, distributed rate limiter implemented via `createTokenBucketLimiter` in `rateLimiter.js`.
+* **Atomic Lua Script Evaluation**: Rates are computed atomically using a Lua script executed directly on Redis. This checks token count, applies refills based on time elapsed since the last request, and decrements tokens in a single transaction.
+* **In-Memory Fallback & GC**: If Redis becomes disconnected or is in fallback mode, the limiter automatically falls back to an in-memory `Map` store. A garbage collection interval periodically runs on the fallback `Map` to prune inactive rate limit buckets and prevent memory leaks.
+* **RFC-Compliant Headers**: Every limited route returns standard headers: `RateLimit-Limit`, `RateLimit-Remaining`, and `RateLimit-Reset`.
+
+### 4.5 Agent Client Management & Directory Isolation
+To support agency and tenant isolation, the system implements a strict access validation framework:
+* **Privilege Escalation Prevention**: New users registered via public routes are locked to the `USER` role. Only an authenticated `ADMIN` can assign elevated roles (`AGENT`, `MERCHANT`, `ADMIN`).
+* **Creator Association**: When an `AGENT` or `MERCHANT` creates a client account, the user is linked via `agent` or `merchant` properties.
+* **Access Isolation (`verifyUserAccess`)**: Reads/writes to user profiles, wishlists, and properties are guarded by a relationship verification engine. An agent can only access users they either created or have an active showing tour scheduled with. A merchant can only access users belonging to their brokerage firm.
+
 ---
 
 ## 5. Complete API Routes Table
@@ -237,8 +264,8 @@ All routes are prefixed with `/v1`. Auth and guest routes are publicly accessibl
 | | `PUT` | `/v1/properties/:id/set-verified` | Yes | `ADMIN` | Directly updates property verification status |
 | | `POST` | `/v1/properties/buy` | Yes | `USER` | Marks a property as sold (`is_sold: true`) |
 | | `DELETE`| `/v1/properties/:id` | Yes | `AGENT`, `MERCHANT`, `ADMIN` | Deletes a property listing (enforces owner validations) |
-| **Users** | `GET` | `/v1/users` | Yes | `ADMIN` | Lists all users |
-| | `POST` | `/v1/users` | No | Any | Creates/registers a new user |
+| **Users** | `GET` | `/v1/users` | Yes | `ADMIN`, `MERCHANT`, `AGENT` | Lists users (filtered by role scope and relations) |
+| | `POST` | `/v1/users` | Optional | Any | Creates/registers a user profile (links to creator) |
 | | `GET` | `/v1/users/:user_id` | Yes | Owner or `ADMIN` | Gets a user profile |
 | | `PUT` | `/v1/users/:user_id` | Yes | Owner or `ADMIN` | Updates a user's details |
 | | `PUT` | `/v1/users/:user_id/resource` | Yes | Owner or `ADMIN` | Uploads a user's avatar image |
@@ -347,3 +374,18 @@ When reviewing the structure of the application, several trade-offs between arch
 * **Decision**: Rejected any request containing duplicate query parameters (`rejectDuplicateQueryParams.js`) globally.
 * **Why**: Mitigates security risks. HPP attacks occur when query arrays are passed to backend parameters that expect singular strings, leading to SQL/NoSQL injection or application errors.
 * **Trade-off**: Rejects standard array queries in query strings (e.g., `?category=LAND&category=DUPLEX` is rejected). To support filtering by multiple values, the client must format parameters as comma-separated values (e.g., `?category=LAND,DUPLEX`), which requires custom parsing in the services layer.
+
+### 6.6 Distributed Rate Limiting vs. Local Memory Fallback
+* **Decision**: Implemented an atomic Lua script-based Token Bucket rate limiter in Redis with a local Map-based in-memory fallback.
+* **Why**: Promotes horizontal scalability. With multiple running instances of the API, rate limits must be tracked globally. The Lua script evaluates limits atomically in Redis. If Redis crashes, the fallback Map prevents API down-time by falling back gracefully to local limits.
+* **Trade-off**: Memory fallback introduces local state. If the API scales horizontally and Redis goes down, clients can exceed their rate limits across multiple server instances because each instance only tracks limits locally on its own memory Map. Additionally, the periodic garbage collection interval introduces small CPU overhead.
+
+### 6.7 Cache Stampede Protection Locks
+* **Decision**: Wrapped database queries on cache misses with a Redis SET-NX lock inside `getOrSetCache`.
+* **Why**: High-load resilience. When a popular cache key expires, thousands of concurrent requests would otherwise hit MongoDB at once, potentially causing a database lockup.
+* **Trade-off**: Increases caching lookup latency. Clients that make requests while another process has the lock are delayed (sleeping 50ms per check, up to 20 retries). If lock release fails or the process hangs, other requests will block until they hit the retry limit before falling back to the database.
+
+### 6.8 Multi-Tenant Isolation & Access Validation Overhead
+* **Decision**: Implemented relationship checks via `verifyUserAccess` in `user.service.js` rather than purely relying on role checks in route authorization.
+* **Why**: Allows fine-grained multi-role directory isolation. Agents and merchants cannot see users/clients unless they have established relationships (agent creator, merchant employer, or appointment).
+* **Trade-off**: Substantial database query overhead. For every single read, write, or update of a user profile, the API must query MongoDB to find the target user, and if they are an agent, perform additional checking (such as querying the `Appointment` collection for active showings). This is mitigated by lean database queries and select projections, but scales linearly with client-agent volume.
